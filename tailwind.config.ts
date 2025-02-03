@@ -16,7 +16,7 @@ const config: Config = {
       colors: {
         primary: {
           white: {
-            DEFAULT: "#F8F7F",
+            DEFAULT: "#F8F7F7",
             hover: "#E8E7EF",
             active: "#D8D7DF",
           },

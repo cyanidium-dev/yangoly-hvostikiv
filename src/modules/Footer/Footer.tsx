@@ -1,20 +1,12 @@
+import Logo from "@/shared/components/Logo/Logo";
 import SocialsList from "@/shared/components/SocialsList/SocialsList";
 import { INavigationItem } from "@/shared/types";
-import Image from "next/image";
 import Link from "next/link";
 
 const Footer = ({ translation }: { translation: INavigationItem[] }) => {
   return (
     <footer className="bg-[#001808] py-10 px-4 flex flex-col gap-6 xl:items-center">
-      <Link href="/">
-        <Image
-          src="/images/logo.mobile.png"
-          alt="logo"
-          width={109}
-          height={48}
-          className="logo-white-mask"
-        />
-      </Link>
+      <Logo href={"/"} width={109} height={48} />
       <nav className="flex flex-col gap-4 xl:flex-row">
         {translation.map((item, index) => (
           <Link

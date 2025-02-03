@@ -1,3 +1,5 @@
+@import "swiper/css";
+@import "swiper/css/autoplay";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -68,6 +70,10 @@ a {
   filter: brightness(0) invert(1);
 }
 
+/* .swiper-wrapper {
+  transition-timing-function: linear !important;
+  will-change: transform;
+} */
 @layer utilities {
   .transition-base {
     @apply transition  duration-300 ease-in-out;

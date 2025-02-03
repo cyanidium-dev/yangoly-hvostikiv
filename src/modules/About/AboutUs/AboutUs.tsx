@@ -1,7 +1,6 @@
 import { IAboutUsTranslation } from "@/shared/types";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 
 const AboutUs = ({ translation }: { translation: IAboutUsTranslation }) => {
   const {
@@ -14,7 +13,7 @@ const AboutUs = ({ translation }: { translation: IAboutUsTranslation }) => {
     reportingLing,
   } = translation;
   return (
-    <section className="container  flex flex-col xl:flex-row xl:items-center xl:bg-white xl:justify-between  mx-auto gap-6 xl:gap-0">
+    <section className="container  flex flex-col px-4 xl:flex-row xl:items-center xl:bg-white  xl:rounded-l-[16px] xl:justify-between  mx-auto gap-6 xl:gap-0">
       <div className="flex flex-col  xl:px-[40px]  gap-6 xl:w-1/2 xl:order-2">
         <h2 className="text-[24px] xl:text-[32px]  font-normal leading-[130%] text-black  text-left">
           {title}
@@ -44,7 +43,7 @@ const AboutUs = ({ translation }: { translation: IAboutUsTranslation }) => {
       </div>
 
       <div className="w-full xl:w-1/2 xl:order-1">
-        <div className="grid grid-cols-2 gap-4 xl:gap-5 ">
+        <div className="grid  grid-cols-2 gap-4 xl:gap-5 xl:bg-primary-gray-100 ">
           <div className="relative w-full aspect-[175/328] xl:aspect-auto">
             <Image
               src="/images/about1.jpg"

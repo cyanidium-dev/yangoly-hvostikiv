@@ -1,8 +1,7 @@
-import React from "react";
-import Navbar from "../Navbar/Navbar";
 import { INavigationItem } from "@/shared/types";
 import SocialsList from "@/shared/components/SocialsList/SocialsList";
 import Button from "@/shared/components/Button/Button";
+import Navbar from "@/modules/Navbar/Navbar";
 
 interface IBurgerMenuProps {
   isOpen: boolean;

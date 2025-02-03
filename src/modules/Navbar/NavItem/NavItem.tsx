@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { useState } from "react";
-import { INavigationItem } from "../Navbar";
 import { cn } from "@/shared/utils";
 import { ArrowDonwIcon } from "../../../../public/images/icons";
+import { INavigationItem } from "@/shared/types";
 
 const NavItem = ({
   item,

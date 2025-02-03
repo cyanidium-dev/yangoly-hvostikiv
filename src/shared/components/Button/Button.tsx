@@ -1,22 +1,13 @@
-import React from "react";
 import { cn } from "@/shared/utils";
-import { ButtonVariant } from "@/shared/types";
+import { IButtonProps } from "@/shared/types";
 
-interface IButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  text: string;
-  variant?: ButtonVariant;
-  fullWidth?: boolean;
-  onClick?: () => void;
-}
-
-const Button: React.FC<IButtonProps> = ({
+const Button = ({
   text,
   variant = "primary",
   fullWidth = false,
-  onClick,
   className,
   ...props
-}) => {
+}: IButtonProps) => {
   const baseStyles =
     "text-white uppercase py-4 px-6 rounded-[12px] transition-colors duration-300";
 
@@ -29,7 +20,6 @@ const Button: React.FC<IButtonProps> = ({
 
   return (
     <button
-      onClick={onClick}
       className={cn(baseStyles, variantStyles[variant], widthStyle, className)}
       {...props}
     >

@@ -3,7 +3,7 @@ export * from "./BurgerButtonIcon";
 export * from "./CloseIcon";
 export * from "./UkraineFlag";
 export * from "./BritishFlag";
-export * from "./HeroMaskMobile";
+export * from "./Masks";
 export * from "./SocialIcons";
 export * from "./PhoneIcon";
 export * from "./EmailIcon";

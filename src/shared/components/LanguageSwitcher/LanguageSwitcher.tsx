@@ -1,23 +1,14 @@
 "use client";
 
-import React, { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import {
   ArrowDonwIcon,
   BritishFlag,
   UkraineFlag,
 } from "../../../../public/images/icons";
-import { Locale } from "@/shared/types";
+import { ILanguage, ILanguages, Locale } from "@/shared/types";
 import { cn } from "@/shared/utils";
-
-interface Language {
-  name: string;
-  icon: React.ReactNode;
-}
-
-interface Languages {
-  [key: string]: Language;
-}
 
 const LanguageSwitcher = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,7 +17,7 @@ const LanguageSwitcher = () => {
   const router = useRouter();
   const pathname = usePathname();
 
-  const languages: Languages = {
+  const languages: ILanguages = {
     uk: {
       name: "UA",
       icon: <UkraineFlag />,
@@ -44,6 +35,7 @@ const LanguageSwitcher = () => {
 
   useEffect(() => {
     setCurrentLocale(getCurrentLocale());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname]);
 
   useEffect(() => {
@@ -91,7 +83,7 @@ const LanguageSwitcher = () => {
 
       {isOpen && (
         <div className="absolute right-0 mt-2 w-32 bg-white rounded-md shadow-lg z-50 border border-gray-100">
-          {(Object.entries(languages) as [Locale, Language][]).map(
+          {(Object.entries(languages) as [Locale, ILanguage][]).map(
             ([locale, { name, icon }]) => (
               <button
                 key={locale}

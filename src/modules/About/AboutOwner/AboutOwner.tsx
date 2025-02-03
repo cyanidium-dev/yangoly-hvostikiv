@@ -1,6 +1,5 @@
 import { IAboutOwnerTranslation } from "@/shared/types";
 import Image from "next/image";
-import React from "react";
 
 const AboutOwner = ({
   translation,
@@ -9,7 +8,7 @@ const AboutOwner = ({
 }) => {
   const { title, firstParagraph, secondParagraph, boldText } = translation;
   return (
-    <section className="container ml-auto mr-auto pt-10 ">
+    <section className="container ml-auto mr-auto pt-10 px-4 ">
       <div className="flex flex-col xl:bg-white xl:rounded-[16px] xl:flex-row gap-6 xl:gap-0">
         <div className="xl:flex xl:flex-col xl:justify-center xl:gap-6 xl:w-1/2 xl:pl-[20px] xl:pr-[40px]">
           <h2 className="text-[24px] xl:text-[32px]  font-normal leading-[130%] text-black text-left">

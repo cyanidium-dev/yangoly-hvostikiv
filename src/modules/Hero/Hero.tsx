@@ -1,6 +1,4 @@
-import React from "react";
 import { HeroMaskMobile } from "../../../public/images/icons";
-// import Image from "next/image";
 import FundraisingGoal from "../FundraisingGoal/FundraisingGoal";
 import { IHeroTranslation } from "@/shared/types";
 

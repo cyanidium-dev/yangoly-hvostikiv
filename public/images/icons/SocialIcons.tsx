@@ -1,11 +1,13 @@
-export const InstagramIcon = ({ className = "" }: { className?: string }) => {
+import { ISvgIconProps } from '@/shared/types';
+
+export const InstagramIcon = ({ ...props }: ISvgIconProps) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="25"
       height="24"
       viewBox="0 0 25 24"
-      className={className}
+      {...props}
     >
       <path
         d="M12.5 15C14.1569 15 15.5 13.6569 15.5 12C15.5 10.3431 14.1569 9 12.5 9C10.8431 9 9.5 10.3431 9.5 12C9.5 13.6569 10.8431 15 12.5 15Z"
@@ -21,14 +23,14 @@ export const InstagramIcon = ({ className = "" }: { className?: string }) => {
   );
 };
 
-export const TwitterIcon = ({ className = "" }: { className?: string }) => {
+export const TwitterIcon = ({ ...props }: ISvgIconProps) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="25"
       height="24"
       viewBox="0 0 25 24"
-      className={className}
+      {...props}
     >
       <path
         d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022.5 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.073 4.073 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.093 4.093 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012.5 18.407a11.615 11.615 0 005.79 1.844"
@@ -38,14 +40,14 @@ export const TwitterIcon = ({ className = "" }: { className?: string }) => {
   );
 };
 
-export const FacebookIcon = ({ className = "" }: { className?: string }) => {
+export const FacebookIcon = ({ ...props }: ISvgIconProps) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="25"
       height="24"
       viewBox="0 0 25 24"
-      className={className}
+      {...props}
     >
       <path
         d="M22.5 12C22.5 6.47715 17.7728 2 12.5 2C7.22715 2 2.5 6.47715 2.5 12C2.5 16.9919 6.00806 21.1291 10.75 22V15.6562H8.4375V12H10.75V9.75C10.75 7.36447 12.3016 6 14.5469 6C15.6532 6 16.8125 6.1875 16.8125 6.1875V8.4375H15.5187C14.25 8.4375 14.0625 9.125 14.0625 9.84375V12H16.7031L16.25 15.6562H14.0625V22C18.7947 21.1291 22.5 16.9919 22.5 12Z"
@@ -55,14 +57,14 @@ export const FacebookIcon = ({ className = "" }: { className?: string }) => {
   );
 };
 
-export const TelegramIcon = ({ className = "" }: { className?: string }) => {
+export const TelegramIcon = ({ ...props }: ISvgIconProps) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="25"
       height="24"
       viewBox="0 0 25 24"
-      className={className}
+      {...props}
     >
       <path
         fillRule="evenodd"
@@ -74,14 +76,14 @@ export const TelegramIcon = ({ className = "" }: { className?: string }) => {
   );
 };
 
-export const YoutubeIcon = ({ className = "" }: { className?: string }) => {
+export const YoutubeIcon = ({ ...props }: ISvgIconProps) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="25"
       height="24"
       viewBox="0 0 25 24"
-      className={className}
+      {...props}
     >
       <path
         d="M22.3008 8C22.3008 8 22.1055 6.62109 21.5039 6.01562C20.7422 5.21875 19.8906 5.21484 19.5 5.16797C16.7031 4.96484 12.5039 4.96484 12.5039 4.96484H12.4961C12.4961 4.96484 8.29688 4.96484 5.5 5.16797C5.10938 5.21484 4.25781 5.21875 3.49609 6.01562C2.89453 6.62109 2.70312 8 2.70312 8C2.70312 8 2.5 9.62109 2.5 11.2383V12.7539C2.5 14.3711 2.69922 15.9922 2.69922 15.9922C2.69922 15.9922 2.89453 17.3711 3.49219 17.9766C4.25391 18.7734 5.25391 18.7461 5.69922 18.832C7.30078 18.9844 12.5 19.0312 12.5 19.0312C12.5 19.0312 16.7031 19.0234 19.5 18.8242C19.8906 18.7773 20.7422 18.7734 21.5039 17.9766C22.1055 17.3711 22.3008 15.9922 22.3008 15.9922C22.3008 15.9922 22.5 14.375 22.5 12.7539V11.2383C22.5 9.62109 22.3008 8 22.3008 8ZM10.4336 14.5938V8.97266L15.8359 11.793L10.4336 14.5938Z"

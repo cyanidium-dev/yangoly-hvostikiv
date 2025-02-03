@@ -1,14 +1,6 @@
 import ProgressBar from "@/shared/components/ProgressBar/ProgressBar";
+import { IFundraisingGoalProps } from "@/shared/types";
 import Image from "next/image";
-import React from "react";
-
-interface IFundraisingGoalProps {
-  fundraisingTitle: string;
-  goal: string;
-  currency: string;
-  totalAmount: number;
-  currentAmount: number;
-}
 
 const FundraisingGoal = ({
   fundraisingTitle,

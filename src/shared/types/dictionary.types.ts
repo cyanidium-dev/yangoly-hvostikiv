@@ -40,3 +40,12 @@ export interface IWorkResult {
   count: string;
   action: string;
 }
+
+export interface IPartenrsTranslation {
+  title: string;
+}
+
+export interface IContactsTranslation {
+  title: string;
+  subtitle: string;
+}

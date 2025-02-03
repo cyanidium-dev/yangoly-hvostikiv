@@ -113,5 +113,17 @@
       "name": "Contacts",
       "href": "/"
     }
-  ]
+  ],
+  "partners": {
+    "title": "Our partners"
+  },
+  "contacts": {
+    "title": "Contacts",
+    "subtitle": "To get in touch with us, please leave your contact details"
+  },
+  "metadata": {
+    "title": "Angels of Tails | Charity Foundation",
+    "description": "Charitable foundation helping stray animals",
+    "keywords": "charity foundation, animal help, stray animals, pet rescue"
+  }
 }

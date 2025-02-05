@@ -55,19 +55,61 @@
   },
   "about": {
     "aboutUs": {
-      "title": "About the Charitable Fund",
-      "charitableFund": "Charitable Fund",
-      "organisation": "Angels of Tails",
-      "firstParagraph": "helps homeless animals in frontline areas, where ensuring their survival is an extremely challenging task due to constant danger. Animals are often left alone during military actions, suffering from hunger and cold. The fund's mission is to provide animals with medicine, food, and vaccinations, as well as to give them a chance for rescue and hope for a decent life.",
-      "secondParagraph": "Our mission is to break through people's indifference toward animals. People need to stop treating animals as objects because humanity lies in this understanding. The life of an animal should be valuable to humans! Animals deserve love and safety just as much as people do!",
-      "partnerLink": "Become a Partner",
-      "reportingLing": "Organization Reports"
+      "title": "About the Charitable Foundation",
+      "paragraphs": [
+        {
+          "segments": [
+            { "text": "Charitable Foundation ", "bold": false },
+            { "text": "\"Angels of Tails\"", "bold": true },
+            {
+              "text": " helps stray animals in frontline territories, where preserving their lives is an extremely challenging task due to constant danger. Animals usually remain alone during military actions, suffering from hunger and cold. The foundation's task is to provide animals with medicines, food and vaccinations, as well as give them a chance for rescue and hope for a dignified life.",
+              "bold": false
+            }
+          ]
+        },
+        {
+          "segments": [
+            { "text": "Our mission", "bold": true },
+            {
+              "text": " is to break through people's indifference towards animals. People must stop treating animals as things. This is what humanity is all about. An animal's life should be valuable to humans! Animals deserve love and security just as much as humans do!",
+              "bold": false
+            }
+          ]
+        }
+      ],
+      "links": [
+        { "text": "Become a Partner", "href": "#" },
+        { "text": "Organization Reports", "href": "#" }
+      ]
     },
     "aboutOwner": {
-      "title": "About the Founder of the Fund",
-      "firstParagraph": "Eugenia Nikonchuk has been actively involved in charity work and animal protection for 10 years. She dedicated half of her life to sports, working as a fitness trainer, and later shifted her focus to helping homeless animals. Her journey began with rescuing a dog in 2022, and since then, Eugenia has become an active participant in public movements aimed at helping animals in frontline areas. She founded the \"Angels of Tails\" fund to organize assistance and expand it to reach more animals.",
-      "secondParagraph": "Her mission is to convey to people that",
-      "boldText": "animals are a part of Ukraine"
+      "title": "About the Foundation Founder",
+      "paragraphs": [
+        {
+          "segments": [
+            {
+              "text": "Eugenia Nikonchuk has been actively involved in charity and animal protection for 10 years. She dedicated half of her life to sports, working as a fitness trainer, and later switched to helping homeless animals. Her activities began with rescuing a dog in 2022, and since then, Eugenia has become an active participant in public movements aimed at helping animals in frontline zones. She founded the \"Angels of Tails\" foundation to organize assistance and extend it to a larger number of animals.",
+              "bold": false
+            }
+          ]
+        },
+        {
+          "segments": [
+            {
+              "text": "Her mission is to convey to people that ",
+              "bold": false
+            },
+            {
+              "text": "animals are part of Ukraine",
+              "bold": true
+            },
+            {
+              "text": " and they are full-fledged members! Taking care of stray animals is our shared responsibility to become more accountable for our actions. Become an Angel for Tails, protect and help animals who don't have a home and family!",
+              "bold": false
+            }
+          ]
+        }
+      ]
     }
   },
   "workResults": [
@@ -121,6 +163,22 @@
     "title": "Contacts",
     "subtitle": "To get in touch with us, please leave your contact details"
   },
+  "donateModal": {
+    "fundraisingTitle": "Our goal for the month",
+    "goal": "Goal",
+    "currency": "UAH",
+    "donateAmountSection": {
+      "title": "Top-up amount",
+      "anotherAmount": "Another amount",
+      "inputPlaceholder": "Optional",
+      "inputLabel": "Your name or comment",
+      "firstCheckboxLabel": "I want to be the first to know about charitable events",
+      "secondCheckboxLabel": "I have read the public offer agreement for making a charitable donation and agree to the collection, processing, and use of personal data in accordance with the terms of this agreement.",
+      "cardButton": "Pay by card",
+      "submitError": "Confirm that you have read the public offer agreement"
+    }
+  },
+
   "metadata": {
     "title": "Angels of Tails | Charity Foundation",
     "description": "Charitable foundation helping stray animals",

@@ -1,5 +1,5 @@
 "use client";
-import  { useCallback, useState } from "react";
+import { useCallback, useState } from "react";
 import { CloseIcon, BurgerButtonIcon } from "../../../public/images/icons";
 import LanguageSwitcher from "@/shared/components/LanguageSwitcher/LanguageSwitcher";
 import { IHeaderProps } from "@/shared/types";
@@ -8,14 +8,23 @@ import TopBanner from "../TopBanner/TopBanner";
 import BurgerMenu from "@/shared/components/BurgerMenu/BurgerMenu";
 import Navbar from "../Navbar/Navbar";
 import Logo from "@/shared/components/Logo/Logo";
+import DonateModal from "@/shared/components/DonateModal/DonateModal";
 
-const Header = ({ translation }: IHeaderProps) => {
+const Header = ({
+  translation,
+  donateModalTranslataion,
+  lang,
+}: IHeaderProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isDonateModalOpen, setIsDonateModalOpen] = useState(false);
 
   const handleMenuToggle = useCallback(() => {
     setIsMenuOpen((prev) => !prev);
   }, []);
 
+  const handleCloseModal = useCallback(() => {
+    setIsDonateModalOpen(false);
+  }, []);
   return (
     <>
       <header className="fixed top-0 flex-col bg-white border-b border-[#E9E9EE] xl:bg-background-gray  w-full flex justify-between items-center z-50">
@@ -36,11 +45,23 @@ const Header = ({ translation }: IHeaderProps) => {
             <Button
               className="hidden xl:block"
               text={translation?.donateButton}
+              onClick={() => setIsDonateModalOpen(true)}
             />
           </div>
         </div>
       </header>
-      <BurgerMenu translation={translation} isOpen={isMenuOpen} />
+      <BurgerMenu
+        lang={lang}
+        translation={translation}
+        donateModalTranslataion={donateModalTranslataion}
+        isOpen={isMenuOpen}
+      />
+      <DonateModal
+        lang={lang}
+        translation={donateModalTranslataion}
+        isOpen={isDonateModalOpen}
+        onClose={handleCloseModal}
+      />
     </>
   );
 };

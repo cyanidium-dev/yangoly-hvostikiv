@@ -8,6 +8,7 @@ import {
   EmailIcon,
   PhoneIcon,
 } from "../../../public/images/icons";
+import Image from "next/image";
 
 const Contacts = ({ lang, translation }: IContactsProps) => {
   const contactConfig = getContactFormConfig(lang);
@@ -17,12 +18,12 @@ const Contacts = ({ lang, translation }: IContactsProps) => {
   };
 
   return (
-    <section className="relative h-[863px] xl:h-[634px] ">
-      <ContactsMask className="absolute inset-0 w-full h-[101%] xl:hidden" />
-      <ContactsMaskDesktop className="absolute inset-0 w-full h-[101%] hidden xl:block" />
-      <div className="container relative z-10 px-4 top-[80px] xl:top-[100px] mx-auto ">
-        <div className="flex flex-col xl:flex-row xl:justify-between xl:items-center">
-          <div className="flex flex-col gap-6">
+    <section className="relative h-[863px] lg:h-[634px] ">
+      <ContactsMask className="absolute inset-0 w-full h-[101%] lg:hidden" />
+      <ContactsMaskDesktop className="absolute inset-0 w-full h-[101%] hidden lg:block" />
+      <div className="container relative z-10 px-4 top-[80px] lg:top-[100px] mx-auto ">
+        <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center">
+          <div className="flex flex-col gap-6 lg:max-w-[406px]">
             <h2 className="text-[24px] text-white leading-[130%] uppercase">
               {title}
             </h2>
@@ -49,7 +50,17 @@ const Contacts = ({ lang, translation }: IContactsProps) => {
               </a>
             </div>
           </div>
-          <div className="mt-5 max-w-[533px] w-full xl:w-[533px] xl:mt-0">
+          {/* Cat */}
+          <div className="hidden xl:block absolute bottom-0 right-[42%] z-10">
+            <Image
+              src="/images/cartoon-cat.png"
+              alt="Cartoon Cat"
+              width={411}
+              height={376}
+              priority
+            />
+          </div>
+          <div className="mt-5 max-w-[533px] w-full lg:w-[533px] lg:mt-0">
             <UniversalForm onSubmit={handleSubmit} {...contactConfig} />
           </div>
         </div>

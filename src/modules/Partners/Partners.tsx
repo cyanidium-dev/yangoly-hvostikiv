@@ -1,10 +1,5 @@
-"use client";
 import Image from "next/image";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
 import { IPartnersProps } from "@/shared/types";
-
-import "swiper/css";
 
 const partners = [
   {
@@ -18,45 +13,89 @@ const partners = [
   { src: "/images/partners/brit.png", alt: "Brit Logo", width: 180 },
 ];
 
-const duplicatedPartners = [...partners, ...partners];
-
 const Partners = ({ translation, ...props }: IPartnersProps) => {
   const { title } = translation;
 
   return (
-    <section {...props} className="container mx-auto px-4 py-[80px] xl:px-10">
+    <section
+      {...props}
+      className="container mx-auto px-4 pt-[160px] pb-[80px] xl:py-[120px] xl:px-10"
+    >
       <h2 className="text-[32px] text-black leading-[130%] text-center mb-8">
         {title}
       </h2>
-      <Swiper
-        modules={[Autoplay]}
-        slidesPerView="auto"
-        spaceBetween={100}
-        loop={true}
-        speed={1000}
-        autoplay={{
-          delay: 0,
-          disableOnInteraction: false,
-        }}
-        className="w-full h-8 xl:h-[60px]"
-      >
-        {duplicatedPartners.map((partner, index) => (
-          <SwiperSlide
-            key={index}
-            className="!w-auto h-full flex items-center"
-            style={{ width: `${partner.width}px` }}
-          >
-            <Image
-              src={partner.src}
-              alt={partner.alt}
-              width={partner.width}
-              height={32}
-              className="object-contain h-full w-auto"
-              priority={index < 5}
-            />
-          </SwiperSlide>
-        ))}
-      </Swiper>
+
+      <div className="relative flex overflow-x-hidden overflow-y-hidden w-full h-8 xl:h-[60px]">
+        <div className="flex space-x-[100px] animate-marquee">
+          {partners.map((partner, index) => (
+            <div
+              key={index}
+              className="flex items-center shrink-0"
+              style={{ width: `${partner.width}px` }}
+            >
+              <Image
+                src={partner.src}
+                alt={partner.alt}
+                width={partner.width}
+                height={32}
+                className="object-contain h-full w-auto"
+                priority={index < 5}
+              />
+            </div>
+          ))}
+          {partners.map((partner, index) => (
+            <div
+              key={`duplicate-${index}`}
+              className="flex items-center shrink-0"
+              style={{ width: `${partner.width}px` }}
+            >
+              <Image
+                src={partner.src}
+                alt={partner.alt}
+                width={partner.width}
+                height={32}
+                className="object-contain h-full w-auto"
+                priority={false}
+              />
+            </div>
+          ))}
+        </div>
+
+        <div className="absolute top-0 flex space-x-[100px] animate-marquee2">
+          {partners.map((partner, index) => (
+            <div
+              key={`second-${index}`}
+              className="flex items-center shrink-0"
+              style={{ width: `${partner.width}px` }}
+            >
+              <Image
+                src={partner.src}
+                alt={partner.alt}
+                width={partner.width}
+                height={32}
+                className="object-contain h-full w-auto"
+                priority={false}
+              />
+            </div>
+          ))}
+          {partners.map((partner, index) => (
+            <div
+              key={`second-duplicate-${index}`}
+              className="flex items-center shrink-0"
+              style={{ width: `${partner.width}px` }}
+            >
+              <Image
+                src={partner.src}
+                alt={partner.alt}
+                width={partner.width}
+                height={32}
+                className="object-contain h-full w-auto"
+                priority={false}
+              />
+            </div>
+          ))}
+        </div>
+      </div>
     </section>
   );
 };

@@ -10,16 +10,15 @@ import { getDictionary } from "@/shared/utils";
 
 export default async function Home({ params }: PageParams) {
   const { locale } = await params;
-  const { hero, about, workResults, partners, contacts } = await getDictionary(
-    locale
-  );
+  const { hero, about, workResults, partners, contacts, donateModal } =
+    await getDictionary(locale);
 
   return (
     <>
       <Hero translation={hero} />
       <WorkResults translation={workResults} />
       <About translation={about} />
-      <MonthlyGoalSection />
+      <MonthlyGoalSection donateModalTranslataion={donateModal} lang={locale} />
       <SupportFundraising />
       <Partners translation={partners} />
       <Contacts translation={contacts} lang={locale} />

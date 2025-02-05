@@ -37,7 +37,7 @@ export const UniversalForm = ({
       ...register(field.name),
       placeholder: field.placeholder,
       className: cn(
-        "w-full rounded-md border px-[6px] py-3 focus:border-blue-500 focus:ring-1 focus:ring-blue-500",
+        "w-full rounded-md border px-[6px] py-3 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 appearance-none bg-white text-[#1D1D1D] placeholder:text-gray-500",
         field.icon && "pl-10",
         errors[field.name] && "border-red-500"
       ),

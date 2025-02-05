@@ -7,3 +7,6 @@ export * from "./Masks";
 export * from "./SocialIcons";
 export * from "./PhoneIcon";
 export * from "./EmailIcon";
+export * from "./GoogleIcon";
+export * from "./CardIcon";
+export * from "./CheckboxIcon";

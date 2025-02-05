@@ -1,82 +1,52 @@
+import ImageGallery from "@/shared/components/ImageGallery/ImageGallery";
+import InfoBlock from "@/shared/components/InfoBlock/InfoBlock";
 import { IAboutUsTranslation } from "@/shared/types";
-import Image from "next/image";
 import Link from "next/link";
 
+const aboutImages = [
+  {
+    src: "/images/about1.jpg",
+    alt: "Owner with pets showing foundation logo",
+  },
+  {
+    src: "/images/about2.jpg",
+    alt: "Pet drawing with paw",
+  },
+  {
+    src: "/images/about3.jpg",
+    alt: "Team members with pets",
+  },
+];
 const AboutUs = ({ translation }: { translation: IAboutUsTranslation }) => {
-  const {
-    title,
-    charitableFund,
-    organisation,
-    firstParagraph,
-    secondParagraph,
-    partnerLink,
-    reportingLing,
-  } = translation;
   return (
-    <section className="container  flex flex-col px-4 xl:flex-row xl:items-center xl:bg-white  xl:rounded-l-[16px] xl:justify-between  mx-auto gap-6 xl:gap-0">
-      <div className="flex flex-col  xl:px-[40px]  gap-6 xl:w-1/2 xl:order-2">
-        <h2 className="text-[24px] xl:text-[32px]  font-normal leading-[130%] text-black  text-left">
-          {title}
-        </h2>
-        <p className=" text-[18px] text-black font-normal leading-[130%]">
-          {charitableFund}{" "}
-          <span className="font-bold">&quot;{organisation}&quot;</span>{" "}
-          {firstParagraph}
-        </p>
-        <p className="text-[18px] text-black font-normal leading-[130%]">
-          {secondParagraph}
-        </p>
+    <div className="flex flex-col xl:flex-row xl:justify-center xl:items-center xl:bg-white gap-6 xl:gap-0 items-start xl:mb-[40px]">
+      <div className="w-full xl:w-1/2 order-2 xl:order-1">
+        <ImageGallery
+          images={aboutImages}
+          variant="splitLayout"
+          className="xl:bg-primary-gray-100 mb-5 xl:mb-0"
+        />
+      </div>
+      <InfoBlock
+        className="w-full xl:w-1/2 order-1 xl:order-2 xl:bg-white xl:px-10 xl:py-10"
+        translation={translation}
+      >
         <div className="flex flex-col gap-4 xl:flex-row">
           <Link
-            className="uppercase px-6 py-3 bg-primary-green text-[#F8F7F7] text-center rounded-lg transition-colors duration-300 hover:bg-primary-green/90"
-            href="/"
+            className="uppercase px-6 py-3 bg-primary-green text-[18px] leading-[130%] text-[#F8F7F7] text-center rounded-lg transition-colors duration-300 hover:bg-primary-green/90"
+            href={translation.links[0].href}
           >
-            {partnerLink}
+            {translation.links[0].text}
           </Link>
           <Link
-            className="uppercase px-6 py-3 bg-white text-primary-green text-center rounded-lg border border-primary-green transition-colors duration-300 hover:bg-primary-green hover:text-white"
-            href="/"
+            className="uppercase px-6 py-3 bg-white text-[18px] leading-[130%] text-primary-green text-center rounded-lg border border-primary-green transition-colors duration-300 hover:bg-primary-green hover:text-white"
+            href={translation.links[1].href}
           >
-            {reportingLing}
+            {translation.links[1].text}
           </Link>
         </div>
-      </div>
-
-      <div className="w-full xl:w-1/2 xl:order-1">
-        <div className="grid  grid-cols-2 gap-4 xl:gap-5 xl:bg-primary-gray-100 ">
-          <div className="relative w-full aspect-[175/328] xl:aspect-auto">
-            <Image
-              src="/images/about1.jpg"
-              alt="Owner"
-              fill
-              className="object-cover rounded-lg xl:rounded-[16px]"
-              sizes="(max-width: 1280px) 50vw, 33vw"
-              priority
-            />
-          </div>
-          <div className="flex flex-col gap-4 xl:gap-5 h-full">
-            <div className="relative w-full aspect-[170/156] xl:aspect-[329/331] ">
-              <Image
-                src="/images/about2.jpg"
-                alt="Owner"
-                fill
-                className="object-cover rounded-lg xl:rounded-[16px]"
-                sizes="(max-width: 1280px) 50vw, 33vw"
-              />
-            </div>
-            <div className="relative w-full aspect-[170/156] xl:aspect-[329/331] ">
-              <Image
-                src="/images/about3.jpg"
-                alt="Owner"
-                fill
-                className="object-cover rounded-lg xl:rounded-[16px]"
-                sizes="(max-width: 1280px) 50vw, 33vw"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+      </InfoBlock>
+    </div>
   );
 };
 

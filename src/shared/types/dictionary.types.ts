@@ -15,22 +15,31 @@ export interface IHeroTranslation {
   currency: string;
 }
 
+interface ISegment {
+  text: string;
+  bold: boolean;
+}
+
+interface IParagraph {
+  segments: ISegment[];
+}
+
+interface ILink {
+  text: string;
+  href: string;
+}
+
 export interface IAboutUsTranslation {
   title: string;
-  charitableFund: string;
-  organisation: string;
-  firstParagraph: string;
-  secondParagraph: string;
-  partnerLink: string;
-  reportingLing: string;
+  paragraphs: IParagraph[];
+  links: ILink[];
 }
 
 export interface IAboutOwnerTranslation {
   title: string;
-  firstParagraph: string;
-  secondParagraph: string;
-  boldText: string;
+  paragraphs: IParagraph[];
 }
+
 export interface IAboutTranslation {
   aboutUs: IAboutUsTranslation;
   aboutOwner: IAboutOwnerTranslation;
@@ -48,4 +57,22 @@ export interface IPartenrsTranslation {
 export interface IContactsTranslation {
   title: string;
   subtitle: string;
+}
+
+export interface IDonateAmountSectionTranslation {
+  title: string;
+  anotherAmount: string;
+  inputPlaceholder: string;
+  inputLabel: string;
+  firstCheckboxLabel: string;
+  secondCheckboxLabel: string;
+  cardButton: string;
+  submitError: string;
+}
+
+export interface IDonateModalTranslation {
+  fundraisingTitle: string;
+  currency: string;
+  goal: string;
+  donateAmountSection: IDonateAmountSectionTranslation;
 }

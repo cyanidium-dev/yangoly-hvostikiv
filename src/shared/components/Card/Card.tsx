@@ -5,7 +5,10 @@ import Button from "../Button/Button";
 
 const Card = ({ title, withProgressBar = false, ...props }: ICardProps) => {
   return (
-    <div {...props} className="bg-white p-5 rounded-[8px] flex flex-col gap-4">
+    <div
+      {...props}
+      className="bg-white p-5 rounded-[8px] flex flex-col gap-4 card-shadow"
+    >
       <h3 className="text-center text-black text-[24px] leading-[130%]">
         {title}
       </h3>

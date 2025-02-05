@@ -1,7 +1,13 @@
-import React, { ComponentProps } from "react";
+import { ComponentProps } from "react";
 import { dictionaries } from "../utils/getDictionary";
 import {
+  IAboutOwnerTranslation,
+  IAboutTranslation,
+  IAboutUsTranslation,
   IContactsTranslation,
+  IDonateAmountSectionTranslation,
+  IDonateModalTranslation,
+  IHeroTranslation,
   INavigationItem,
   IPartenrsTranslation,
 } from "./dictionary.types";
@@ -33,6 +39,26 @@ export interface IHeaderProps {
     navigation: INavigationItem[];
     donateButton: string;
   };
+  donateModalTranslataion: IDonateModalTranslation;
+  lang: Locale;
+}
+
+export interface IBurgerMenuProps {
+  isOpen: boolean;
+  translation: {
+    navigation: INavigationItem[];
+    donateButton: string;
+  };
+  donateModalTranslataion: IDonateModalTranslation;
+  lang: Locale;
+}
+
+export interface IHeroProps {
+  translation: IHeroTranslation;
+}
+
+export interface IAboutProps {
+  translation: IAboutTranslation;
 }
 
 export interface IButtonProps
@@ -42,12 +68,20 @@ export interface IButtonProps
   fullWidth?: boolean;
 }
 
-export interface IFundraisingGoalProps {
+interface IFundraisingGoalStyleProps {
+  titleClassName?: string;
+  goalClassName?: string;
+  currentAmountClassName?: string;
+}
+
+export interface IFundraisingGoalProps extends ComponentProps<"div"> {
   fundraisingTitle: string;
   goal: string;
   currency: string;
   totalAmount: number;
   currentAmount: number;
+  styles?: IFundraisingGoalStyleProps;
+  imageVariant?: "big" | "small" | "middle";
 }
 
 export interface IProgressBarProps
@@ -94,8 +128,112 @@ export interface ISvgIconProps extends React.SVGProps<SVGSVGElement> {
   variant?: "primary" | "secondary";
 }
 
+export interface ICheckBoxIconProps extends React.SVGProps<SVGSVGElement> {
+  variant?: "default" | "error" | "checked";
+}
+
 export interface ILogoProps extends ComponentProps<typeof Link> {
   variant?: "black" | "color";
   width?: number;
   height?: number;
+}
+
+export interface IInfoBlockProps extends ComponentProps<"div"> {
+  translation: IAboutUsTranslation | IAboutOwnerTranslation;
+  children?: React.ReactNode;
+}
+
+interface IImage {
+  src: string;
+  alt: string;
+}
+
+export interface IImageGalleryProps extends ComponentProps<"div"> {
+  images: IImage[];
+  variant: "splitLayout" | "fourGrid";
+}
+
+export interface IAmountCardProps {
+  amount: number;
+  formattedAmount: string;
+  isSelected: boolean;
+  currency: string;
+  onClick: (amount: number) => void;
+}
+
+export interface ICustomAmountCardProps {
+  value: string;
+  isSelected: boolean;
+  currency: string;
+  anotherAmount: string;
+  onChange: (value: string) => void;
+  onFocus: () => void;
+  formatAmount: (amount: number) => string;
+}
+
+export interface ITextInputProps
+  extends Omit<ComponentProps<"input">, "onChange"> {
+  value: string;
+  onChange: (value: string) => void;
+  label?: string;
+}
+
+export interface ICheckBoxProps
+  extends Omit<ComponentProps<"input">, "onChange" | "type"> {
+  label: string;
+  onChange: (checked: boolean) => void;
+  error?: boolean;
+}
+
+type PaymentType = "monoPay" | "googlePay" | "card";
+
+export interface IPaymentButtonProps
+  extends Omit<ComponentProps<"button">, "type"> {
+  paymentType: PaymentType;
+  text?: string;
+}
+
+export interface IDonateModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+  translation: IDonateModalTranslation;
+  lang: Locale;
+}
+
+export interface IAmountSectionProps {
+  translation: IDonateAmountSectionTranslation;
+  currency: string;
+  lang: Locale;
+}
+
+export interface IToastProps {
+  message: string;
+  isVisible: boolean;
+  onClose: () => void;
+  duration?: number;
+}
+
+export interface ICardPaymentFormProps {
+  onSubmit: (data: ICardPaymentFormData) => void;
+  lang: Locale;
+}
+
+export interface ICardPaymentFormData {
+  cardNumber: string;
+  expiryDate: string;
+  cvv: string;
+}
+
+export interface IThankYouModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+  title: string;
+  message: string;
+  buttonText: string;
+  onButtonClick?: () => void;
+}
+
+export interface IMonthlyGoalSectionProps {
+  lang: Locale;
+  donateModalTranslataion: IDonateModalTranslation;
 }

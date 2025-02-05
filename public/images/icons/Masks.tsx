@@ -18,6 +18,24 @@ export const HeroMaskMobile = ({ ...props }: ISvgIconProps) => {
   );
 };
 
+export const HeroMaskDesktop = ({ ...props }: ISvgIconProps) => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 1512 338"
+      className="w-full h-full"
+      preserveAspectRatio="none"
+      fill="none"
+      {...props}
+    >
+      <path
+        d="M19.5501 298.5C53.0565 239.78 82.8941 211.401 127.339 162.204C192.828 89.7141 247.477 58.8478 340.968 37.2167C411.188 20.9699 453.884 27.3469 525.199 37.2167C586.011 45.633 616.656 69.3483 677.581 76.8469C794.055 91.1828 859.743 56.9282 975.485 37.2167C1050.22 24.4894 1090.38 -2.05611 1166.08 0.126842C1263.06 2.9232 1314.11 37.0949 1403.23 76.8469C1446.31 96.0624 1512 131.5 1512 131.5V338H-1C-1 338 10.9248 313.616 19.5501 298.5Z"
+        fill="#34AD5D"
+      />
+    </svg>
+  );
+};
+
 export const ContactsMask = ({ ...props }: ISvgIconProps) => {
   return (
     <svg

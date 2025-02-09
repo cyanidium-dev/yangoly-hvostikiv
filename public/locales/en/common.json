@@ -8,7 +8,7 @@
       },
       {
         "name": "About the Foundation",
-        "href": "/"
+        "href": "/#about"
       },
       {
         "name": "Our Projects",
@@ -16,7 +16,7 @@
         "dropdown": [
           {
             "name": "Spay/neuter",
-            "href": "/"
+            "href": "/sterilization-of-tails"
           },
           {
             "name": "Become a guardian angel",
@@ -42,7 +42,7 @@
       },
       {
         "name": "Contacts",
-        "href": "/"
+        "href": "/#contacts"
       }
     ]
   },
@@ -177,6 +177,27 @@
       "cardButton": "Pay by card",
       "submitError": "Confirm that you have read the public offer agreement"
     }
+  },
+  "sterilization": {
+    "title": "Sterilization of Tail-Waggers",
+    "paragraphs": [
+      {
+        "segments": [
+          {
+            "text": "Sterilization is an important step toward a happy future for our furry friends! Every day, hundreds of stray animals suffer due to overpopulation and lack of resources. Sterilization is not just about preventing unwanted litters but also about preserving the lives and health of adult animals. Your contribution will help us sterilize even more tail-waggers, reducing the number of stray animals and improving their quality of life. Every donation is a saved destiny.",
+            "bold": false
+          }
+        ]
+      },
+      {
+        "segments": [
+          {
+            "text": "Our foundation actively participates in reducing the number of stray animals in a humane way. We have already managed to sterilize 11 dogs and 26 cats.",
+            "bold": false
+          }
+        ]
+      }
+    ]
   },
 
   "metadata": {

@@ -15,6 +15,10 @@ const NavItem = ({
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
+  const handleDropdownItemClick = () => {
+    setIsOpen(false);
+  };
+
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (
@@ -72,6 +76,7 @@ const NavItem = ({
         >
           {item.dropdown.map((dropdownItem) => (
             <Link
+              onClick={handleDropdownItemClick}
               key={dropdownItem.name}
               href={dropdownItem.href}
               className={cn(

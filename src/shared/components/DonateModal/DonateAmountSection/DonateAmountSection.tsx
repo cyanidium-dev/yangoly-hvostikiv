@@ -6,9 +6,8 @@ import { formatAmount } from "@/shared/utils";
 import TextInput from "../../TextInput/TextInput";
 import CheckBox from "../../CheckBox/CheckBox";
 import PaymentButton from "../PaymentButton/PaymentButton";
-import { IAmountSectionProps, ICardPaymentFormData } from "@/shared/types";
+import { IAmountSectionProps } from "@/shared/types";
 import Toast from "../../Toast/Toast";
-import CardPaymentForm from "../CardPaymentForm/CardPaymentForm";
 import ThankYouModal from "../ThankYouModal/ThankYouModal";
 
 const DonateAmountSection = ({
@@ -23,7 +22,6 @@ const DonateAmountSection = ({
   const [wantNotifications, setWantNotifications] = useState(false);
   const [agreementError, setAgreementError] = useState(false);
   const [isToastVisible, setIsToastVisible] = useState(false);
-  const [showCardPaymentForm, setShowCardPaymentForm] = useState(false);
   const [isThankYouModalOpen, setIsThankYouModalOpen] = useState(false);
 
   const predefinedAmounts = [200, 500, 1000];
@@ -35,7 +33,6 @@ const DonateAmountSection = ({
     inputLabel,
     firstCheckboxLabel,
     secondCheckboxLabel,
-    cardButton,
     submitError,
   } = translation;
 
@@ -77,39 +74,6 @@ const DonateAmountSection = ({
     });
   }, [isAgreed, currentAmount, comment, wantNotifications]);
 
-  const handleCardPaymentSubmit = useCallback(
-    (cardData: ICardPaymentFormData) => {
-      if (!isAgreed) {
-        setAgreementError(true);
-        setIsToastVisible(true);
-        return;
-      }
-
-      try {
-        console.log({
-          amount: currentAmount,
-          comment,
-          wantNotifications,
-          isAgreed,
-          paymentType: "card",
-          cardData,
-        });
-
-        setShowCardPaymentForm(false);
-        setIsThankYouModalOpen(true);
-      } catch (error) {
-        console.error("Payment error", error);
-      }
-    },
-    [
-      isAgreed,
-      currentAmount,
-      comment,
-      wantNotifications,
-      setShowCardPaymentForm,
-      setIsThankYouModalOpen,
-    ]
-  );
   return (
     <>
       <div className="flex relative flex-col items-center gap-6">
@@ -171,15 +135,7 @@ const DonateAmountSection = ({
           <div className="space-y-3">
             <PaymentButton paymentType="monoPay" onClick={handlePayment} />
             <PaymentButton paymentType="googlePay" onClick={handlePayment} />
-            <PaymentButton
-              text={cardButton}
-              paymentType="card"
-              onClick={() => setShowCardPaymentForm(!showCardPaymentForm)}
-            />
           </div>
-          {showCardPaymentForm && (
-            <CardPaymentForm lang={lang} onSubmit={handleCardPaymentSubmit} />
-          )}
         </div>
       </div>
       <ThankYouModal

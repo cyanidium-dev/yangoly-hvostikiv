@@ -28,14 +28,16 @@ export default async function LocaleLayout({
   const { header, footerNav, donateModal } = await getDictionary(locale);
 
   return (
-    <div className="flex flex-col min-h-[100%]">
+    <>
       <Header
         lang={locale}
         translation={header}
         donateModalTranslataion={donateModal}
       />
-      <main className="bg-background-gray h-full flex-1">{children}</main>
-      <Footer translation={footerNav} />
-    </div>
+      <div className="flex flex-col min-h-[100%]">
+        <main className="bg-background-gray h-full flex-1">{children}</main>
+        <Footer translation={footerNav} />
+      </div>
+    </>
   );
 }

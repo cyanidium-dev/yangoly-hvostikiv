@@ -1,13 +1,12 @@
 import { ComponentProps } from "react";
 import { dictionaries } from "../utils/getDictionary";
 import {
-  IAboutOwnerTranslation,
   IAboutTranslation,
-  IAboutUsTranslation,
   IContactsTranslation,
   IDonateAmountSectionTranslation,
   IDonateModalTranslation,
   IHeroTranslation,
+  IInformationBlockTranslation,
   INavigationItem,
   IPartenrsTranslation,
 } from "./dictionary.types";
@@ -15,7 +14,7 @@ import * as yup from "yup";
 import Link from "next/link";
 
 export type Locale = keyof typeof dictionaries;
-export type ButtonVariant = "primary" | "secondary";
+export type ButtonVariant = "primary" | "secondary" | "outline";
 
 export interface ILanguage {
   name: string;
@@ -139,7 +138,7 @@ export interface ILogoProps extends ComponentProps<typeof Link> {
 }
 
 export interface IInfoBlockProps extends ComponentProps<"div"> {
-  translation: IAboutUsTranslation | IAboutOwnerTranslation;
+  translation: IInformationBlockTranslation;
   children?: React.ReactNode;
 }
 
@@ -236,4 +235,28 @@ export interface IThankYouModalProps {
 export interface IMonthlyGoalSectionProps {
   lang: Locale;
   donateModalTranslataion: IDonateModalTranslation;
+}
+
+export interface IAnimatedSectionProps {
+  children: React.ReactNode;
+  initial?: {
+    opacity?: number;
+    x?: number;
+    y?: number;
+    scale?: number;
+    rotate?: number;
+  };
+  whileInView?: {
+    opacity?: number;
+    x?: number;
+    y?: number;
+    scale?: number;
+    rotate?: number;
+  };
+  transition?: {
+    duration?: number;
+    delay?: number;
+    ease?: string | number[];
+  };
+  amount?: number;
 }

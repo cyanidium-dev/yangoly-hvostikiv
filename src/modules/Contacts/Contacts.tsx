@@ -18,7 +18,7 @@ const Contacts = ({ lang, translation }: IContactsProps) => {
   };
 
   return (
-    <section className="relative h-[863px] lg:h-[634px] ">
+    <section id="contacts" className="relative h-[863px] lg:h-[634px] ">
       <ContactsMask className="absolute inset-0 w-full h-[101%] lg:hidden" />
       <ContactsMaskDesktop className="absolute inset-0 w-full h-[101%] hidden lg:block" />
       <div className="container relative z-10 px-4 top-[80px] lg:top-[100px] mx-auto ">
@@ -50,7 +50,6 @@ const Contacts = ({ lang, translation }: IContactsProps) => {
               </a>
             </div>
           </div>
-          {/* Cat */}
           <div className="hidden xl:block absolute bottom-0 right-[42%] z-10">
             <Image
               src="/images/cartoon-cat.png"

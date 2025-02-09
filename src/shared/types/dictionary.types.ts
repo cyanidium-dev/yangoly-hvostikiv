@@ -29,10 +29,10 @@ interface ILink {
   href: string;
 }
 
-export interface IAboutUsTranslation {
+export interface IInformationBlockTranslation {
   title: string;
   paragraphs: IParagraph[];
-  links: ILink[];
+  links?: ILink[];
 }
 
 export interface IAboutOwnerTranslation {
@@ -41,8 +41,8 @@ export interface IAboutOwnerTranslation {
 }
 
 export interface IAboutTranslation {
-  aboutUs: IAboutUsTranslation;
-  aboutOwner: IAboutOwnerTranslation;
+  aboutUs: IInformationBlockTranslation;
+  aboutOwner: IInformationBlockTranslation;
 }
 
 export interface IWorkResult {

@@ -10,11 +10,7 @@ const ImageGallery = ({
     return (
       <div className={`grid grid-cols-2  gap-4 xl:gap-5 ${className}`}>
         <div className="relative w-full h-full">
-          {" "}
-          {/* Прибрали aspect-ratio для мобільної версії */}
           <div className="absolute inset-0">
-            {" "}
-            {/* Додали wrapper для повного заповнення */}
             <Image
               src={images[0].src}
               alt={images[0].alt}

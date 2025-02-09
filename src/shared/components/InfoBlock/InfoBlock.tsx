@@ -15,7 +15,7 @@ const InfoBlock = ({
       <div className="space-y-6">
         {paragraphs.map((paragraph, index) => (
           <p key={index} className="text-black text-[18px] leading-[130%]">
-            {paragraph.segments.map((segment, segIndex) => (
+            {paragraph.segments?.map((segment, segIndex) => (
               <span
                 key={segIndex}
                 className={segment.bold ? "font-bold" : "font-normal"}

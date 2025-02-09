@@ -1,0 +1,208 @@
+{
+  "header": {
+    "donateButton": "One-time assistance",
+    "navigation": [
+      {
+        "name": "Home",
+        "href": "/"
+      },
+      {
+        "name": "About the Foundation",
+        "href": "/#about"
+      },
+      {
+        "name": "Our Projects",
+        "href": "/",
+        "dropdown": [
+          {
+            "name": "Spay/neuter",
+            "href": "/sterilization-of-tails"
+          },
+          {
+            "name": "Become a guardian angel",
+            "href": "/"
+          },
+          {
+            "name": "Adopt into a family",
+            "href": "/"
+          }
+        ]
+      },
+      {
+        "name": "Partnership",
+        "href": "/"
+      },
+      {
+        "name": "Charity Events",
+        "href": "/"
+      },
+      {
+        "name": "Reporting",
+        "href": "/"
+      },
+      {
+        "name": "Contacts",
+        "href": "/#contacts"
+      }
+    ]
+  },
+  "hero": {
+    "title": "Charity Fund “Angels of Tails”",
+    "subtitle": "Become an Angel for Tails with us",
+    "fundraisingTitle": "Our monthly goal",
+    "goal": "Goal",
+    "currency": "UAH"
+  },
+  "about": {
+    "aboutUs": {
+      "title": "About the Charitable Foundation",
+      "paragraphs": [
+        {
+          "segments": [
+            { "text": "Charitable Foundation ", "bold": false },
+            { "text": "\"Angels of Tails\"", "bold": true },
+            {
+              "text": " helps stray animals in frontline territories, where preserving their lives is an extremely challenging task due to constant danger. Animals usually remain alone during military actions, suffering from hunger and cold. The foundation's task is to provide animals with medicines, food and vaccinations, as well as give them a chance for rescue and hope for a dignified life.",
+              "bold": false
+            }
+          ]
+        },
+        {
+          "segments": [
+            { "text": "Our mission", "bold": true },
+            {
+              "text": " is to break through people's indifference towards animals. People must stop treating animals as things. This is what humanity is all about. An animal's life should be valuable to humans! Animals deserve love and security just as much as humans do!",
+              "bold": false
+            }
+          ]
+        }
+      ],
+      "links": [
+        { "text": "Become a Partner", "href": "#" },
+        { "text": "Organization Reports", "href": "#" }
+      ]
+    },
+    "aboutOwner": {
+      "title": "About the Foundation Founder",
+      "paragraphs": [
+        {
+          "segments": [
+            {
+              "text": "Eugenia Nikonchuk has been actively involved in charity and animal protection for 10 years. She dedicated half of her life to sports, working as a fitness trainer, and later switched to helping homeless animals. Her activities began with rescuing a dog in 2022, and since then, Eugenia has become an active participant in public movements aimed at helping animals in frontline zones. She founded the \"Angels of Tails\" foundation to organize assistance and extend it to a larger number of animals.",
+              "bold": false
+            }
+          ]
+        },
+        {
+          "segments": [
+            {
+              "text": "Her mission is to convey to people that ",
+              "bold": false
+            },
+            {
+              "text": "animals are part of Ukraine",
+              "bold": true
+            },
+            {
+              "text": " and they are full-fledged members! Taking care of stray animals is our shared responsibility to become more accountable for our actions. Become an Angel for Tails, protect and help animals who don't have a home and family!",
+              "bold": false
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "workResults": [
+    {
+      "count": "1,000+",
+      "action": "Rescued tails"
+    },
+    {
+      "count": "5,000+",
+      "action": "Kilograms of food"
+    },
+    {
+      "count": "4,000+",
+      "action": "Vaccines, treatments, canned food, etc."
+    }
+  ],
+  "footerNav": [
+    {
+      "name": "Home",
+      "href": "/"
+    },
+    {
+      "name": "About the Fund",
+      "href": "/"
+    },
+    {
+      "name": "Our Projects",
+      "href": "/"
+    },
+    {
+      "name": "Support Us",
+      "href": "/"
+    },
+    {
+      "name": "Charity Events",
+      "href": "/"
+    },
+    {
+      "name": "Reports",
+      "href": "/"
+    },
+    {
+      "name": "Contacts",
+      "href": "/"
+    }
+  ],
+  "partners": {
+    "title": "Our partners"
+  },
+  "contacts": {
+    "title": "Contacts",
+    "subtitle": "To get in touch with us, please leave your contact details"
+  },
+  "donateModal": {
+    "fundraisingTitle": "Our goal for the month",
+    "goal": "Goal",
+    "currency": "UAH",
+    "donateAmountSection": {
+      "title": "Top-up amount",
+      "anotherAmount": "Another amount",
+      "inputPlaceholder": "Optional",
+      "inputLabel": "Your name or comment",
+      "firstCheckboxLabel": "I want to be the first to know about charitable events",
+      "secondCheckboxLabel": "I have read the public offer agreement for making a charitable donation and agree to the collection, processing, and use of personal data in accordance with the terms of this agreement.",
+      "cardButton": "Pay by card",
+      "submitError": "Confirm that you have read the public offer agreement"
+    }
+  },
+  "sterilization": {
+    "title": "Sterilization of Tail-Waggers",
+    "paragraphs": [
+      {
+        "segments": [
+          {
+            "text": "Sterilization is an important step toward a happy future for our furry friends! Every day, hundreds of stray animals suffer due to overpopulation and lack of resources. Sterilization is not just about preventing unwanted litters but also about preserving the lives and health of adult animals. Your contribution will help us sterilize even more tail-waggers, reducing the number of stray animals and improving their quality of life. Every donation is a saved destiny.",
+            "bold": false
+          }
+        ]
+      },
+      {
+        "segments": [
+          {
+            "text": "Our foundation actively participates in reducing the number of stray animals in a humane way. We have already managed to sterilize 11 dogs and 26 cats.",
+            "bold": false
+          }
+        ]
+      }
+    ]
+  },
+
+  "metadata": {
+    "title": "Angels of Tails | Charity Foundation",
+    "description": "Charitable foundation helping stray animals",
+    "keywords": "charity foundation, animal help, stray animals, pet rescue"
+  }
+}

@@ -27,7 +27,7 @@ const DonateModal = ({
   return (
     <div
       onClick={handleBackdropClick}
-      className="fixed inset-0 top-[65px] xl:top-[130px] flex items-start justify-center bg-black/50 z-[1000]"
+      className="fixed inset-0 top-[65px] xl:top-[140px] flex items-start justify-center bg-black/50 z-[1000]"
     >
       <div className="w-[92%] xl:w-[78%] h-[calc(100vh-81px)] xl:h-[90%] bg-white rounded-lg relative mt-2 xl:mt-10">
         <button

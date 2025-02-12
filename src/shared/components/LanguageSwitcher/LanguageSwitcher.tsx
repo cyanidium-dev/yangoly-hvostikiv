@@ -1,5 +1,4 @@
 "use client";
-
 import { useState, useRef, useEffect } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import {
@@ -11,11 +10,10 @@ import { ILanguage, ILanguages, Locale } from "@/shared/types";
 import { cn } from "@/shared/utils";
 
 const LanguageSwitcher = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [currentLocale, setCurrentLocale] = useState<Locale>("uk");
-  const dropdownRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
   const pathname = usePathname();
+  const dropdownRef = useRef<HTMLDivElement>(null);
+  const [isOpen, setIsOpen] = useState(false);
 
   const languages: ILanguages = {
     uk: {
@@ -33,9 +31,10 @@ const LanguageSwitcher = () => {
     return (pathSegments?.[1] as Locale) || "uk";
   };
 
+  const [currentLocale, setCurrentLocale] = useState<Locale>(getCurrentLocale);
+
   useEffect(() => {
     setCurrentLocale(getCurrentLocale());
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname]);
 
   useEffect(() => {
@@ -70,11 +69,11 @@ const LanguageSwitcher = () => {
         onClick={() => setIsOpen(!isOpen)}
         className="flex items-center gap-2 px-3 py-2 rounded-md hover:bg-gray-50"
       >
-        <div className=" flex-shrink-0 items-center">
-          {languages[currentLocale].icon}
+        <div className="flex-shrink-0 items-center">
+          {languages[currentLocale]?.icon}
         </div>
         <span className="text-sm font-medium">
-          {languages[currentLocale].name}
+          {languages[currentLocale]?.name}
         </span>
         <ArrowDonwIcon
           className={cn("w-4 h-4 transition-transform", isOpen && "rotate-180")}
@@ -88,8 +87,9 @@ const LanguageSwitcher = () => {
               <button
                 key={locale}
                 onClick={() => switchLanguage(locale)}
-                className={`w-full flex  items-center gap-2 px-4 py-2 text-sm hover:bg-gray-50 
-                ${currentLocale === locale ? "bg-gray-50" : ""}`}
+                className={`w-full flex items-center gap-2 px-4 py-2 text-sm hover:bg-gray-50 ${
+                  currentLocale === locale ? "bg-gray-50" : ""
+                }`}
               >
                 <div className="flex-shrink-0 items-center">{icon}</div>
                 <span className="font-medium">{name}</span>

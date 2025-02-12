@@ -76,3 +76,23 @@ export interface IDonateModalTranslation {
   goal: string;
   donateAmountSection: IDonateAmountSectionTranslation;
 }
+
+export interface IPartnershipTranslation {
+  hero: {
+    title: string;
+    button: string;
+  };
+  content: {
+    title: string;
+    description: string;
+    sections: {
+      title: string;
+      items: string[];
+    }[];
+    buttons: {
+      partner: string;
+      documents: string;
+    };
+  };
+  modalTitle: string;
+}

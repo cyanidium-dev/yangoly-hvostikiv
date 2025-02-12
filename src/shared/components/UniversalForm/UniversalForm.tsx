@@ -13,6 +13,7 @@ export const UniversalForm = ({
   fields,
   submitText,
   onSubmit,
+  className,
 }: IFormConfig) => {
   const validationSchema = yup.object().shape(
     fields.reduce<Record<string, any>>(
@@ -61,7 +62,12 @@ export const UniversalForm = ({
   };
 
   return (
-    <div className="w-full  mx-auto p-6 bg-white rounded-lg shadow">
+    <div
+      className={cn(
+        "w-full  mx-auto p-6 bg-white rounded-lg shadow",
+        className
+      )}
+    >
       {title && (
         <h2 className="text-2xl font-semibold text-center mb-6">{title}</h2>
       )}

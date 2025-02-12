@@ -15,12 +15,8 @@ const partners = [
 
 const Partners = ({ translation, ...props }: IPartnersProps) => {
   const { title } = translation;
-
   return (
-    <section
-      {...props}
-      className="container mx-auto px-4 pt-[160px] pb-[80px] xl:py-[120px] xl:px-10"
-    >
+    <section {...props}>
       <h2 className="text-[32px] text-black leading-[130%] text-center mb-8">
         {title}
       </h2>

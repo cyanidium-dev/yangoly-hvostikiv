@@ -8,6 +8,7 @@ import {
 } from "../../../../public/images/icons";
 import { ILanguage, ILanguages, Locale } from "@/shared/types";
 import { cn } from "@/shared/utils";
+import { motion, AnimatePresence } from "framer-motion";
 
 const LanguageSwitcher = () => {
   const router = useRouter();
@@ -35,6 +36,7 @@ const LanguageSwitcher = () => {
 
   useEffect(() => {
     setCurrentLocale(getCurrentLocale());
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname]);
 
   useEffect(() => {
@@ -52,14 +54,16 @@ const LanguageSwitcher = () => {
   }, []);
 
   const switchLanguage = (newLocale: Locale) => {
-    const currentPath = pathname || "";
     const currentLocale = getCurrentLocale();
-    const newPath = currentPath.replace(`/${currentLocale}`, `/${newLocale}`);
+    const currentPath = pathname.replace(`/${currentLocale}`, "");
+
+    const searchParams = new URLSearchParams(window.location.search);
+    const newUrl = `/${newLocale}${currentPath}?${searchParams.toString()}`;
 
     document.cookie = `NEXT_LOCALE=${newLocale}; path=/; max-age=${
       60 * 60 * 24 * 365
     }`;
-    router.push(newPath);
+    router.push(newUrl);
     setIsOpen(false);
   };
 
@@ -80,24 +84,32 @@ const LanguageSwitcher = () => {
         />
       </button>
 
-      {isOpen && (
-        <div className="absolute right-0 mt-2 w-32 bg-white rounded-md shadow-lg z-50 border border-gray-100">
-          {(Object.entries(languages) as [Locale, ILanguage][]).map(
-            ([locale, { name, icon }]) => (
-              <button
-                key={locale}
-                onClick={() => switchLanguage(locale)}
-                className={`w-full flex items-center gap-2 px-4 py-2 text-sm hover:bg-gray-50 ${
-                  currentLocale === locale ? "bg-gray-50" : ""
-                }`}
-              >
-                <div className="flex-shrink-0 items-center">{icon}</div>
-                <span className="font-medium">{name}</span>
-              </button>
-            )
-          )}
-        </div>
-      )}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            className="absolute right-0 mt-2 w-32 bg-white rounded-md shadow-lg z-50 border border-gray-100"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.3 }}
+          >
+            {(Object.entries(languages) as [Locale, ILanguage][]).map(
+              ([locale, { name, icon }]) => (
+                <button
+                  key={locale}
+                  onClick={() => switchLanguage(locale)}
+                  className={`w-full flex items-center gap-2 px-4 py-2 text-sm hover:bg-gray-50 ${
+                    currentLocale === locale ? "bg-gray-50" : ""
+                  }`}
+                >
+                  <div className="flex-shrink-0 items-center">{icon}</div>
+                  <span className="font-medium">{name}</span>
+                </button>
+              )
+            )}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };

@@ -8,7 +8,6 @@ const RandomTailCards = ({ tails }: { tails: ITailProps[] }) => {
   const windowWidth = useWindowWidth();
 
   const itemsToShow = windowWidth > 1366 ? 3 : 2;
-  console.log(`itemsToShow`);
   return (
     <div className="grid grid-cols-2 md:grid-cols-2 xl:grid-cols-3 gap-5 mt-6 pb-[120px]">
       {tails.slice(0, itemsToShow).map((randomTail) => (

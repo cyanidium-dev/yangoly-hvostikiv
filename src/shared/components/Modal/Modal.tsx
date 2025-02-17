@@ -3,6 +3,7 @@ import React, { useCallback } from "react";
 import { cn } from "@/shared/utils";
 import { CloseIcon } from "../../../../public/images/icons";
 import { IModalProps } from "@/shared/types";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Modal = ({
   isOpen,
@@ -10,7 +11,6 @@ const Modal = ({
   children,
   className,
   modalClassName,
-  ...props
 }: IModalProps) => {
   const handleBackdropClick = useCallback(
     (e: React.MouseEvent) => {
@@ -21,32 +21,41 @@ const Modal = ({
     [onClose]
   );
 
-  if (!isOpen) return null;
-
   return (
-    <div
-      onClick={handleBackdropClick}
-      className={cn(
-        "fixed inset-0 flex items-center top-[65px] xl:top-[140px] justify-center bg-black/50 z-[1000]",
-        className
-      )}
-      {...props}
-    >
-      <div
-        className={cn(
-          "bg-white w-[90%] max-w-lg xl:max-w-2xl h-auto p-6 rounded-lg relative",
-          modalClassName
-        )}
-      >
-        <button
-          onClick={onClose}
-          className="absolute right-4 top-4 p-2 hover:bg-gray-100 rounded-full z-10"
+    <AnimatePresence>
+      {isOpen && (
+        <motion.div
+          onClick={handleBackdropClick}
+          className={cn(
+            "fixed inset-0 flex items-center top-[65px] xl:top-[140px] justify-center bg-black/50 z-[1000]",
+            className
+          )}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.3 }}
         >
-          <CloseIcon variant="secondary" className="w-6 h-6" />
-        </button>
-        <div className="overflow-y-auto">{children}</div>
-      </div>
-    </div>
+          <motion.div
+            className={cn(
+              "bg-white w-[90%] max-w-lg xl:max-w-2xl h-auto p-6 rounded-lg relative",
+              modalClassName
+            )}
+            initial={{ scale: 0.8 }}
+            animate={{ scale: 1 }}
+            exit={{ scale: 0.8 }}
+            transition={{ duration: 0.3 }}
+          >
+            <button
+              onClick={onClose}
+              className="absolute right-4 top-4 p-2 hover:bg-gray-100 rounded-full z-10"
+            >
+              <CloseIcon variant="secondary" className="w-6 h-6" />
+            </button>
+            <div className="overflow-y-auto">{children}</div>
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 };
 

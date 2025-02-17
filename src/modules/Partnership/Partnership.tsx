@@ -79,6 +79,7 @@ const Partnership = ({ translation, lang }: IPartnershipProps) => {
               </ul>
               <div className="flex flex-col justify-center items-center gap-4 mt-5 xl:flex-row">
                 <Button
+                  onClick={handleOpenModal}
                   className="w-full py-3"
                   text={content.buttons.partner}
                 />

@@ -12,9 +12,7 @@ export default async function TailPage({ params }: PageParams) {
   const tail = tails.find((tail) => tail.id === id);
 
   if (!tail) {
-    return (
-      <div className="text-center text-gray-500">Тваринка не знайдена</div>
-    );
+    return null
   }
 
   const otherTails = tails.filter((t) => t.id !== id);

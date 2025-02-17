@@ -41,7 +41,7 @@
       },
       {
         "name": "Reporting",
-        "href": "/"
+        "href": "/reporting"
       },
       {
         "name": "Contacts",
@@ -140,7 +140,7 @@
     },
     {
       "name": "Our Projects",
-      "href": "/"
+      "href": "/sterilization-of-tails"
     },
     {
       "name": "Partnership",
@@ -152,7 +152,7 @@
     },
     {
       "name": "Reports",
-      "href": "/"
+      "href": "/reporting"
     },
     {
       "name": "Contacts",
@@ -234,6 +234,12 @@
       }
     },
     "modalTitle": "To become our partner, please leave your contact details."
+  },
+  "filters": {
+    "allTails": "All tails",
+    "needsSterilization": "Needs sterilization",
+    "needsFamily": "Needs a family",
+    "adopted": "Adopted"
   },
 
   "metadata": {

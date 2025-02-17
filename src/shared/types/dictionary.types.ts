@@ -98,3 +98,18 @@ export interface IPartnershipTranslation {
   };
   modalTitle: string;
 }
+
+export interface ISterilizationData {
+  title: string;
+  paragraphs: {
+    segments: {
+      text: string;
+      bold: boolean;
+    }[];
+  }[];
+}
+
+export interface IFilterOption {
+  label: string;
+  value: string;
+}

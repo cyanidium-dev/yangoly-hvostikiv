@@ -20,11 +20,14 @@
           },
           {
             "name": "Стати янголом-опікуном",
-            "href": "/"
+            "href": "/tails"
           },
           {
             "name": "Взяти в родину",
-            "href": "/"
+            "href": {
+              "pathname": "/tails",
+              "query": { "filter": "needs-family", "page": 1 }
+            }
           }
         ]
       },

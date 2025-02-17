@@ -1,5 +1,5 @@
 "use client";
-
+import { usePathname } from "next/navigation";
 import { ArrowDonwIcon } from "../../../public/images/icons";
 
 export default function Pagination({
@@ -13,6 +13,9 @@ export default function Pagination({
   maxVisiblePages?: number;
   onPageChange: (page: number) => void;
 }) {
+  const pathname = usePathname();
+  const lang = pathname.split("/")[1];
+
   const generatePageNumbers = () => {
     const pageNumbers = [];
     const halfVisible = Math.floor(maxVisiblePages / 2);
@@ -37,13 +40,16 @@ export default function Pagination({
   const pageNumbers = generatePageNumbers();
 
   return (
-    <div className="inline-flex  justify-center items-center gap-[1px] rounded-[4px] border border-[#DDD] bg-[#DDD]">
+    <div className="inline-flex justify-center items-center gap-[1px] rounded-[4px] border border-[#DDD] bg-[#DDD]">
       {pageNumbers.map((page) => (
         <button
           key={page}
-          className={`px-[15px] py-2 h-[38px] text-[18px] text-[#FF9332] bg-white no-ligatures font-sans-pro font-[600] leading-[144%] ${
-            page === currentPage ? "bg-[#FF9332] text-white" : "bg-gray-200"
-          }`}
+          className={`px-[15px] py-2 h-[38px] text-[18px] font-sans-pro font-[600] leading-[144%] transition-colors 
+            ${
+              page === currentPage
+                ? "bg-[#fc8f31] text-white hover:bg-opacity-80"
+                : "bg-white text-[#FF9332] hover:bg-[#fc8f31] hover:text-white"
+            }`}
           onClick={() => onPageChange(page)}
         >
           {page}
@@ -51,13 +57,16 @@ export default function Pagination({
       ))}
 
       <button
-        className={`flex justify-center gap-[2px] items-center px-[15px] py-2 h-[38px] bg-white leading-[144%] text-[#FF9332] text-[18px] ${
-          currentPage === totalPages ? "opacity-50" : "bg-gray-200"
-        }`}
+        className={`flex justify-center gap-[2px] items-center px-[15px] py-2 h-[38px] text-[18px] leading-[144%] transition-opacity 
+          ${
+            currentPage === totalPages
+              ? "opacity-50 cursor-not-allowed"
+              : "bg-white text-[#FF9332] hover:bg-opacity-80"
+          }`}
         onClick={() => onPageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
       >
-        Далі
+        {lang === "uk" ? "Далі" : "Next"}
         <ArrowDonwIcon className="rotate-[270deg] w-4 h-4" color="#FF9332" />
       </button>
     </div>

@@ -12,7 +12,6 @@ import { tails } from "./constans";
 export default function TailsPage() {
   const router = useRouter();
   const searchParams = useSearchParams();
-
   const [filter, setFilter] = useState(searchParams.get("filter") || "all");
   const [currentPage, setCurrentPage] = useState(
     parseInt(searchParams.get("page") || "1", 10)
@@ -48,7 +47,7 @@ export default function TailsPage() {
 
   return (
     <section className="bg-[#E9E9E9] min-h-screen">
-      <div className="mt-[65px] mx-auto xl:mt-[140px] container py-8 px-4">
+      <div className="mt-[65px] mx-auto xl:mt-[140px] container py-8 px-4 xl:px-10">
         <Filter selectedFilter={filter} />
         <ul className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
           {currentItems.map((tail, index) => (

@@ -1,9 +1,10 @@
 "use client";
+import { useState, useEffect, useCallback } from "react";
 import { CloseIcon } from "../../../../public/images/icons";
 import FundraisingGoal from "@/modules/FundraisingGoal/FundraisingGoal";
 import DonateAmountSection from "./DonateAmountSection/DonateAmountSection";
 import { IDonateModalProps } from "@/shared/types";
-import { useCallback } from "react";
+import { getDictionary } from "@/shared/utils";
 
 const DonateModal = ({
   isOpen,
@@ -11,6 +12,16 @@ const DonateModal = ({
   translation,
   lang,
 }: IDonateModalProps) => {
+  const [localTranslation, setLocalTranslation] = useState(translation);
+
+  useEffect(() => {
+    if (!translation) {
+      getDictionary(lang).then(({ donateModal }) =>
+        setLocalTranslation(donateModal)
+      );
+    }
+  }, [lang, translation]);
+
   const handleBackdropClick = useCallback(
     (e: React.MouseEvent) => {
       if (e.target === e.currentTarget) {
@@ -20,9 +31,10 @@ const DonateModal = ({
     [onClose]
   );
 
-  if (!isOpen) return null;
+  if (!isOpen || !localTranslation) return null;
 
-  const { fundraisingTitle, currency, goal, donateAmountSection } = translation;
+  const { fundraisingTitle, currency, goal, donateAmountSection } =
+    localTranslation;
 
   return (
     <div

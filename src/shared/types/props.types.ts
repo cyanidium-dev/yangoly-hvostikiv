@@ -27,7 +27,7 @@ export interface ILanguages {
 }
 
 export type PageParams = {
-  params: Promise<{ locale: Locale }>;
+  params: Promise<{ locale: Locale; id?: string }>;
   searchParams?: Promise<{ [key: string]: string | undefined }>;
 };
 export type LocaleLayoutProps = {
@@ -206,7 +206,7 @@ export interface IPaymentButtonProps
 export interface IDonateModalProps {
   isOpen: boolean;
   onClose: () => void;
-  translation: IDonateModalTranslation;
+  translation?: IDonateModalTranslation;
   lang: Locale;
 }
 
@@ -282,4 +282,19 @@ export interface IModalProps extends ComponentProps<"div"> {
   onClose: () => void;
   children?: React.ReactNode;
   modalClassName?: string;
+}
+
+export interface ITailProps {
+  image: string;
+  images: string[];
+  name: string;
+  buttonText: string;
+  categories: string[];
+  description: string[];
+  id: string;
+}
+
+export interface ITailInfoProps {
+  tail: ITailProps;
+  locale: Locale;
 }

@@ -20,11 +20,14 @@
           },
           {
             "name": "Become a guardian angel",
-            "href": "/"
+            "href": "/tails"
           },
           {
             "name": "Adopt into a family",
-            "href": "/"
+            "href": {
+              "pathname": "/tails",
+              "query": { "filter": "needs-family", "page": 1 }
+            }
           }
         ]
       },

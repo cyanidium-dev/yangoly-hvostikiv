@@ -1,9 +1,10 @@
 "use client";
-import Link from "next/link";
+
 import { useState, useRef, useEffect } from "react";
 import { cn } from "@/shared/utils";
 import { ArrowDonwIcon } from "../../../../public/images/icons";
 import { INavigationItem } from "@/shared/types";
+import { usePathname, useRouter } from "next/navigation";
 
 const NavItem = ({
   item,
@@ -14,9 +15,30 @@ const NavItem = ({
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const lang = pathname.split("/")[1]; 
 
   const handleDropdownItemClick = () => {
     setIsOpen(false);
+  };
+
+  const handleNavigation = (
+    href: string | { pathname: string; query?: Record<string, string | number> }
+  ) => {
+    let url: string;
+
+    if (typeof href === "string") {
+      url = `/${lang}${href}`;
+    } else {
+      const queryString = new URLSearchParams(
+        href.query as Record<string, string>
+      ).toString();
+      url = `/${lang}${href.pathname}?${queryString}`;
+    }
+
+    router.push(url);
   };
 
   useEffect(() => {
@@ -42,12 +64,12 @@ const NavItem = ({
 
   if (!item.dropdown) {
     return (
-      <Link
+      <button
         className="text-primary-black hover:text-primary-gray text-center text-lg font-normal leading-[120%]"
-        href={item.href}
+        onClick={() => handleNavigation(item.href)}
       >
         {item.name}
-      </Link>
+      </button>
     );
   }
 
@@ -75,19 +97,21 @@ const NavItem = ({
           )}
         >
           {item.dropdown.map((dropdownItem) => (
-            <Link
-              onClick={handleDropdownItemClick}
+            <button
               key={dropdownItem.name}
-              href={dropdownItem.href}
+              onClick={() => {
+                handleNavigation(dropdownItem.href);
+                handleDropdownItemClick();
+              }}
               className={cn(
-                "block",
+                "block w-full text-left",
                 isOnBurger
                   ? "text-primary-black text-lg font-normal leading-[120%] hover:text-primary-gray transition-colors text-center"
                   : "px-4 py-2 text-[#000] text-[18px] leading-[110%] hover:bg-gray-100"
               )}
             >
               {dropdownItem.name}
-            </Link>
+            </button>
           ))}
         </div>
       )}

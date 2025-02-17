@@ -16,14 +16,14 @@ const ImageSlider = ({ images }: { images: string[] }) => {
   };
 
   return (
-    <div className="flex gap-4 items-start flex-1 bg-white">
+    <div className="flex gap-4 items-start  bg-white">
       <div className="flex flex-col gap-6">
         <AnimatePresence mode="popLayout">
-          {thumbs.map((image) => {
+          {thumbs.map((image, index) => {
             const globalIndex = images.indexOf(image);
             return (
               <motion.button
-                key={image}
+                key={`${image}-${index}`}
                 layout
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
@@ -50,7 +50,7 @@ const ImageSlider = ({ images }: { images: string[] }) => {
 
       <motion.div
         key={selectedIndex}
-        className="w-[580px] h-[474px] relative"
+        className="lg:w-[420px] xl:w-[580px] h-[474px] relative"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}

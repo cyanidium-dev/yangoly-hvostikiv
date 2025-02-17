@@ -1,9 +1,11 @@
 export interface INavigationItem {
   name: string;
-  href: string;
+  href: string | { pathname: string; query?: Record<string, string | number> };
   dropdown?: {
     name: string;
-    href: string;
+    href:
+      | string
+      | { pathname: string; query?: Record<string, string | number> };
   }[];
 }
 

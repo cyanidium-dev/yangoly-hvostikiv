@@ -9,6 +9,7 @@ import {
   IInformationBlockTranslation,
   INavigationItem,
   IPartenrsTranslation,
+  IPartnershipTranslation,
 } from "./dictionary.types";
 import * as yup from "yup";
 import Link from "next/link";
@@ -26,7 +27,8 @@ export interface ILanguages {
 }
 
 export type PageParams = {
-  params: Promise<{ locale: Locale }>;
+  params: Promise<{ locale: Locale; id?: string }>;
+  searchParams?: Promise<{ [key: string]: string | undefined }>;
 };
 export type LocaleLayoutProps = {
   children: React.ReactNode;
@@ -91,8 +93,16 @@ export interface IProgressBarProps
 }
 
 export interface ICardProps extends React.HTMLAttributes<HTMLDivElement> {
-  title: string;
+  title?: string;
   withProgressBar?: boolean;
+  goal?: string;
+  currency?: string;
+  currentAmount?: number;
+  totalAmount?: number;
+  onClick?: () => void;
+  buttonText?: string;
+  image: string;
+  buttonStyle?: string;
 }
 
 export interface IPartnersProps
@@ -116,6 +126,7 @@ export interface IFormConfig {
   fields: IFormField[];
   submitText: string;
   onSubmit?: (data: Record<string, string>) => void;
+  className?: string;
 }
 
 export interface IContactsProps {
@@ -195,7 +206,7 @@ export interface IPaymentButtonProps
 export interface IDonateModalProps {
   isOpen: boolean;
   onClose: () => void;
-  translation: IDonateModalTranslation;
+  translation?: IDonateModalTranslation;
   lang: Locale;
 }
 
@@ -259,4 +270,31 @@ export interface IAnimatedSectionProps {
     ease?: string | number[];
   };
   amount?: number;
+}
+
+export interface IPartnershipProps {
+  translation: IPartnershipTranslation;
+  lang: Locale;
+}
+
+export interface IModalProps extends ComponentProps<"div"> {
+  isOpen: boolean;
+  onClose: () => void;
+  children?: React.ReactNode;
+  modalClassName?: string;
+}
+
+export interface ITailProps {
+  image: string;
+  images: string[];
+  name: string;
+  buttonText: string;
+  categories: string[];
+  description: string[];
+  id: string;
+}
+
+export interface ITailInfoProps {
+  tail: ITailProps;
+  locale: Locale;
 }

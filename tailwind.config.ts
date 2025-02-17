@@ -48,6 +48,7 @@ const config: Config = {
       },
       fontFamily: {
         sans: ["Georgia", "serif"],
+        "sans-pro": ["Source Sans Pro", "serif"],
       },
       animation: {
         marquee: "marquee 40s linear infinite",

@@ -1,5 +1,6 @@
 import * as yup from "yup";
 import { IFormConfig, Locale } from "@/shared/types";
+import { UkraineFlag } from "../../../public/images/icons";
 
 const getContactFormConfig = (lang: Locale): IFormConfig => {
   const translations = {
@@ -48,7 +49,7 @@ const getContactFormConfig = (lang: Locale): IFormConfig => {
         required: true,
         mask: "+38 (___) ___-__-__",
         placeholder: t.placeholderPhone,
-        icon: null,
+        icon: <UkraineFlag />,
         validation: yup
           .string()
           .required(t.requiredPhone)

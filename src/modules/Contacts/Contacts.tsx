@@ -59,7 +59,7 @@ const Contacts = ({ lang, translation }: IContactsProps) => {
               priority
             />
           </div>
-          <div className="mt-5 max-w-[533px] w-full lg:w-[533px] lg:mt-0">
+          <div className="mt-5 max-w-[533px]  w-full lg:w-[533px] lg:mt-0">
             <UniversalForm onSubmit={handleSubmit} {...contactConfig} />
           </div>
         </div>

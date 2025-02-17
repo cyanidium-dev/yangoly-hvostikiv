@@ -32,10 +32,12 @@ export default async function Home({ params }: PageParams) {
         />
       </AnimatedLayout>
       <AnimatedLayout {...animations.slideFromRight}>
-        <SupportFundraising />
+        <SupportFundraising lang={locale} />
       </AnimatedLayout>
       <AnimatedLayout {...animations.slideFromTop}>
-        <Partners translation={partners} />
+        <div className="container mx-auto px-4 pt-[160px] pb-[80px] xl:py-[120px] xl:px-10">
+          <Partners translation={partners} />
+        </div>
       </AnimatedLayout>
       <AnimatedLayout {...animations.slideFromRight}>
         <Contacts translation={contacts} lang={locale} />

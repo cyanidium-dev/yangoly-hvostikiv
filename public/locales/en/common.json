@@ -20,17 +20,20 @@
           },
           {
             "name": "Become a guardian angel",
-            "href": "/"
+            "href": "/tails"
           },
           {
             "name": "Adopt into a family",
-            "href": "/"
+            "href": {
+              "pathname": "/tails",
+              "query": { "filter": "needs-family", "page": 1 }
+            }
           }
         ]
       },
       {
         "name": "Partnership",
-        "href": "/"
+        "href": "/partnership"
       },
       {
         "name": "Charity Events",
@@ -38,7 +41,7 @@
       },
       {
         "name": "Reporting",
-        "href": "/"
+        "href": "/reporting"
       },
       {
         "name": "Contacts",
@@ -137,11 +140,11 @@
     },
     {
       "name": "Our Projects",
-      "href": "/"
+      "href": "/sterilization-of-tails"
     },
     {
-      "name": "Support Us",
-      "href": "/"
+      "name": "Partnership",
+      "href": "/partnership"
     },
     {
       "name": "Charity Events",
@@ -149,7 +152,7 @@
     },
     {
       "name": "Reports",
-      "href": "/"
+      "href": "/reporting"
     },
     {
       "name": "Contacts",
@@ -198,6 +201,45 @@
         ]
       }
     ]
+  },
+  "partnership": {
+    "hero": {
+      "title": "Partnership to Save Animals from War",
+      "button": "BECOME A PARTNER"
+    },
+    "content": {
+      "title": "To become our partner",
+      "description": "Friends, we decided to organize charitable events ourselves to support animals in frontline territories.",
+      "sections": [
+        {
+          "title": "How do we achieve this?",
+          "items": [
+            "get to know you personally",
+            "introduce you to our activities",
+            "give you unforgettable emotions, good mood and gifts with our furry friends"
+          ]
+        },
+        {
+          "title": "What will you get at our charity events?",
+          "items": [
+            "exclusive and unique gifts that you can't buy online",
+            "gifts personally from us and our partners",
+            "great emotions and wonderful mood"
+          ]
+        }
+      ],
+      "buttons": {
+        "partner": "Become a partner",
+        "documents": "founding documents"
+      }
+    },
+    "modalTitle": "To become our partner, please leave your contact details."
+  },
+  "filters": {
+    "allTails": "All tails",
+    "needsSterilization": "Needs sterilization",
+    "needsFamily": "Needs a family",
+    "adopted": "Adopted"
   },
 
   "metadata": {

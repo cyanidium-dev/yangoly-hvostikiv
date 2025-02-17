@@ -1,9 +1,11 @@
 export interface INavigationItem {
   name: string;
-  href: string;
+  href: string | { pathname: string; query?: Record<string, string | number> };
   dropdown?: {
     name: string;
-    href: string;
+    href:
+      | string
+      | { pathname: string; query?: Record<string, string | number> };
   }[];
 }
 
@@ -75,4 +77,39 @@ export interface IDonateModalTranslation {
   currency: string;
   goal: string;
   donateAmountSection: IDonateAmountSectionTranslation;
+}
+
+export interface IPartnershipTranslation {
+  hero: {
+    title: string;
+    button: string;
+  };
+  content: {
+    title: string;
+    description: string;
+    sections: {
+      title: string;
+      items: string[];
+    }[];
+    buttons: {
+      partner: string;
+      documents: string;
+    };
+  };
+  modalTitle: string;
+}
+
+export interface ISterilizationData {
+  title: string;
+  paragraphs: {
+    segments: {
+      text: string;
+      bold: boolean;
+    }[];
+  }[];
+}
+
+export interface IFilterOption {
+  label: string;
+  value: string;
 }

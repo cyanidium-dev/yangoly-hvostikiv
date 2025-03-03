@@ -5,14 +5,16 @@ import { cn } from "@/shared/utils";
 import { ArrowDonwIcon } from "../../../../public/images/icons";
 import { INavigationItem } from "@/shared/types";
 import { usePathname, useRouter } from "next/navigation";
-import { motion, AnimatePresence } from "framer-motion"; // Імпортуємо фреймворк для анімацій
+import { motion, AnimatePresence } from "framer-motion";
 
 const NavItem = ({
   item,
   isOnBurger,
+  onNavClick,
 }: {
   item: INavigationItem;
   isOnBurger: boolean;
+  onNavClick?: () => void;
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -23,6 +25,7 @@ const NavItem = ({
 
   const handleDropdownItemClick = () => {
     setIsOpen(false);
+    onNavClick?.();
   };
 
   const handleNavigation = (
@@ -40,6 +43,7 @@ const NavItem = ({
     }
 
     router.push(url);
+    onNavClick?.();
   };
 
   useEffect(() => {
@@ -66,7 +70,7 @@ const NavItem = ({
   if (!item.dropdown) {
     return (
       <button
-        className="text-primary-black hover:text-primary-gray text-center text-lg font-normal leading-[120%]"
+        className="text-[#262827] hover:text-primary-gray text-center text-[18px] font-normal leading-[120%]"
         onClick={() => handleNavigation(item.href)}
       >
         {item.name}
@@ -78,7 +82,7 @@ const NavItem = ({
     <div className={cn(isOnBurger ? "w-full" : "relative")} ref={dropdownRef}>
       <button
         className={cn(
-          "text-primary-black text-lg hover:text-primary-gray font-normal leading-[120%] flex items-center gap-1",
+          "text-[#262827] text-[18px] hover:text-primary-gray font-normal leading-[120%] flex items-center gap-1",
           isOnBurger && "mx-auto"
         )}
         onClick={() => setIsOpen(!isOpen)}
@@ -112,8 +116,8 @@ const NavItem = ({
                 className={cn(
                   "block w-full text-left",
                   isOnBurger
-                    ? "text-primary-black text-lg font-normal leading-[120%] hover:text-primary-gray transition-colors text-center"
-                    : "px-4 py-2 text-[#000] text-[18px] leading-[110%] hover:bg-gray-100"
+                    ? "text-primary-black text-[18px] font-normal leading-[120%] hover:text-primary-gray transition-colors text-center"
+                    : "px-4 py-2 text-[#262827] text-[18px] leading-[110%] hover:bg-gray-100"
                 )}
               >
                 {dropdownItem.name}

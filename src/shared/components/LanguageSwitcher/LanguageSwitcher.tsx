@@ -36,7 +36,7 @@ const LanguageSwitcher = () => {
 
   useEffect(() => {
     setCurrentLocale(getCurrentLocale());
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname]);
 
   useEffect(() => {
@@ -76,10 +76,11 @@ const LanguageSwitcher = () => {
         <div className="flex-shrink-0 items-center">
           {languages[currentLocale]?.icon}
         </div>
-        <span className="text-sm font-medium">
+        <span className="text-sm font-medium text-[#262827]">
           {languages[currentLocale]?.name}
         </span>
         <ArrowDonwIcon
+          color="#262827"
           className={cn("w-4 h-4 transition-transform", isOpen && "rotate-180")}
         />
       </button>
@@ -98,7 +99,7 @@ const LanguageSwitcher = () => {
                 <button
                   key={locale}
                   onClick={() => switchLanguage(locale)}
-                  className={`w-full flex items-center gap-2 px-4 py-2 text-sm hover:bg-gray-50 ${
+                  className={`w-full flex items-center text-[#262827] gap-2 px-4 py-2 text-sm hover:bg-gray-50 ${
                     currentLocale === locale ? "bg-gray-50" : ""
                   }`}
                 >

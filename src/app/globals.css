@@ -67,6 +67,54 @@ a {
   filter: brightness(0) invert(1);
 }
 
+input,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+input:focus-visible,
+textarea:focus-visible {
+  outline: none;
+}
+
+.swiper-pagination {
+  display: flex;
+  margin-top: 24px;
+  justify-content: center;
+}
+.swiper-pagination-bullet {
+  width: 14px;
+  height: 14px;
+  display: block;
+  background-color: #d9d9d9;
+  opacity: 1;
+  margin: 0 4px !important;
+  color: #d9d9d9;
+  border-radius: 50px;
+}
+
+.swiper-pagination-bullet-active {
+  width: 14px;
+  height: 14px;
+  display: block;
+  background-color: #ff9332;
+  color: #ff9332;
+  border-radius: 50px;
+  opacity: 1;
+}
+
+.hero-bg {
+  background-image: url("../../public/images/hero-bg-mob.jpg");
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  @media (min-width: 480px) {
+    /* background-image: url("../../public/images/hero-desk.jpg"); */
+  }
+}
 @layer utilities {
   .transition-base {
     @apply transition  duration-300 ease-in-out;

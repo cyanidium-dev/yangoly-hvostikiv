@@ -25,6 +25,10 @@ const Header = ({
   const handleCloseModal = useCallback(() => {
     setIsDonateModalOpen(false);
   }, []);
+
+  const handleCloseMenu = useCallback(() => {
+    setIsMenuOpen(false);
+  }, []);
   return (
     <>
       <header className="fixed top-0 flex-col bg-white border-b border-[#E9E9EE] xl:bg-background-gray  w-full flex justify-between items-center z-50">
@@ -43,7 +47,8 @@ const Header = ({
               {isMenuOpen ? <CloseIcon /> : <BurgerButtonIcon />}
             </button>
             <Button
-              className="hidden xl:block"
+              variant="outline"
+              className="hidden xl:block text-[#FF9332] border-[#FF9332] hover:bg-[#FF9332] hover:text-white"
               text={translation?.donateButton}
               onClick={() => setIsDonateModalOpen(true)}
             />
@@ -51,6 +56,7 @@ const Header = ({
         </div>
       </header>
       <BurgerMenu
+        onClose={handleCloseMenu}
         lang={lang}
         translation={translation}
         donateModalTranslataion={donateModalTranslataion}

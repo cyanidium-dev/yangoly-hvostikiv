@@ -46,6 +46,7 @@ export interface IHeaderProps {
 
 export interface IBurgerMenuProps {
   isOpen: boolean;
+  onClose: () => void;
   translation: {
     navigation: INavigationItem[];
     donateButton: string;
@@ -136,6 +137,7 @@ export interface IContactsProps {
 
 export interface ISvgIconProps extends React.SVGProps<SVGSVGElement> {
   variant?: "primary" | "secondary";
+  color?: string;
 }
 
 export interface ICheckBoxIconProps extends React.SVGProps<SVGSVGElement> {

@@ -6,7 +6,7 @@ import { IBlogListProps } from "@/shared/types";
 
 export default function BlogList({ lang }: IBlogListProps) {
   return (
-    <ul>
+    <ul className="flex flex-col gap-5 xl:gap-x-5 xl:gap-y-8">
       {newsList[lang].map((blogItem) => (
         <BlogCard key={blogItem.id} blogItem={blogItem} />
       ))}

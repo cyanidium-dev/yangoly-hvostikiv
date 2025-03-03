@@ -65,12 +65,12 @@ const news = {
   ],
 };
 
-const newsListUk = Array.from({ length: 100 }, (_, i) => ({
+const newsListUk = Array.from({ length: 20 }, (_, i) => ({
   ...news.uk[i % news.uk.length],
   id: `article-${i + 1}`,
 }));
 
-const newsListEn = Array.from({ length: 100 }, (_, i) => ({
+const newsListEn = Array.from({ length: 20 }, (_, i) => ({
   ...news.en[i % news.en.length],
   id: `article-${i + 1}`,
 }));

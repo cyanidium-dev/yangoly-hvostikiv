@@ -67,6 +67,9 @@ const config: Config = {
           "100%": { transform: "translateX(0%)" },
         },
       },
+      boxShadow: {
+        blogCard: "0px 4px 24px 3px rgba(104, 104, 104, 0.12)"
+      }
     },
   },
   // eslint-disable-next-line @typescript-eslint/no-require-imports

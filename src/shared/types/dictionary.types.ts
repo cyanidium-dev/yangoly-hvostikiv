@@ -123,3 +123,7 @@ export interface IChairtyEvents {
   partnerModalTitle: string;
   photoSubtitle: string;
 }
+
+export interface IBlog {
+  title: string;
+}

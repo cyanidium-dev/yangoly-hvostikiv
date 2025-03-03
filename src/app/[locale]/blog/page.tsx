@@ -1,7 +1,15 @@
+import Blog from "@/modules/Blog/Blog";
 import React from "react";
-import { newsList } from "./constants";
+import { getDictionary } from "@/shared/utils";
+import { PageParams } from "@/shared/types";
 
-export default function BlogPage() {
-  console.log(newsList);
-  return <div>BlogP</div>;
+export default async function BlogPage({ params }: PageParams) {
+  const { locale } = await params;
+  const { blog } = await getDictionary(locale);
+
+  return (
+    <>
+      <Blog translation={blog} />
+    </>
+  );
 }

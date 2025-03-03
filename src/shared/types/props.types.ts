@@ -2,6 +2,7 @@ import { ComponentProps } from "react";
 import { dictionaries } from "../utils/getDictionary";
 import {
   IAboutTranslation,
+  IBlog,
   IContactsTranslation,
   IDonateAmountSectionTranslation,
   IDonateModalTranslation,
@@ -299,4 +300,8 @@ export interface ITailProps {
 export interface ITailInfoProps {
   tail: ITailProps;
   locale: Locale;
+}
+
+export interface IBlogProps {
+  translation: IBlog;
 }

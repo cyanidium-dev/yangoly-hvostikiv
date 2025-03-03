@@ -304,4 +304,26 @@ export interface ITailInfoProps {
 
 export interface IBlogProps {
   translation: IBlog;
+  lang: Locale;
+}
+
+export interface INewsItem {
+  id: string;
+  date: string;
+  title: string;
+  description: string;
+  mainPart: {
+    lists: { title: string; items: string[] }[];
+    text: string;
+  };
+  mainPhoto: string;
+  secondaryPhoto: string;
+}
+
+export interface IBlogCardProps {
+  blogItem: INewsItem;
+}
+
+export interface IBlogListProps {
+  lang: Locale;
 }

@@ -9,7 +9,7 @@ export default async function BlogPage({ params }: PageParams) {
 
   return (
     <>
-      <Blog translation={blog} />
+      <Blog translation={blog} lang={locale} />
     </>
   );
 }

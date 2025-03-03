@@ -50,7 +50,7 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ["Raleway", "serif"],
+        raleway: ["var(--font-raleway)", "serif"],
         arial: ["Arial Black", "serif"],
       },
       animation: {
@@ -68,8 +68,8 @@ const config: Config = {
         },
       },
       boxShadow: {
-        blogCard: "0px 4px 24px 3px rgba(104, 104, 104, 0.12)"
-      }
+        blogCard: "0px 4px 24px 3px rgba(104, 104, 104, 0.12)",
+      },
     },
   },
   // eslint-disable-next-line @typescript-eslint/no-require-imports

@@ -3,6 +3,8 @@ import Header from "@/modules/Header/Header";
 import { LocaleLayoutProps, PageParams } from "@/shared/types";
 import { getDictionary } from "@/shared/utils";
 import Footer from "@/modules/Footer/Footer";
+import { Raleway } from "next/font/google";
+import "../globals.css";
 
 export async function generateMetadata({
   params,
@@ -20,6 +22,12 @@ export async function generateMetadata({
   };
 }
 
+const raleway = Raleway({
+  weight: ["300", "400", "500", "600", "700", "900"],
+  variable: "--font-raleway",
+  subsets: ["latin", "cyrillic"],
+});
+
 export default async function LocaleLayout({
   children,
   params,
@@ -35,7 +43,9 @@ export default async function LocaleLayout({
         donateModalTranslataion={donateModal}
       />
       <div className="flex flex-col min-h-[100%]">
-        <main className="bg-background-gray h-full flex-1 w-full overflow-y-hidden overflow-x-hidden">
+        <main
+          className={`${raleway.variable} bg-background-gray h-full flex-1 w-full overflow-y-hidden overflow-x-hidden font-raleway`}
+        >
           {children}
         </main>
         <Footer translation={footerNav} />

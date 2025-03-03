@@ -113,3 +113,13 @@ export interface IFilterOption {
   label: string;
   value: string;
 }
+
+export interface IChairtyEvents {
+  title: string;
+  paragraphs: string[];
+  listTitle: string;
+  listItems: string[];
+  buttons: string[];
+  partnerModalTitle: string;
+  photoSubtitle: string;
+}

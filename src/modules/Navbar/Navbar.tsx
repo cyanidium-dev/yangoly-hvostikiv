@@ -4,12 +4,13 @@ import { cn } from "@/shared/utils";
 
 interface INavbarProps {
   isOnBurger: boolean;
+  onNavClick?: () => void;
   translation: {
     navigation: INavigationItem[];
   };
 }
 
-const Navbar = ({ translation, isOnBurger }: INavbarProps) => {
+const Navbar = ({ translation, isOnBurger, onNavClick }: INavbarProps) => {
   return (
     <nav
       className={cn(
@@ -18,7 +19,12 @@ const Navbar = ({ translation, isOnBurger }: INavbarProps) => {
       )}
     >
       {translation?.navigation.map((item) => (
-        <NavItem key={item.name} item={item} isOnBurger={isOnBurger} />
+        <NavItem
+          onNavClick={onNavClick}
+          key={item.name}
+          item={item}
+          isOnBurger={isOnBurger}
+        />
       ))}
     </nav>
   );

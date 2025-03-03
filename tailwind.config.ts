@@ -14,6 +14,9 @@ const config: Config = {
         xl: "1366px",
       },
       colors: {
+        dark: {
+          DEFAULT: "#140A01",
+        },
         primary: {
           white: {
             DEFAULT: "#F8F7F7",
@@ -47,8 +50,8 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ["Georgia", "serif"],
-        "sans-pro": ["Source Sans Pro", "serif"],
+        sans: ["Raleway", "serif"],
+        arial: ["Arial Black", "serif"],
       },
       animation: {
         marquee: "marquee 40s linear infinite",

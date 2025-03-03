@@ -37,7 +37,7 @@
       },
       {
         "name": "Charity Events",
-        "href": "/"
+        "href": "/chairty-events"
       },
       {
         "name": "Reporting",
@@ -240,6 +240,24 @@
     "needsSterilization": "Needs sterilization",
     "needsFamily": "Needs a family",
     "adopted": "Adopted"
+  },
+  "chairtyEvents": {
+    "title": "Our Charity Events",
+    "paragraphs": [
+      "Friends, let's imagine which emotions are most often evoked by charitable foundations? Emotions of sadness, pain, hopelessness… Everything that fills us in these difficult times is sadness, worries, stress.",
+      "Unfortunately, during the war it is very difficult to stay in a good and joyful state, we understand this very well. Because of this, it is difficult to close many fundraisers. People are tired of donating, they often pass by and remain indifferent, because they are full of disappointment and sadness.",
+      "Analyzing this, we decided to do charity through entertainment. This is a chance to help animals not just through donations, but through participation in interesting events.",
+      "We have already held 2 charity events, which we organized ourselves. At the first event, we painted pictures on canvases with the handprints of owners and the paw prints of their pets. The second event was very atmospheric in a Halloween style, with a photo zone, prizes, costumes, contests."
+    ],
+    "listTitle": "Advantages of our charity events:",
+    "listItems": [
+      "Interesting and captivating entertainment: we hold various interactive activities where everyone receives gifts, and we also create unique and exclusive products together with you that cannot be bought anywhere.",
+      "After our events, everyone is left with a wonderful mood, great emotions and cool photos",
+      "We create unique themed photo zones, costume looks, props"
+    ],
+    "buttons": ["Support", "BECOME A PARTNER"],
+    "partnerModalTitle": "To become our partner, leave your contact details",
+    "photoSubtitle": "The mission of our events: through good emotions and entertainment to help animals in frontline areas."
   },
 
   "metadata": {

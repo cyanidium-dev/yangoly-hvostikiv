@@ -9,15 +9,13 @@ const Button = ({
   ...props
 }: IButtonProps) => {
   const baseStyles =
-    "text-white uppercase py-4 px-6 rounded-[12px] transition-all duration-300";
+    "text-white uppercase py-4 px-6 rounded-[28px] transition-all duration-300 text-[18px]  leading-[110%] font-bold";
 
   const variantStyles = {
-    primary:
-      "bg-primary-green hover:bg-primary-green/90 active:bg-primary-green/80 active:scale-95",
-    secondary:
-      "bg-primary-orange hover:bg-primary-orange/90 active:bg-primary-orange/80 active:scale-95",
+    primary: "bg-primary-green hover:bg-primary-green/90  active:scale-95",
+    secondary: "bg-primary-orange hover:bg-primary-orange/90  active:scale-95",
     outline:
-      "border border-primary-green text-primary-green hover:bg-primary-green hover:text-white active:bg-primary-green/90 active:scale-95",
+      "border border-primary-green text-primary-green hover:bg-primary-green hover:text-white  active:scale-95",
   };
   const widthStyle = fullWidth ? "w-full" : "w-auto";
 

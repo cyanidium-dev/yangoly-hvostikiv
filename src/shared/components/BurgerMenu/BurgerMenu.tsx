@@ -11,6 +11,7 @@ const BurgerMenu = ({
   isOpen,
   donateModalTranslataion,
   lang,
+  onClose,
 }: IBurgerMenuProps) => {
   const [isDonateModalOpen, setIsDonateModalOpen] = useState(false);
   if (!isOpen) return null;
@@ -19,11 +20,18 @@ const BurgerMenu = ({
     <div className="fixed top-[65px] right-0 bg-white z-40 xl:hidden w-[80%] ">
       <div className="flex flex-col h-full">
         <div className="px-4 pt-3 pb-8 flex flex-col flex-grow gap-4 items-center">
-          <Navbar translation={translation} isOnBurger={true} />
+          <Navbar
+            translation={translation}
+            isOnBurger={true}
+            onNavClick={onClose}
+          />
           <div className="my-3">
             <Button
               text={translation?.donateButton}
-              onClick={() => setIsDonateModalOpen(true)}
+              onClick={() => {
+                setIsDonateModalOpen(true);
+                onClose();
+              }}
             />
           </div>
           <SocialsList />

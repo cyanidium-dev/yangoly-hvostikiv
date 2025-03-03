@@ -8,8 +8,6 @@ import { ISterilizationData, Locale } from "@/shared/types";
 import { getDictionary } from "@/shared/utils";
 import DonateModal from "@/shared/components/DonateModal/DonateModal";
 
-// Типізація отриманих даних
-
 export default function SterilizationPage() {
   const [localTranslation, setLocalTranslation] =
     useState<ISterilizationData | null>(null);

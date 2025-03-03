@@ -60,14 +60,14 @@ const Partnership = ({ translation, lang }: IPartnershipProps) => {
                       alt="Paws"
                     />
                     <div>
-                      <p className="text-[18px] leading-[130%]">
+                      <p className="text-[18px] text-black leading-[130%]">
                         {section.title}
                       </p>
                       <ul className="list-none">
                         {section.items.map((item, itemIndex) => (
                           <li
                             key={itemIndex}
-                            className="before:content-['-'] before:mr-1 text-[18px] leading-[130%]"
+                            className="before:content-['-'] text-black before:mr-1 text-[18px] leading-[130%]"
                           >
                             {item}
                           </li>

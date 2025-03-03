@@ -11,7 +11,10 @@ const config: Config = {
   theme: {
     extend: {
       screens: {
+        tabxl: "1101px",
         xl: "1366px",
+        laptop: "1512px",
+        desk: "1920px",
       },
       colors: {
         dark: {

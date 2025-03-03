@@ -4,18 +4,20 @@ import Image from "next/image";
 import React from "react";
 import Link from "next/link";
 
-export default function BlogCard({ blogItem }: IBlogCardProps) {
+export default function BlogCard({ blogItem, className = "" }: IBlogCardProps) {
   const { mainPhoto, date, title, description } = blogItem;
 
   return (
-    <li className="max-w-[343px] h-[560px] pt-8 pb-5 px-6 bg-[#FCFCFC] rounded-[20px] shadow-blogCard">
+    <li
+      className={`max-w-[343px] desk:max-w-[436px] pt-8 pb-5 px-6 bg-[#FCFCFC] rounded-[20px] shadow-blogCard ${className}`}
+    >
       <Link href="">
         <Image
           src={mainPhoto}
           alt={title}
           width={756}
           height={1008}
-          className="w-full h-[246px] mb-[26px] object-cover object-center rounded-[11.25px]"
+          className="w-full h-[246px] desk:h-[323px] mb-[26px] object-cover object-center rounded-[11.25px]"
         />
       </Link>
       <p className="mb-3 text-[16px] font-medium leading-[20.8px] text-black">

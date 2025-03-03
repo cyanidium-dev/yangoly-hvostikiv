@@ -322,6 +322,7 @@ export interface INewsItem {
 
 export interface IBlogCardProps {
   blogItem: INewsItem;
+  className?: string;
 }
 
 export interface IBlogListProps {

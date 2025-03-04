@@ -80,7 +80,7 @@ export const UniversalForm = ({
       >
         {fields.map((field) => (
           <div key={field.name} className="space-y-1">
-            <label className="block text-[18px] leading-[130%] text-[#1D1D1D]">
+            <label className="block text-[16px] lg:text-[18px] leading-[130%] text-[#1D1D1D]">
               {field.label}
               {field.required && (
                 <span className={cn("", errors[field.name] && "text-red-500")}>

@@ -18,10 +18,10 @@ const Contacts = ({ lang, translation }: IContactsProps) => {
   };
 
   return (
-    <section id="contacts" className="relative h-[863px] lg:h-[634px] ">
+    <section id="contacts" className="relative h-[1047px] lg:h-[634px]">
       <ContactsMask className="absolute inset-0 w-full h-[101%] lg:hidden" />
       <ContactsMaskDesktop className="absolute inset-0 w-full h-[101%] hidden lg:block" />
-      <div className="container relative z-10 px-4 top-[80px] lg:top-[100px] mx-auto ">
+      <div className="container relative z-10 px-4 top-[245px] lg:top-[100px] mx-auto ">
         <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center">
           <div className="flex flex-col items-center lg:items-start lg:max-w-[406px]">
             <h2 className="mb-3 font-arial font-black text-[24px] lg:text-[32px] text-white leading-[130%] uppercase text-center lg:text-left">
@@ -33,18 +33,26 @@ const Contacts = ({ lang, translation }: IContactsProps) => {
             <div className="flex flex-col gap-4">
               <a
                 href="tel:+380992004080"
+                target="_blank"
+                rel="noopener noreferrer nofollow"
                 className="flex items-center gap-2 text-white leading-[130%] text-[20px] lg:text-[24px] font-semibold"
               >
-                <PhoneIcon className="w-6 h-6" /> 38 093 000 00 00
+                <PhoneIcon className="w-6 h-6" variant="secondary" /> 38 093 000
+                00 00
               </a>
               <a
                 href="tel:+380992004080"
+                target="_blank"
+                rel="noopener noreferrer nofollow"
                 className="flex items-center gap-2 text-white leading-[130%] text-[20px] lg:text-[24px] font-semibold"
               >
-                <PhoneIcon className="w-6 h-6" /> 38 093 000 00 00
+                <PhoneIcon className="w-6 h-6" variant="secondary" /> 38 093 000
+                00 00
               </a>
               <a
                 href="mailto:email@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer nofollow"
                 className="flex items-center gap-2 text-white leading-[130%] text-[20px] lg:text-[24px] font-semibold"
               >
                 <EmailIcon className="w-6 h-6" variant="secondary" />
@@ -53,7 +61,7 @@ const Contacts = ({ lang, translation }: IContactsProps) => {
             </div>
           </div>
 
-          <div className="mt-5 max-w-[533px]  w-full lg:w-[533px] lg:mt-0">
+          <div className="mt-[44px] max-w-[533px] w-full lg:w-[533px] lg:mt-0 mx-auto lg:mx-0">
             <UniversalForm onSubmit={handleSubmit} {...contactConfig} />
           </div>
         </div>

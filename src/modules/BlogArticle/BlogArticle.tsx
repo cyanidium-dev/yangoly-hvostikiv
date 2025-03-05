@@ -39,7 +39,17 @@ export default function BlogArticle({
           className="w-full lg:w-[40.8%] max-w-[585px] h-[383px] mx-auto lg:mx-0 object-cover object-center rounded-[18.05px]"
         />
       </div>
-      <div>
+      <div className="mb-[60px] lg:mb-[96px] text-[14px] lg:text-[18px] font-light leading-[130%]">
+        {mainPart.lists.map((list, idx) => (
+          <React.Fragment key={idx}>
+            <h2>{list.title}</h2>
+            <ul>
+              {list.items.map((item, idx) => (
+                <li key={idx}>{item}</li>
+              ))}
+            </ul>
+          </React.Fragment>
+        ))}
         <p>{mainPart.text}</p>
       </div>
       <Image

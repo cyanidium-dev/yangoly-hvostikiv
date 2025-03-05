@@ -216,7 +216,7 @@
     "modalTitle": "Щоб стати нашим партнером, залиште ваші контактні дані"
   },
   "sterilization": {
-    "title": "Стерелізація хвостиків",
+    "title": "Стерилізація хвостиків",
     "paragraphs": [
       {
         "segments": [
@@ -238,8 +238,8 @@
   },
   "filters": {
     "allTails": "Всі хвостики",
-    "needsSterilization": "Потребують стерилізацію",
-    "needsFamily": "Потребують сім'ю",
+    "needsSterilization": "Потребують стерилізації",
+    "needsFamily": "Потребують сім'ї",
     "adopted": "Усиновлені"
   },
   "chairtyEvents": {

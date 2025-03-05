@@ -126,4 +126,5 @@ export interface IChairtyEvents {
 
 export interface IBlog {
   title: string;
+  timeToRead: string;
 }

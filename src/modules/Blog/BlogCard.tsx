@@ -5,13 +5,13 @@ import React from "react";
 import Link from "next/link";
 
 export default function BlogCard({ blogItem, className = "" }: IBlogCardProps) {
-  const { mainPhoto, date, title, description } = blogItem;
+  const { mainPhoto, date, title, description, id } = blogItem;
 
   return (
     <li
       className={`max-w-[343px] desk:max-w-[436px] pt-8 pb-5 px-6 bg-[#FCFCFC] rounded-[20px] shadow-blogCard ${className}`}
     >
-      <Link href="">
+      <Link href={`/blog/${id}`}>
         <Image
           src={mainPhoto}
           alt={title}
@@ -23,7 +23,7 @@ export default function BlogCard({ blogItem, className = "" }: IBlogCardProps) {
       <p className="mb-3 text-[16px] font-medium leading-[20.8px] text-black">
         {date}
       </p>
-      <Link href="">
+      <Link href={`/blog/${id}`}>
         <h2
           className="mb-3 text-[20px] font-semibold leading-[26px] line-clamp-2 focus-visible:text-primary-gray xl:hover:text-primary-gray 
         transition duration-300 ease-out"
@@ -34,7 +34,7 @@ export default function BlogCard({ blogItem, className = "" }: IBlogCardProps) {
       <p className="mb-5 font-normal text-[14px] leading-[18.2px] line-clamp-4">
         {description}
       </p>
-      <Link href="">
+      <Link href={`/blog/${id}`}>
         <Button text="Детальніше" fullWidth />
       </Link>
     </li>

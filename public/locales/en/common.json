@@ -266,6 +266,7 @@
     "keywords": "charity foundation, animal help, stray animals, pet rescue"
   },
   "blog": {
-    "title": "News of our foundation"
+    "title": "News of our foundation",
+    "timeToRead": " min read"
   }
 }

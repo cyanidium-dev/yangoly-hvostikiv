@@ -328,3 +328,8 @@ export interface IBlogCardProps {
 export interface IBlogListProps {
   lang: Locale;
 }
+
+export interface IBlogArticleProps {
+  article: INewsItem;
+  translation: IBlog;
+}

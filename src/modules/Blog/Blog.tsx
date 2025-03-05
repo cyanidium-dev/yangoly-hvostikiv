@@ -2,7 +2,7 @@ import { IBlogProps } from "@/shared/types";
 import React from "react";
 import BlogList from "./BlogList";
 
-export default async function Blog({ translation, lang }: IBlogProps) {
+export default function Blog({ translation, lang }: IBlogProps) {
   const { title } = translation;
 
   return (

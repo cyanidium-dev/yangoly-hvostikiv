@@ -6,13 +6,23 @@ export const useItemsPerPage = () => {
 
   useEffect(() => {
     const updateItemsPerPage = () => {
-      setItemsPerPage(window.innerWidth >= 768 ? 12 : 6);
+      const width = window.innerWidth;
+
+      if (width < 768) {
+        setItemsPerPage(3);
+      } else if (width < 1512) {
+        setItemsPerPage(6);
+      } else if (width < 1920) {
+        setItemsPerPage(8);
+      } else {
+        setItemsPerPage(10);
+      }
     };
 
-    updateItemsPerPage(); 
+    updateItemsPerPage();
 
     window.addEventListener("resize", updateItemsPerPage);
-    return () => window.removeEventListener("resize", updateItemsPerPage); 
+    return () => window.removeEventListener("resize", updateItemsPerPage);
   }, []);
 
   return itemsPerPage;

@@ -267,6 +267,10 @@
   },
   "blog": {
     "title": "News of our foundation",
-    "timeToRead": " min read"
+    "timeToRead": " min read",
+    "detailsButton": "More details"
+  },
+  "tails": {
+    "detailsButton": "More details"
   }
 }

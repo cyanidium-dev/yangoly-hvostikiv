@@ -4,21 +4,28 @@ import Image from "next/image";
 import React from "react";
 import Link from "next/link";
 
-export default function BlogCard({ blogItem, className = "" }: IBlogCardProps) {
+export default function BlogCard({
+  blogItem,
+  className = "",
+  translation,
+}: IBlogCardProps) {
   const { mainPhoto, date, title, description, id } = blogItem;
+  const { detailsButton } = translation;
 
   return (
     <li
       className={`max-w-[343px] desk:max-w-[436px] pt-8 pb-5 px-6 bg-[#FCFCFC] rounded-[20px] shadow-blogCard ${className}`}
     >
-      <Link href={`/blog/${id}`}>
-        <Image
-          src={mainPhoto}
-          alt={title}
-          width={756}
-          height={1008}
-          className="w-full h-[246px] desk:h-[323px] mb-[26px] object-cover object-center rounded-[11.25px]"
-        />
+      <Link href={`/blog/${id}`} className="block mb-[26px]">
+        <div className="relative w-full h-[246px] desk:h-[323px] aspect-[295/246] rounded-[11.25px]">
+          <Image
+            src={mainPhoto}
+            alt={title}
+            fill
+            className="object-cover object-center rounded-[11.25px]"
+            sizes="(max-width: 1280px) 50vw, 33vw"
+          />
+        </div>
       </Link>
       <p className="mb-3 text-[16px] font-medium leading-[20.8px] text-black">
         {date}
@@ -35,7 +42,7 @@ export default function BlogCard({ blogItem, className = "" }: IBlogCardProps) {
         {description}
       </p>
       <Link href={`/blog/${id}`}>
-        <Button text="Детальніше" fullWidth />
+        <Button text={detailsButton} fullWidth />
       </Link>
     </li>
   );

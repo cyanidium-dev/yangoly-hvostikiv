@@ -5,11 +5,11 @@ import { PageParams } from "@/shared/types";
 
 export default async function TailsPage({ params }: PageParams) {
   const { locale } = await params;
-  const { contacts } = await getDictionary(locale);
+  const { contacts, tails } = await getDictionary(locale);
 
   return (
     <>
-      <Tails />
+      <Tails translation={tails} />
       <Contacts translation={contacts} lang={locale} />
     </>
   );

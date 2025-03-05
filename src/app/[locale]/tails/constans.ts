@@ -8,7 +8,8 @@ const baseTails = [
       "/images/card-image.jpg",
     ],
     name: "Песик-інвалід Чарлі",
-    buttonText: "Більше про “Чарлі”",
+    sex: "Хлопчик",
+    sterialized: "Нестерилізований",
     categories: ["needs-sterilization", "needs-family"],
     description: [
       "Чарлі отримав кулю в хребет та довго лежав на сонці, що призвело до інсульту. Також у песика паралізований сечовий міхур. Нажаль ходити він більше не зможе. Не дивлячись на це Чарлі дуже життєрадісний пес. У серпні 2024 року Чарлі був евакуйований з Покровська у Черкаську обл.",
@@ -24,6 +25,8 @@ const baseTails = [
       "/images/rubi.jpg",
     ],
     name: "Кошеня Рубі",
+    sex: "Дівчинка",
+    sterialized: "Стерилізована",
     buttonText: "Більше про “Кошеня Рубі”",
     categories: ["needs-family"],
     description: [
@@ -40,7 +43,8 @@ const baseTails = [
       "/images/juja.jpg",
     ],
     name: "Жужа",
-    buttonText: "Більше про “Жужа”",
+    sex: "Дівчинка",
+    sterialized: "Стерилізована",
     categories: ["needs-family", "adopted"],
     description: [
       "Жужа – активна та енергійна собачка, яка любить гратися і гуляти.",
@@ -56,7 +60,8 @@ const baseTails = [
       "/images/card-image.jpg",
     ],
     name: "Барсік",
-    buttonText: "Більше про “Барсік”",
+    sex: "Хлопчик",
+    sterialized: "Нестерилізований",
     categories: ["needs-sterilization"],
     description: [
       "Барсік – добрий і спокійний кіт, який обожнює муркотіти та ніжитися на сонечку.",
@@ -71,7 +76,8 @@ const baseTails = [
       "/images/rubi.jpg",
     ],
     name: "Мурзик",
-    buttonText: "Більше про “Мурзик”",
+    sex: "Хлопчик",
+    sterialized: "Стерилізований",
     categories: ["needs-family"],
     description: [
       "Мурзик – грайливий котик, який шукає дім, де його любитимуть та піклуватимуться про нього.",
@@ -86,7 +92,8 @@ const baseTails = [
       "/images/juja.jpg",
     ],
     name: "Граф",
-    buttonText: "Більше про “Граф”",
+    sex: "Хлопчик",
+    sterialized: "Стерилізований",
     categories: ["adopted"],
     description: [
       "Граф – благородний і відданий пес, який мріє про дім, де його оточать турботою та любов'ю.",

@@ -11,6 +11,7 @@ import {
   INavigationItem,
   IPartenrsTranslation,
   IPartnershipTranslation,
+  ITails,
 } from "./dictionary.types";
 import * as yup from "yup";
 import Link from "next/link";
@@ -320,16 +321,33 @@ export interface INewsItem {
   secondaryPhoto: string;
 }
 
+export interface ITailItem {
+  id: string;
+  image: string;
+  images: string[];
+  name: string;
+  description: string[];
+  sex: string;
+  sterialized: string;
+  categories: string[];
+}
+
 export interface IBlogCardProps {
   blogItem: INewsItem;
   className?: string;
+  translation: IBlog;
 }
 
 export interface IBlogListProps {
   lang: Locale;
+  translation: IBlog;
 }
 
 export interface IBlogArticleProps {
   article: INewsItem;
   translation: IBlog;
+}
+
+export interface ITailsProps {
+  translation: ITails;
 }

@@ -13,7 +13,7 @@ export default function Blog({ translation, lang }: IBlogProps) {
       >
         {title}
       </h1>
-      <BlogList lang={lang} />
+      <BlogList lang={lang} translation={translation} />
     </section>
   );
 }

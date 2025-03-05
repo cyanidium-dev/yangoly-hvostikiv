@@ -12,10 +12,8 @@ export const useItemsPerPage = () => {
         setItemsPerPage(3);
       } else if (width < 1512) {
         setItemsPerPage(6);
-      } else if (width < 1920) {
-        setItemsPerPage(8);
       } else {
-        setItemsPerPage(10);
+        setItemsPerPage(8);
       }
     };
 

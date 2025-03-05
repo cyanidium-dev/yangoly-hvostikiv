@@ -267,6 +267,10 @@
   },
   "blog": {
     "title": "Новини нашого фонду",
-    "timeToRead": " хв на читання"
+    "timeToRead": " хв на читання",
+    "detailsButton": "Детальніше"
+  },
+  "tails": {
+    "detailsButton": "Детальніше"
   }
 }

@@ -127,4 +127,9 @@ export interface IChairtyEvents {
 export interface IBlog {
   title: string;
   timeToRead: string;
+  detailsButton: string;
+}
+
+export interface ITails {
+  detailsButton: string;
 }

@@ -18,10 +18,10 @@ const Contacts = ({ lang, translation }: IContactsProps) => {
   };
 
   return (
-    <section id="contacts" className="relative h-[1047px] lg:h-[632px]">
+    <section id="contacts" className="relative h-[1047px] lg:h-[634px]">
       <ContactsMask className="absolute inset-0 w-full h-[101%] lg:hidden" />
-      <ContactsMaskDesktop className="absolute inset-0 w-full h-[102%] hidden lg:block" />
-      <div className="container relative z-10 px-4 top-[245px] lg:top-[113px] mx-auto ">
+      <ContactsMaskDesktop className="absolute inset-0 w-full h-[101%] hidden lg:block" />
+      <div className="container relative z-10 px-4 xl:px-10 top-[245px] lg:top-[113px] mx-auto ">
         <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center">
           <div className="flex flex-col items-center lg:items-start lg:max-w-[406px]">
             <h2 className="mb-3 font-arial font-black text-[24px] lg:text-[32px] text-white leading-[130%] uppercase text-center lg:text-left">

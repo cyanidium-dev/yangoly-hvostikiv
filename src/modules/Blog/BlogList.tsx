@@ -8,7 +8,7 @@ import { useSearchParams, useRouter } from "next/navigation";
 import { useItemsPerPage } from "@/shared/hooks/useItemsPerPage";
 import { useState, useEffect } from "react";
 
-export default function BlogList({ lang }: IBlogListProps) {
+export default function BlogList({ lang, translation }: IBlogListProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
   const itemsPerPage = useItemsPerPage();
@@ -39,7 +39,11 @@ export default function BlogList({ lang }: IBlogListProps) {
       <div className="flex justify-center">
         <ul className="grid grid-cols-1 md:grid-cols-2 tabxl:grid-cols-3 laptop:grid-cols-4 gap-5 xl:gap-x-5 xl:gap-y-8 justify-items-center">
           {currentItems.map((blogItem) => (
-            <BlogCard key={blogItem.id} blogItem={blogItem} />
+            <BlogCard
+              key={blogItem.id}
+              blogItem={blogItem}
+              translation={translation}
+            />
           ))}
         </ul>
       </div>

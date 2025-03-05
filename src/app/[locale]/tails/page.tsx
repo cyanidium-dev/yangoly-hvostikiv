@@ -46,8 +46,8 @@ export default function TailsPage() {
   };
 
   return (
-    <section className="bg-[#E9E9E9] min-h-screen">
-      <div className="mt-[65px] mx-auto xl:mt-[140px] container py-8 px-4 xl:px-10">
+    <section className="min-h-screen">
+      <div className="mt-[65px] mx-auto xl:mt-[140px] container pt-[60px] lg:pt-8 pb-[100px] lg:pb-[148px] px-4 xl:px-10">
         <Filter selectedFilter={filter} />
         <ul className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
           {currentItems.map((tail, index) => (

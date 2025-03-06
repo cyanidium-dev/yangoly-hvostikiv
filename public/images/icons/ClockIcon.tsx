@@ -1,4 +1,3 @@
-import React from "react";
 import { ISvgIconProps } from "@/shared/types";
 
 export default function ClockIcon({ className, ...props }: ISvgIconProps) {

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React, { ComponentProps } from "react";
+import { ComponentProps } from "react";
 
 interface ITailCardProps extends ComponentProps<"div"> {
   image: string;

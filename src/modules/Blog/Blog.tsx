@@ -1,5 +1,4 @@
 import { IBlogProps } from "@/shared/types";
-import React from "react";
 import BlogList from "./BlogList";
 
 export default function Blog({ translation, lang }: IBlogProps) {

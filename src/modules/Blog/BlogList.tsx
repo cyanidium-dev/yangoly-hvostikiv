@@ -1,5 +1,4 @@
 "use client";
-import React from "react";
 import { newsList } from "@/app/[locale]/blog/constants";
 import BlogCard from "./BlogCard";
 import { IBlogListProps } from "@/shared/types";

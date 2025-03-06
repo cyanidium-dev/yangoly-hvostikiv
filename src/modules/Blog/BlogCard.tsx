@@ -1,7 +1,7 @@
-import Button from "@/shared/components/Button/Button";
-import { IBlogCardProps } from "@/shared/types";
 import Image from "next/image";
 import Link from "next/link";
+import Button from "@/shared/components/Button/Button";
+import { IBlogCardProps } from "@/shared/types";
 
 export default function BlogCard({ blogItem, className = "" }: IBlogCardProps) {
   const { mainPhoto, date, title, description, id } = blogItem;

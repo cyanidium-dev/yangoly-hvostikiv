@@ -1,8 +1,8 @@
-import { IBlogArticleProps } from "@/shared/types";
 import Image from "next/image";
 import { Fragment } from "react";
-import { calculateReadingTime } from "@/shared/utils/calculateReadingTime";
 import ClockIcon from "../../../public/images/icons/ClockIcon";
+import { calculateReadingTime } from "@/shared/utils/calculateReadingTime";
+import { IBlogArticleProps } from "@/shared/types";
 
 export default function BlogArticle({
   article,

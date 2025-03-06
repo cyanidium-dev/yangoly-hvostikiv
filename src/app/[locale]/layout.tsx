@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import Header from "@/modules/Header/Header";
-import { LocaleLayoutProps, PageParams } from "@/shared/types";
-import { getDictionary } from "@/shared/utils";
-import Footer from "@/modules/Footer/Footer";
 import { Raleway } from "next/font/google";
+import Header from "@/modules/Header/Header";
+import Footer from "@/modules/Footer/Footer";
+import { getDictionary } from "@/shared/utils";
+import { LocaleLayoutProps, PageParams } from "@/shared/types";
 import "../globals.css";
 
 export async function generateMetadata({

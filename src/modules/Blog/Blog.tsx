@@ -1,5 +1,5 @@
-import { IBlogProps } from "@/shared/types";
 import BlogList from "./BlogList";
+import { IBlogProps } from "@/shared/types";
 
 export default function Blog({ translation, lang }: IBlogProps) {
   const { title } = translation;

@@ -84,7 +84,7 @@ export default function CharityEventPage() {
           {localTranslation.title}
         </h2>
       </div>
-      {/* 4 абзаци */}
+      {/* 4 абзаци! */}
       <div className="container  flex justify-center mx-auto px-4 xl:px-[40px] ">
         <div className="grid  mt-[48px] pb-[100px] xl:pb-[148px] grid-cols-1 md:grid-cols-2 xl:flex xl:gap-[80px] gap-[32px] ">
           {localTranslation.paragraphs.map((paragraph, index) => (

@@ -13,7 +13,7 @@ export default function BlogCard({
 
   return (
     <li
-      className={`max-w-[343px] desk:max-w-[436px] pt-8 pb-5 px-6 bg-[#FCFCFC] rounded-[20px] shadow-blogCard ${className}`}
+      className={`max-w-[343px] desk:max-w-[436px] pt-8 pb-5 px-6 bg-white rounded-[20px] shadow-blogCard ${className}`}
     >
       <Link href={`/blog/${id}`} className="block mb-[26px]">
         <div className="relative w-full h-[246px] desk:h-[323px] aspect-[295/246] rounded-[11.25px]">
@@ -26,9 +26,7 @@ export default function BlogCard({
           />
         </div>
       </Link>
-      <p className="mb-3 text-[16px] font-medium leading-[20.8px] text-black">
-        {date}
-      </p>
+      <p className="mb-3 text-[16px] font-medium leading-[20.8px]">{date}</p>
       <Link href={`/blog/${id}`}>
         <h2
           className="mb-3 text-[20px] font-semibold leading-[26px] line-clamp-2 focus-visible:text-primary-gray xl:hover:text-primary-gray 

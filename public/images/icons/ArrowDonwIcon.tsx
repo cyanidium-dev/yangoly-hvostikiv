@@ -11,7 +11,7 @@ export const ArrowDonwIcon = ({
       width="25"
       height="25"
       viewBox="0 0 25 25"
-      fill={color}
+      fill="currentColor"
       className={`w-6 h-6 ${className}`}
       {...props}
     >

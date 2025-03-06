@@ -2,21 +2,23 @@
 import { useState } from "react";
 import ImageSlider from "../ImageSlider/ImageSlider";
 import Button from "../Button/Button";
-import Modal from "../Modal/Modal";
+import AdoptModal from "../AdoptModal/AdoptModal";
 import DonateModal from "../DonateModal/DonateModal";
 import { ITailInfoProps } from "@/shared/types";
 
 const TailInfo = ({ tail, locale, translation }: ITailInfoProps) => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isAdoptModalOpen, setIsAdoptModalOpen] = useState(false);
   const [isDonateModalOpen, setIsDonateModalOpen] = useState(false);
 
-  const {
-    adoptButton,
-    oneTimeHelpButton,
-    adoptDescription,
-    name,
-    connectButton,
-  } = translation;
+  const { adoptButton, oneTimeHelpButton } = translation;
+
+  const handleAdoptModalClose = () => {
+    setIsAdoptModalOpen(false);
+  };
+
+  const handleDoanteModalClose = () => {
+    setIsDonateModalOpen(false);
+  };
 
   return (
     <div className="flex flex-col items-center lg:flex-row gap-y-7 lg:gap-y-0 lg:bg-white">
@@ -37,7 +39,7 @@ const TailInfo = ({ tail, locale, translation }: ITailInfoProps) => {
         </div>
         <div className="flex flex-col mt-7 lg:mt-8 gap-2">
           <Button
-            onClick={() => setIsModalOpen(true)}
+            onClick={() => setIsAdoptModalOpen(true)}
             text={adoptButton}
             fullWidth
             className="max-w-[404px] lg:w-[313px] mx-auto lg:mx-0"
@@ -51,34 +53,14 @@ const TailInfo = ({ tail, locale, translation }: ITailInfoProps) => {
           />
         </div>
       </div>
-
-      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-        <h2 className="text-center font-arial font-black text-[24px] leading-[130%] text-[#1D1D1D] uppercase mt-[40px]">
-          {adoptButton}
-        </h2>
-        <p className="text-[14px] lg:text-[16px] leading-[144%] mt-[18px] lg:mt-6 text-center">
-          {adoptDescription}
-        </p>
-        <p className="text-[16px] lg:text-[18px] leading-[130%] mt-6">{name}</p>
-        <p className="text-[14px] lg:text-[16px] leading-[130%] mt-2 px-[14px] py-[11px] border border-[#A1A1AA] rounded-[4px]">
-          +380 93 098 57 78
-        </p>
-        <a
-          href="tel:+380930985778"
-          target="_blank"
-          rel="noopener noreferrer nofollow"
-        >
-          <Button
-            onClick={() => setIsModalOpen(false)}
-            className="mt-6 w-full"
-            text={connectButton}
-          />
-        </a>
-      </Modal>
-
+      <AdoptModal
+        isOpen={isAdoptModalOpen}
+        onClose={handleAdoptModalClose}
+        translation={translation}
+      />
       <DonateModal
         isOpen={isDonateModalOpen}
-        onClose={() => setIsDonateModalOpen(false)}
+        onClose={handleDoanteModalClose}
         lang={locale}
       />
     </div>

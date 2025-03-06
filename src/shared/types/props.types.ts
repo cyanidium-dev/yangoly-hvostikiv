@@ -354,3 +354,9 @@ export interface ITailProps {
   randomTails: ITailItem[];
   locale: Locale;
 }
+
+export interface IAdoptModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+  translation: ITails;
+}

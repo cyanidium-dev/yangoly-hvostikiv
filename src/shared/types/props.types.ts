@@ -346,3 +346,10 @@ export interface IRandomTailCardsProps {
   translation: ITails;
   tails: ITailItem[];
 }
+
+export interface ITailProps {
+  translation: ITails;
+  tail: ITailItem;
+  randomTails: ITailItem[];
+  locale: Locale
+}

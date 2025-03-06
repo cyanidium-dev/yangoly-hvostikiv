@@ -1,17 +1,13 @@
 import { PageParams } from "@/shared/types";
 import { tails } from "../constans";
-
-import TailInfoMobile from "@/shared/components/TailInfo/TailInfoMobile/TailInfoMobile";
-import TailInfoDesktop from "@/shared/components/TailInfo/TailInfoDesktop/TailInfoDesktop";
-import Link from "next/link";
-import { ArrowDonwIcon } from "../../../../../public/images/icons";
-import RandomTailCards from "@/shared/components/RandomTailCards/RandomTailCards";
 import { getDictionary } from "@/shared/utils";
+import Tail from "@/modules/Tail/Tail";
+import Contacts from "@/modules/Contacts/Contacts";
 
 export default async function TailPage({ params }: PageParams) {
   const { id, locale } = await params;
   const tail = tails.find((tail) => tail.id === id);
-  const { tails: translation } = await getDictionary(locale);
+  const { tails: translation, contacts } = await getDictionary(locale);
 
   if (!tail) {
     return null;
@@ -21,30 +17,14 @@ export default async function TailPage({ params }: PageParams) {
   const randomTails = otherTails.sort(() => 0.5 - Math.random()).slice(0, 4);
 
   return (
-    <section className="bg-white xl:bg-[#F8F7F7]">
-      <div className="mt-[65px] mx-auto xl:mt-[140px] container pt-8 pb-5 px-4 xl:px-10">
-        <div className="lg:hidden">
-          <TailInfoMobile tail={tail} locale={locale} />
-        </div>
-        <div className="hidden lg:block">
-          <TailInfoDesktop tail={tail} locale={locale} />
-        </div>
-      </div>
-
-      <div className="bg-[#F8F7F7] pt-10">
-        <div className="container mx-auto px-4 xl:px-10">
-          <div className="mt-8">
-            <Link
-              className="flex justify-between items-center text-[24px] leading-[130%] text-black transition-colors duration-300 hover:text-primary-orange"
-              href="/tails"
-            >
-              <span>{locale === "uk" ? "Всі хвостики" : "All tails"}</span>
-              <ArrowDonwIcon className="rotate-[270deg] w-6 h-6 transition-colors duration-300 group-hover:text-primary-orange" />
-            </Link>
-            <RandomTailCards tails={randomTails} translation={translation} />
-          </div>
-        </div>
-      </div>
-    </section>
+    <>
+      <Tail
+        translation={translation}
+        locale={locale}
+        tail={tail}
+        randomTails={randomTails}
+      />
+      <Contacts translation={contacts} lang={locale} />
+    </>
   );
 }

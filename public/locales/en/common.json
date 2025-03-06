@@ -271,6 +271,7 @@
     "detailsButton": "More details"
   },
   "tails": {
-    "detailsButton": "More details"
+    "detailsButton": "More details",
+    "allTails": "All tails"
   }
 }

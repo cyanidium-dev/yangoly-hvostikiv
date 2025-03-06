@@ -132,4 +132,10 @@ export interface IBlog {
 
 export interface ITails {
   detailsButton: string;
+  allTails: string;
+  adoptButton: string;
+  oneTimeHelpButton: string;
+  adoptDescription: string;
+  name: string;
+  connectButton: string;
 }

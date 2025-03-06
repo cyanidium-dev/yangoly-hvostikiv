@@ -291,6 +291,7 @@ export interface IModalProps extends ComponentProps<"div"> {
 export interface ITailInfoProps {
   tail: ITailItem;
   locale: Locale;
+  translation: ITails;
 }
 
 export interface IBlogProps {
@@ -351,5 +352,5 @@ export interface ITailProps {
   translation: ITails;
   tail: ITailItem;
   randomTails: ITailItem[];
-  locale: Locale
+  locale: Locale;
 }

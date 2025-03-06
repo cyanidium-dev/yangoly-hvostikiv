@@ -1,60 +1,63 @@
 "use client";
 import { ITailInfoProps } from "@/shared/types";
-import ImageSlider from "../../ImageSlider/ImageSlider";
-import Button from "../../Button/Button";
-import Modal from "../../Modal/Modal";
+import ImageSlider from "../ImageSlider/ImageSlider";
+import Button from "../Button/Button";
+import Modal from "../Modal/Modal";
 import { useState } from "react";
 
-const TailInfoDesktop = ({ tail, locale }: ITailInfoProps) => {
+const TailInfo = ({ tail, locale, translation }: ITailInfoProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isAngelModalOpen, setIsAngelModalOpen] = useState(false);
+
+  const {
+    adoptButton,
+    oneTimeHelpButton,
+    adoptDescription,
+    name,
+    connectButton,
+  } = translation;
+
   return (
-    <div className="flex  bg-white">
+    <div className="flex flex-col items-center lg:flex-row gap-y-7 lg:gap-y-0 lg:bg-white">
       <ImageSlider images={tail.images} />
-      <div className="flex flex-col justify-center px-[76px]">
-        <h2 className="mb-5 font-arial font-black text-black text-[32px] leading-[130%]">
+      <div className="flex flex-col justify-center p-6 lg:px-[76px] bg-white rounded-[12px] lg:rounded-none">
+        <h2 className="mb-4 lg:mb-5 font-arial font-black text-black text-[24px] lg:text-[32px] leading-[130%]">
           {tail.name}
         </h2>
         <div className="flex flex-col gap-4">
           {tail.description.map((descr, index) => (
-            <p className="text-black text-[16px] leading-[130%]" key={index}>
+            <p
+              className="text-[14px] lg:text-[16px] leading-[130%]"
+              key={index}
+            >
               {descr}
             </p>
           ))}
         </div>
-        <div className="flex flex-col max-w-[364px] mt-8 gap-2">
-          <Button
-            onClick={() => setIsModalOpen(true)}
-            text={locale === "uk" ? "Взяти в родину" : "Take into the family"}
-          />
+        <div className="flex flex-col max-w-[364px] mt-7 lg:mt-8 gap-2 mx-auto lg:mx-0">
+          <Button onClick={() => setIsModalOpen(true)} text={adoptButton} />
           <Button
             onClick={() => setIsAngelModalOpen(true)}
             variant="outline"
-            text={
-              locale === "uk"
-                ? "Стати янголом - опікуном"
-                : "Become a guardian - angel"
-            }
+            text={oneTimeHelpButton}
           />
         </div>
       </div>
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-        <h2 className="text-center text-[24px] leading-[130%] text-[#1D1D1D] uppercase mt-[40px]">
-          {locale === "uk" ? "ВЗЯТИ В РОДИНУ" : "TAKE INTO THE FAMILY"}
+        <h2 className="text-center font-arial font-black text-[24px] leading-[130%] text-[#1D1D1D] uppercase mt-[40px]">
+          {adoptButton}
         </h2>
-        <p className="text-[#1D1D1D] text-[18px] leading-[144%] mt-6">
-          {locale === "uk"
-            ? "Щоб взяти в родину хвостика, будь ласка, зв’яжіться з його опікуном за цим номером"
-            : "To take the tail into the family, please contact its guardian at this number"}
+        <p className="text-[14px] lg:text-[16px] leading-[144%] mt-[18px] lg:mt-6 text-center">
+          {adoptDescription}
         </p>
-        <p className="text-[18px] leading-[130%] text-black mt-6">Анатолій</p>
-        <p className="text-[18px] leading-[130%] text-black mt-6 px-[6px] py-3 border border-[#D4D4D4] rounded-[4px]">
+        <p className="text-[16px] lg:text-[18px] leading-[130%] mt-6">{name}</p>
+        <p className="text-[14px] lg:text-[16px] leading-[130%] mt-2 px-[14px] py-[11px] border border-[#A1A1AA] rounded-[4px]">
           +380 93 098 57 78
         </p>
         <Button
           onClick={() => setIsModalOpen(false)}
           className="mt-6 w-full"
-          text={locale === "uk" ? "Зрозуміло" : "Understood"}
+          text={connectButton}
         />
       </Modal>
 
@@ -85,4 +88,4 @@ const TailInfoDesktop = ({ tail, locale }: ITailInfoProps) => {
   );
 };
 
-export default TailInfoDesktop;
+export default TailInfo;

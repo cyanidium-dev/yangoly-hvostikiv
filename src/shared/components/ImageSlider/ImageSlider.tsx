@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
+import { CloseIcon } from "../../../../public/images/icons";
 import { cn } from "@/shared/utils";
 
 const ImageSlider = ({ images }: { images: string[] }) => {
@@ -17,8 +18,8 @@ const ImageSlider = ({ images }: { images: string[] }) => {
   };
 
   return (
-    <div className="flex gap-4 items-start bg-white">
-      <div className="flex flex-col gap-6">
+    <div className="flex flex-col-reverse lg:flex-row gap-4 items-start w-full lg:w-auto lg:bg-white">
+      <div className="flex lg:flex-col gap-[15px] lg:gap-6 w-full lg:w-auto max-w-[706px] lg:max-w-full mx-auto lg:mx-0">
         <AnimatePresence mode="popLayout">
           {thumbs.map((image, index) => {
             const globalIndex = images.indexOf(image);
@@ -31,7 +32,7 @@ const ImageSlider = ({ images }: { images: string[] }) => {
                 exit={{ y: -20, opacity: 0 }}
                 transition={{ duration: 0.3, ease: "easeInOut" }}
                 className={cn(
-                  "relative aspect-[101/142] min-w-[101px] min-h-[142px] rounded-[8px] cursor-pointer",
+                  "relative aspect-[99/104] lg:aspect-[101/142] min-w-[99px] lg:min-w-[101px] min-h-[104px] lg:min-h-[142px] rounded-[6px] lg:rounded-[10px] cursor-pointer",
                   globalIndex === selectedIndex &&
                     "border-2 border-primary-orange"
                 )}
@@ -41,7 +42,7 @@ const ImageSlider = ({ images }: { images: string[] }) => {
                   src={image}
                   alt={`Thumbnail ${image}`}
                   fill={true}
-                  className="object-cover rounded-[8px]"
+                  className="object-cover rounded-[4px] lg:rounded-[8px]"
                 />
               </motion.button>
             );
@@ -51,13 +52,13 @@ const ImageSlider = ({ images }: { images: string[] }) => {
 
       <motion.div
         key={selectedIndex}
-        className="lg:w-[420px] xl:w-[580px] h-[474px] relative"
+        className="w-full max-w-[706px] lg:max-w-full aspect-[328/264] lg:aspect-auto lg:w-[420px] xl:w-[580px] lg:h-[474px] mx-auto lg:mx-0 relative rounded-[8px] lg:rounded-r-none overflow-hidden"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
       >
         <Image
-          className="object-cover hover:scale-[1.01] transition-all duration-300 cursor-pointer rounded-tl-[8px] rounded-bl-[8px]"
+          className="object-cover hover:scale-[1.05] transition duration-1000 ease-in-out cursor-pointer"
           src={images[selectedIndex]}
           alt={`Selected Image ${selectedIndex}`}
           fill={true}
@@ -77,17 +78,23 @@ const ImageSlider = ({ images }: { images: string[] }) => {
             onClick={() => setIsModalOpen(false)}
           >
             <motion.div
-              className="relative w-[90vw] max-w-[800px] h-[90vh] max-h-[600px]"
+              className="relative w-[90vw] max-w-[800px] h-[90vh] max-h-[600px] rounded-lg overflow-hidden"
               initial={{ scale: 0.8 }}
               animate={{ scale: 1 }}
               exit={{ scale: 0.8 }}
               onClick={(e) => e.stopPropagation()}
             >
+              <button
+                onClick={() => setIsModalOpen(false)}
+                className="absolute right-6 top-6 p-2 hover:bg-gray-100 bg-opacity-[1%] rounded-full z-10 transition duration-300 ease-in-out"
+              >
+                <CloseIcon variant="secondary" className="w-6 h-6" />
+              </button>
               <Image
                 src={images[selectedIndex]}
                 alt="Full-size Image"
                 fill={true}
-                className="object-contain rounded-lg"
+                className="object-cover object-center"
               />
             </motion.div>
           </motion.div>

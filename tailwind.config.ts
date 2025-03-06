@@ -32,7 +32,7 @@ const config: Config = {
             active: "#464847",
           },
           orange: {
-            DEFAULT: "#FF9332",
+            DEFAULT: "#EACCAA",
             hover: "#FF8322",
             active: "#FF7312",
           },
@@ -43,7 +43,7 @@ const config: Config = {
             active: "#999999",
           },
           green: {
-            DEFAULT: "#34AD5D",
+            DEFAULT: "#74C396",
           },
         },
         background: {
@@ -72,7 +72,7 @@ const config: Config = {
       },
       boxShadow: {
         blogCard: "0px 4px 24px 3px rgba(104, 104, 104, 0.12)",
-        pagination: "0px 10px 56px 2px #7979791F"
+        pagination: "0px 10px 56px 2px #7979791F",
       },
     },
   },

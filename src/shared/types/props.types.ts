@@ -11,6 +11,7 @@ import {
   INavigationItem,
   IPartenrsTranslation,
   IPartnershipTranslation,
+  ITails,
 } from "./dictionary.types";
 import * as yup from "yup";
 import Link from "next/link";
@@ -287,19 +288,10 @@ export interface IModalProps extends ComponentProps<"div"> {
   modalClassName?: string;
 }
 
-export interface ITailProps {
-  image: string;
-  images: string[];
-  name: string;
-  buttonText: string;
-  categories: string[];
-  description: string[];
-  id: string;
-}
-
 export interface ITailInfoProps {
-  tail: ITailProps;
+  tail: ITailItem;
   locale: Locale;
+  translation: ITails;
 }
 
 export interface IBlogProps {
@@ -320,16 +312,52 @@ export interface INewsItem {
   secondaryPhoto: string;
 }
 
+export interface ITailItem {
+  id: string;
+  image: string;
+  images: string[];
+  name: string;
+  description: string[];
+  sex: string;
+  sterilized: string;
+  categories: string[];
+}
+
 export interface IBlogCardProps {
   blogItem: INewsItem;
   className?: string;
+  translation: IBlog;
 }
 
 export interface IBlogListProps {
   lang: Locale;
+  translation: IBlog;
 }
 
 export interface IBlogArticleProps {
   article: INewsItem;
   translation: IBlog;
+}
+
+export interface ITailsProps {
+  translation: ITails;
+  lang: Locale;
+}
+
+export interface IRandomTailCardsProps {
+  translation: ITails;
+  tails: ITailItem[];
+}
+
+export interface ITailProps {
+  translation: ITails;
+  tail: ITailItem;
+  randomTails: ITailItem[];
+  locale: Locale;
+}
+
+export interface IAdoptModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+  translation: ITails;
 }

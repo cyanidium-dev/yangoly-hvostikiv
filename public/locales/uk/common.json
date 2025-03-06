@@ -216,7 +216,7 @@
     "modalTitle": "Щоб стати нашим партнером, залиште ваші контактні дані"
   },
   "sterilization": {
-    "title": "Стерелізація хвостиків",
+    "title": "Стерилізація хвостиків",
     "paragraphs": [
       {
         "segments": [
@@ -238,8 +238,8 @@
   },
   "filters": {
     "allTails": "Всі хвостики",
-    "needsSterilization": "Потребують стерилізацію",
-    "needsFamily": "Потребують сім'ю",
+    "needsSterilization": "Потребують стерилізації",
+    "needsFamily": "Потребують сім'ї",
     "adopted": "Усиновлені"
   },
   "chairtyEvents": {
@@ -267,6 +267,17 @@
   },
   "blog": {
     "title": "Новини нашого фонду",
-    "timeToRead": " хв на читання"
+    "timeToRead": " хв на читання",
+    "detailsButton": "Детальніше"
+  },
+  "tails": {
+    "detailsButton": "Детальніше",
+    "allTails": "Всі хвостики",
+    "adoptButton": "Взяти в родину",
+    "oneTimeHelpButton": "Разова допомога",
+    "adoptDescription": "Щоб взяти в родину хвостика, будь ласка, зв’яжіться з його опікуном за цим номером",
+    "name": "Анатолій",
+    "connectButton": "Зв'язатися",
+    "sterilize": "Стерилізувати"
   }
 }

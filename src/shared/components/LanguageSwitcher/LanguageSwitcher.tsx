@@ -80,8 +80,10 @@ const LanguageSwitcher = () => {
           {languages[currentLocale]?.name}
         </span>
         <ArrowDonwIcon
-          color="#262827"
-          className={cn("w-4 h-4 transition-transform", isOpen && "rotate-180")}
+          className={cn(
+            "w-4 h-4 transition-transform text-[#262827]",
+            isOpen && "rotate-180"
+          )}
         />
       </button>
 

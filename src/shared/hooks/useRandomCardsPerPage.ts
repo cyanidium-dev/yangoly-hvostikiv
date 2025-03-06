@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 
-export const useItemsPerPage = () => {
+export const useRandomCardsPerPage = () => {
   const [itemsPerPage, setItemsPerPage] = useState(6);
 
   useEffect(() => {
@@ -10,10 +10,12 @@ export const useItemsPerPage = () => {
 
       if (width < 768) {
         setItemsPerPage(3);
+      } else if (width < 1024) {
+        setItemsPerPage(4);
       } else if (width < 1512) {
-        setItemsPerPage(6);
+        setItemsPerPage(3);
       } else {
-        setItemsPerPage(8);
+        setItemsPerPage(4);
       }
     };
 

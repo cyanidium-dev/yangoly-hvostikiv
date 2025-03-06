@@ -3,6 +3,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/shared/utils";
+import { CloseIcon } from "../../../../public/images/icons";
 
 const ImageSlider = ({ images }: { images: string[] }) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -77,17 +78,23 @@ const ImageSlider = ({ images }: { images: string[] }) => {
             onClick={() => setIsModalOpen(false)}
           >
             <motion.div
-              className="relative w-[90vw] max-w-[800px] h-[90vh] max-h-[600px] rounded-lg"
+              className="relative w-[90vw] max-w-[800px] h-[90vh] max-h-[600px] rounded-lg overflow-hidden"
               initial={{ scale: 0.8 }}
               animate={{ scale: 1 }}
               exit={{ scale: 0.8 }}
               onClick={(e) => e.stopPropagation()}
             >
+              <button
+                onClick={() => setIsModalOpen(false)}
+                className="absolute right-6 top-6 p-2 hover:bg-gray-100 bg-opacity-[1%] rounded-full z-10 transition duration-300 ease-in-out"
+              >
+                <CloseIcon variant="secondary" className="w-6 h-6" />
+              </button>
               <Image
                 src={images[selectedIndex]}
                 alt="Full-size Image"
                 fill={true}
-                className="object-contain rounded-lg"
+                className="object-cover object-center"
               />
             </motion.div>
           </motion.div>

@@ -2,6 +2,7 @@ import { ComponentProps } from "react";
 import { dictionaries } from "../utils/getDictionary";
 import {
   IAboutTranslation,
+  IBlog,
   IContactsTranslation,
   IDonateAmountSectionTranslation,
   IDonateModalTranslation,
@@ -299,4 +300,36 @@ export interface ITailProps {
 export interface ITailInfoProps {
   tail: ITailProps;
   locale: Locale;
+}
+
+export interface IBlogProps {
+  translation: IBlog;
+  lang: Locale;
+}
+
+export interface INewsItem {
+  id: string;
+  date: string;
+  title: string;
+  description: string;
+  mainPart: {
+    lists: { title: string; items: string[] }[];
+    text: string;
+  };
+  mainPhoto: string;
+  secondaryPhoto: string;
+}
+
+export interface IBlogCardProps {
+  blogItem: INewsItem;
+  className?: string;
+}
+
+export interface IBlogListProps {
+  lang: Locale;
+}
+
+export interface IBlogArticleProps {
+  article: INewsItem;
+  translation: IBlog;
 }

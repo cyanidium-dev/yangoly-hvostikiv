@@ -1,5 +1,5 @@
 "use client";
-import React, { useCallback } from "react";
+import { useCallback } from "react";
 import { cn } from "@/shared/utils";
 import { CloseIcon } from "../../../../public/images/icons";
 import { IModalProps } from "@/shared/types";

@@ -11,7 +11,10 @@ const config: Config = {
   theme: {
     extend: {
       screens: {
+        tabxl: "1101px",
         xl: "1366px",
+        laptop: "1512px",
+        desk: "1920px",
       },
       colors: {
         dark: {
@@ -50,7 +53,7 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ["Raleway", "serif"],
+        raleway: ["var(--font-raleway)", "serif"],
         arial: ["Arial Black", "serif"],
       },
       animation: {
@@ -66,6 +69,10 @@ const config: Config = {
           "0%": { transform: "translateX(100%)" },
           "100%": { transform: "translateX(0%)" },
         },
+      },
+      boxShadow: {
+        blogCard: "0px 4px 24px 3px rgba(104, 104, 104, 0.12)",
+        pagination: "0px 10px 56px 2px #7979791F"
       },
     },
   },

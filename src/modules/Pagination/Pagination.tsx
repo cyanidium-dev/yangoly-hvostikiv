@@ -1,6 +1,4 @@
-"use client";
-import { usePathname } from "next/navigation";
-import { ArrowDonwIcon } from "../../../public/images/icons";
+import ArrowInCircleIcon from "../../../public/images/icons/ArrowInCircleIcon";
 
 export default function Pagination({
   currentPage,
@@ -13,9 +11,6 @@ export default function Pagination({
   maxVisiblePages?: number;
   onPageChange: (page: number) => void;
 }) {
-  const pathname = usePathname();
-  const lang = pathname.split("/")[1];
-
   const generatePageNumbers = () => {
     const pageNumbers = [];
     const halfVisible = Math.floor(maxVisiblePages / 2);
@@ -40,34 +35,46 @@ export default function Pagination({
   const pageNumbers = generatePageNumbers();
 
   return (
-    <div className="inline-flex justify-center items-center gap-[1px] rounded-[4px] border border-[#DDD] bg-[#DDD]">
-      {pageNumbers.map((page) => (
-        <button
-          key={page}
-          className={`px-[15px] py-2 h-[38px] text-[18px] font-sans-pro font-[600] leading-[144%] transition-colors 
+    <div className="inline-flex justify-center items-center gap-[35px]">
+      <button
+        className={`flex justify-center items-center p-[13px] lg:p-[16.5px] size-[52px] lg:size-[66px] rounded-[19.8px] shadow-pagination transition duration-300 ease-in-out
+          enabled:hover:brightness-[115%] enabled:active:scale-95 enabled:focus-visible:brightness-[115%]
+          ${currentPage === 1 ? "bg-white text-gray-400" : "bg-[#FF9332]"}`}
+        onClick={() => onPageChange(currentPage - 1)}
+        disabled={currentPage === 1}
+      >
+        <ArrowInCircleIcon className="rotate-180" />
+      </button>
+
+      <div>
+        {pageNumbers.map((page) => (
+          <button
+            key={page}
+            className={`px-[9px] py-2 text-[20px] font-medium leading-[16px] transition duration-300 ease-in-out
             ${
               page === currentPage
-                ? "bg-[#fc8f31] text-white hover:bg-opacity-80"
-                : "bg-white text-[#FF9332] hover:bg-[#fc8f31] hover:text-white"
+                ? "hover:bg-opacity-80 text-[#FF9332]"
+                : "  hover:text-[#FF9332]"
             }`}
-          onClick={() => onPageChange(page)}
-        >
-          {page}
-        </button>
-      ))}
+            onClick={() => onPageChange(page)}
+          >
+            {page}
+          </button>
+        ))}
+      </div>
 
       <button
-        className={`flex justify-center gap-[2px] items-center px-[15px] py-2 h-[38px] text-[18px] leading-[144%] transition-opacity 
+        className={`flex justify-center items-center p-[13px] lg:p-[16.5px] size-[52px] lg:size-[66px] rounded-[19.8px] shadow-pagination transition duration-300 ease-in-out
+           enabled:hover:brightness-[115%] enabled:active:scale-95 enabled:focus-visible:brightness-[115%] 
           ${
             currentPage === totalPages
-              ? "opacity-50 cursor-not-allowed"
-              : "bg-white text-[#FF9332] hover:bg-opacity-80"
+              ? "text-gray-400 bg-white"
+              : "bg-[#FF9332]"
           }`}
         onClick={() => onPageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
       >
-        {lang === "uk" ? "Далі" : "Next"}
-        <ArrowDonwIcon className="rotate-[270deg] w-4 h-4" color="#FF9332" />
+        <ArrowInCircleIcon />
       </button>
     </div>
   );

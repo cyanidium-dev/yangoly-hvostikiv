@@ -1,9 +1,8 @@
 import Contacts from "@/modules/Contacts/Contacts";
+import BlogArticle from "@/modules/BlogArticle/BlogArticle";
 import { getDictionary } from "@/shared/utils";
 import { PageParams } from "@/shared/types";
 import { newsList } from "../constants";
-import React from "react";
-import BlogArticle from "@/modules/BlogArticle/BlogArticle";
 
 export default async function ArticlePage({ params }: PageParams) {
   const { id, locale } = await params;

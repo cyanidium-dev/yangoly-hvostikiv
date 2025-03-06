@@ -1,8 +1,8 @@
-import { IBlogArticleProps } from "@/shared/types";
 import Image from "next/image";
-import React from "react";
-import { calculateReadingTime } from "@/shared/utils/calculateReadingTime";
+import { Fragment } from "react";
 import ClockIcon from "../../../public/images/icons/ClockIcon";
+import { calculateReadingTime } from "@/shared/utils/calculateReadingTime";
+import { IBlogArticleProps } from "@/shared/types";
 
 export default function BlogArticle({
   article,
@@ -41,14 +41,14 @@ export default function BlogArticle({
       </div>
       <div className="mb-[60px] lg:mb-[96px] text-[14px] lg:text-[18px] font-light leading-[130%]">
         {mainPart.lists.map((list, idx) => (
-          <React.Fragment key={idx}>
+          <Fragment key={idx}>
             <h2>{list.title}</h2>
             <ul>
               {list.items.map((item, idx) => (
                 <li key={idx}>{item}</li>
               ))}
             </ul>
-          </React.Fragment>
+          </Fragment>
         ))}
         <p>{mainPart.text}</p>
       </div>

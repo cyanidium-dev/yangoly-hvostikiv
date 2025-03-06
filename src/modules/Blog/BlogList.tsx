@@ -1,12 +1,11 @@
 "use client";
-import React from "react";
-import { newsList } from "@/app/[locale]/blog/constants";
-import BlogCard from "./BlogCard";
-import { IBlogListProps } from "@/shared/types";
-import Pagination from "../Pagination/Pagination";
-import { useSearchParams, useRouter } from "next/navigation";
-import { useItemsPerPage } from "@/shared/hooks/useItemsPerPage";
 import { useState, useEffect } from "react";
+import { useSearchParams, useRouter } from "next/navigation";
+import Pagination from "../Pagination/Pagination";
+import BlogCard from "./BlogCard";
+import { useItemsPerPage } from "@/shared/hooks/useItemsPerPage";
+import { IBlogListProps } from "@/shared/types";
+import { newsList } from "@/app/[locale]/blog/constants";
 
 export default function BlogList({ lang, translation }: IBlogListProps) {
   const router = useRouter();

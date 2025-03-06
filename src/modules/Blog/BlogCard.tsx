@@ -1,8 +1,7 @@
+import Image from "next/image";
+import Link from "next/link";
 import Button from "@/shared/components/Button/Button";
 import { IBlogCardProps } from "@/shared/types";
-import Image from "next/image";
-import React from "react";
-import Link from "next/link";
 
 export default function BlogCard({
   blogItem,

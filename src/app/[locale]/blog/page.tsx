@@ -1,8 +1,7 @@
 import Blog from "@/modules/Blog/Blog";
-import React from "react";
+import Contacts from "@/modules/Contacts/Contacts";
 import { getDictionary } from "@/shared/utils";
 import { PageParams } from "@/shared/types";
-import Contacts from "@/modules/Contacts/Contacts";
 
 export default async function BlogPage({ params }: PageParams) {
   const { locale } = await params;

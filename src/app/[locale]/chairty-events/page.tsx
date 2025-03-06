@@ -105,7 +105,7 @@ export default function CharityEventPage() {
       </div>
       {/* Переваги заходів */}
       <div className="bg-[#140A01] py-[70px]">
-        <div className="container mx-auto px-4 xl:px-[40px] md:flex md:gap-[40px] xl:flex-row-reverse xl:gap-[130px]">
+        <div className="container mx-auto px-4 xl:px-[40px] xl:pl-[100px] laptop:pl-[114px] md:flex md:gap-[40px] xl:flex-row-reverse xl:gap-[130px]">
           <Image
             src="/images/events/benefits-mob.jpg"
             alt="Event"
@@ -173,7 +173,7 @@ export default function CharityEventPage() {
       </div>
       {/* Секція з кнопками */}
       <div className="bg-green py-[60px] ">
-        <div className="container mx-auto px-4 xl:px-[40px] bg-green ">
+        <div className="container mx-auto px-4 xl:px-[40px] xl:pr-[100px] laptop:pr-[114px] bg-green ">
           <div className="md:flex md:gap-4 md:justify-between xl:flex-row-reverse xl:items-center">
             <div className="md:max-w-[450px] xl:max-w-[585px]">
               <div className="flex flex-col gap-4">

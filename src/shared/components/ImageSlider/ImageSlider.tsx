@@ -19,7 +19,7 @@ const ImageSlider = ({ images }: { images: string[] }) => {
 
   return (
     <div className="flex flex-col-reverse lg:flex-row gap-4 items-start w-full lg:w-auto lg:bg-white">
-      <div className="flex lg:flex-col gap-[15px] lg:gap-6 w-full lg:w-auto max-w-[678px] lg:max-w-full mx-auto lg:mx-0">
+      <div className="flex lg:flex-col gap-[15px] lg:gap-6 w-full lg:w-auto max-w-[706px] lg:max-w-full mx-auto lg:mx-0">
         <AnimatePresence mode="popLayout">
           {thumbs.map((image, index) => {
             const globalIndex = images.indexOf(image);
@@ -52,7 +52,7 @@ const ImageSlider = ({ images }: { images: string[] }) => {
 
       <motion.div
         key={selectedIndex}
-        className="w-full max-w-[678px] lg:max-w-full aspect-[328/264] lg:aspect-auto lg:w-[420px] xl:w-[580px] lg:h-[474px] mx-auto lg:mx-0 relative rounded-[8px] lg:rounded-r-none overflow-hidden"
+        className="w-full max-w-[706px] lg:max-w-full aspect-[328/264] lg:aspect-auto lg:w-[420px] xl:w-[580px] lg:h-[474px] mx-auto lg:mx-0 relative rounded-[8px] lg:rounded-r-none overflow-hidden"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}

@@ -6,7 +6,7 @@ const About = ({ translation }: IAboutProps) => {
   const { aboutUs, aboutOwner } = translation;
 
   return (
-    <section id="about" className="bg-white   xl:bg-primary-gray-100 py-20">
+    <section id="about" className="bg-orange-bg py-20">
       <div className="container px-4 xl:px-10 mx-auto ">
         <AboutUs translation={aboutUs} />
         <AboutOwner translation={aboutOwner} />

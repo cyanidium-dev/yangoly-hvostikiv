@@ -35,7 +35,7 @@ export default async function LocaleLayout({
         donateModalTranslataion={donateModal}
       />
       <div className="flex flex-col min-h-[100%]">
-        <main className="bg-background-gray h-full flex-1 w-full overflow-y-hidden overflow-x-hidden">
+        <main className="bg-orange-bg h-full flex-1 w-full overflow-y-hidden overflow-x-hidden">
           {children}
         </main>
         <Footer translation={footerNav} />

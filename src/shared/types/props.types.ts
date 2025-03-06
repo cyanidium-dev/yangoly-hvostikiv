@@ -153,6 +153,7 @@ export interface ILogoProps extends ComponentProps<typeof Link> {
 export interface IInfoBlockProps extends ComponentProps<"div"> {
   translation: IInformationBlockTranslation;
   children?: React.ReactNode;
+  titleClassName?: string;
 }
 
 interface IImage {
@@ -299,4 +300,21 @@ export interface ITailProps {
 export interface ITailInfoProps {
   tail: ITailProps;
   locale: Locale;
+}
+
+export interface IFundraisingCardProps {
+  image: string;
+  title: string;
+  totalAmount: number;
+  currentAmount: number;
+  currency: string;
+  buttonText: string;
+  onClick: () => void;
+  className?: string;
+}
+
+export interface ISlidesPaginationProps extends ComponentProps<"button"> {
+  direction: "prev" | "next";
+  onClick: () => void;
+  disabled?: boolean;
 }

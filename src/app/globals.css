@@ -7,6 +7,13 @@
   --foreground: #171717;
 }
 
+@font-face {
+  font-family: "ArialBlack";
+  src: url("../../public/fonts/ariblk.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -79,31 +86,27 @@ input:focus-visible,
 textarea:focus-visible {
   outline: none;
 }
-
+.swiper {
+  position: relative;
+}
 .swiper-pagination {
-  display: flex;
-  margin-top: 24px;
-  justify-content: center;
+  position: static !important;
+  display: flex !important;
+  justify-content: center !important;
+  margin-top: 32px !important;
 }
 .swiper-pagination-bullet {
-  width: 14px;
-  height: 14px;
-  display: block;
-  background-color: #d9d9d9;
-  opacity: 1;
+  width: 14px !important;
+  height: 14px !important;
+  background-color: #d9d9d9 !important;
+  opacity: 1 !important;
   margin: 0 4px !important;
-  color: #d9d9d9;
-  border-radius: 50px;
+  border-radius: 50px !important;
 }
-
 .swiper-pagination-bullet-active {
-  width: 14px;
-  height: 14px;
-  display: block;
-  background-color: #ff9332;
-  color: #ff9332;
-  border-radius: 50px;
-  opacity: 1;
+  background-color: #ff9332 !important;
+  border-radius: 50px !important;
+  opacity: 1 !important;
 }
 
 .hero-bg {
@@ -111,10 +114,23 @@ textarea:focus-visible {
   background-size: 100% 100%;
   background-position: center;
   background-repeat: no-repeat;
-  @media (min-width: 480px) {
-    /* background-image: url("../../public/images/hero-desk.jpg"); */
+  @media (min-width: 640px) {
+    background-image: url("../../public/images/hero-bg-desk.jpg");
   }
 }
+
+.event-mask {
+  background-image: url("../../public/images/events/mask-mob.png");
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  @media (min-width: 1366px) {
+    background-image: url("../../public/images/events/mask-desk.png");
+    background-position: right top -50px;
+    background-size: 90% 100%;
+  }
+}
+
 @layer utilities {
   .transition-base {
     @apply transition  duration-300 ease-in-out;

@@ -70,7 +70,7 @@ const NavItem = ({
   if (!item.dropdown) {
     return (
       <button
-        className="text-[#262827] hover:text-primary-gray text-center text-[18px] font-normal leading-[120%]"
+        className="text-[#27272A] hover:text-[#27272A]/60 text-center text-[18px] font-normal leading-[120%]"
         onClick={() => handleNavigation(item.href)}
       >
         {item.name}
@@ -82,7 +82,7 @@ const NavItem = ({
     <div className={cn(isOnBurger ? "w-full" : "relative")} ref={dropdownRef}>
       <button
         className={cn(
-          "text-[#262827] text-[18px] hover:text-primary-gray font-normal leading-[120%] flex items-center gap-1",
+          "text-[#27272A] text-[18px] hover:text-[#27272A]/60 font-normal leading-[120%] flex items-center gap-1",
           isOnBurger && "mx-auto"
         )}
         onClick={() => setIsOpen(!isOpen)}

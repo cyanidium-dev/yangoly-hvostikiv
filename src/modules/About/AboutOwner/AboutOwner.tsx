@@ -8,22 +8,23 @@ const AboutOwner = ({
   translation: IAboutOwnerTranslation;
 }) => {
   return (
-    <div className="flex flex-col xl:flex-row gap-6 xl:gap-0 items-start xl:items-center xl:bg-white xl:rounded-r-[32px]">
-      <div className="w-full xl:w-1/2">
-        <InfoBlock className="xl:pr-10 xl:pl-5" translation={translation} />
-      </div>
-
-      <div className="w-full xl:w-1/2">
-        <div className="relative w-full aspect-[355/344] xl:aspect-[722/689]">
-          <Image
-            src="/images/owner.jpg"
-            alt="Foundation Owner"
-            fill
-            className="object-cover rounded-br-[32px] xl:rounded-r-[32px]"
-            sizes="(max-width: 1280px) 100vw, 50vw"
-            priority
-          />
-        </div>
+    <div className="bg-orange-bg">
+      <div className="grid grid-cols-1 gap-6 xl:grid-cols-2 xl:gap-0">
+        <InfoBlock
+          titleClassName="xl:text-left"
+          className="px-[30px] py-[40px] flex flex-col  justify-center rounded-[20px] xl:px-[89px]  xl:py-10"
+          translation={translation}
+        />
+        <Image
+          src="/images/owner.jpg"
+          alt="Foundation Owner"
+          layout="responsive"
+          className="object-cover rounded-[20px]"
+          width={328}
+          height={400}
+          quality={100}
+          priority
+        />
       </div>
     </div>
   );

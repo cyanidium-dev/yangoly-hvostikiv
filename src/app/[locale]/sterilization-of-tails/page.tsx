@@ -33,7 +33,7 @@ export default function SterilizationPage() {
   if (!localTranslation) return null;
 
   return (
-    <section className="mt-[65px] mx-auto xl:mt-[140px] container py-8 px-4">
+    <section className=" mx-auto  container py-8 px-4">
       <div className="bg-white xl:flex xl:p-0">
         <h2 className="text-[24px] pt-5 xl:pt-0 xl:hidden text-center xl:text-left xl:text-[32px] text-black leading-[130%] mb-6">
           {localTranslation.title}

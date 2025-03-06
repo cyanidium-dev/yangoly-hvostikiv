@@ -48,7 +48,7 @@ const Header = ({
             </button>
             <Button
               variant="outline"
-              className="hidden xl:block text-[#FF9332] border-[#FF9332] hover:bg-[#FF9332] hover:text-white"
+              className="hidden xl:block bg-inherit text-dark border-dark hover:text-white hover:bg-dark"
               text={translation?.donateButton}
               onClick={() => setIsDonateModalOpen(true)}
             />

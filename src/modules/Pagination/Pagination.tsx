@@ -39,7 +39,9 @@ export default function Pagination({
       <button
         className={`flex justify-center items-center p-[13px] lg:p-[16.5px] size-[52px] lg:size-[66px] rounded-[19.8px] shadow-pagination transition duration-300 ease-in-out
           enabled:hover:brightness-[115%] enabled:active:scale-95 enabled:focus-visible:brightness-[115%]
-          ${currentPage === 1 ? "bg-white text-gray-400" : "bg-[#FF9332]"}`}
+          ${
+            currentPage === 1 ? "bg-white text-gray-400" : "bg-primary-orange"
+          }`}
         onClick={() => onPageChange(currentPage - 1)}
         disabled={currentPage === 1}
       >
@@ -53,8 +55,8 @@ export default function Pagination({
             className={`px-[9px] py-2 text-[20px] font-medium leading-[16px] transition duration-300 ease-in-out
             ${
               page === currentPage
-                ? "hover:bg-opacity-80 text-[#FF9332]"
-                : "  hover:text-[#FF9332]"
+                ? "hover:bg-opacity-80 text-primary-orange"
+                : "  hover:text-primary-orange"
             }`}
             onClick={() => onPageChange(page)}
           >
@@ -69,7 +71,7 @@ export default function Pagination({
           ${
             currentPage === totalPages
               ? "text-gray-400 bg-white"
-              : "bg-[#FF9332]"
+              : "bg-primary-orange"
           }`}
         onClick={() => onPageChange(currentPage + 1)}
         disabled={currentPage === totalPages}

@@ -32,7 +32,7 @@ const config: Config = {
             active: "#464847",
           },
           orange: {
-            DEFAULT: "#FF9332",
+            DEFAULT: "#EACCAA",
             hover: "#FF8322",
             active: "#FF7312",
           },

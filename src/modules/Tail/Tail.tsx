@@ -1,9 +1,8 @@
-import React from "react";
 import Link from "next/link";
-import { ArrowDonwIcon } from "../../../public/images/icons";
-import RandomTailCards from "@/shared/components/RandomTailCards/RandomTailCards";
-import { ITailProps } from "@/shared/types";
 import TailInfo from "@/shared/components/TailInfo/TailInfo";
+import RandomTailCards from "@/shared/components/RandomTailCards/RandomTailCards";
+import { ArrowDonwIcon } from "../../../public/images/icons";
+import { ITailProps } from "@/shared/types";
 
 export default function Tail({
   tail,
@@ -14,7 +13,7 @@ export default function Tail({
   const { allTails } = translation;
 
   return (
-    <section className="">
+    <section>
       <div className="mt-[65px] mx-auto xl:mt-[140px] container pt-8 pb-5 px-4 xl:px-10">
         <TailInfo tail={tail} locale={locale} translation={translation} />
       </div>

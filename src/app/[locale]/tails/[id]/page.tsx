@@ -1,8 +1,8 @@
-import { PageParams } from "@/shared/types";
-import { tails } from "../constans";
-import { getDictionary } from "@/shared/utils";
 import Tail from "@/modules/Tail/Tail";
 import Contacts from "@/modules/Contacts/Contacts";
+import { getDictionary } from "@/shared/utils";
+import { PageParams } from "@/shared/types";
+import { tails } from "../constans";
 
 export default async function TailPage({ params }: PageParams) {
   const { id, locale } = await params;

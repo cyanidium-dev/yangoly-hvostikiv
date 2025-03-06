@@ -1,8 +1,7 @@
 "use client";
-
-import { IRandomTailCardsProps } from "@/shared/types";
-import { useRandomCardsPerPage } from "@/shared/hooks/useRandomCardsPerPage";
 import TailCard from "../TailCard/TailCard";
+import { useRandomCardsPerPage } from "@/shared/hooks/useRandomCardsPerPage";
+import { IRandomTailCardsProps } from "@/shared/types";
 
 const RandomTailCards = ({ tails, translation }: IRandomTailCardsProps) => {
   const itemsToShow = useRandomCardsPerPage();

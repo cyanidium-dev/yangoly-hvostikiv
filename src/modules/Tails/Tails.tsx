@@ -9,7 +9,7 @@ import { useItemsPerPage } from "@/shared/hooks/useItemsPerPage";
 import { tails } from "@/app/[locale]/tails/constans";
 import { ITailsProps } from "@/shared/types";
 
-export default function Tails({ translation }: ITailsProps) {
+export default function Tails({ translation, lang }: ITailsProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [filter, setFilter] = useState(searchParams.get("filter") || "all");
@@ -25,8 +25,8 @@ export default function Tails({ translation }: ITailsProps) {
 
   const filteredTails =
     filter === "all"
-      ? tails
-      : tails.filter((tail) => tail.categories.includes(filter));
+      ? tails[lang]
+      : tails[lang].filter((tail) => tail.categories.includes(filter));
 
   const totalPages = Math.ceil(filteredTails.length / itemsPerPage);
   const currentItems = filteredTails.slice(

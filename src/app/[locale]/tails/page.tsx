@@ -9,7 +9,7 @@ export default async function TailsPage({ params }: PageParams) {
 
   return (
     <>
-      <Tails translation={tails} />
+      <Tails translation={tails} lang={locale} />
       <Contacts translation={contacts} lang={locale} />
     </>
   );

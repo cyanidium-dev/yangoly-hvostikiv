@@ -6,14 +6,14 @@ import { tails } from "../constans";
 
 export default async function TailPage({ params }: PageParams) {
   const { id, locale } = await params;
-  const tail = tails.find((tail) => tail.id === id);
+  const tail = tails[locale].find((tail) => tail.id === id);
   const { tails: translation, contacts } = await getDictionary(locale);
 
   if (!tail) {
     return null;
   }
 
-  const otherTails = tails.filter((t) => t.id !== id);
+  const otherTails = tails[locale].filter((t) => t.id !== id);
   const randomTails = otherTails.sort(() => 0.5 - Math.random()).slice(0, 4);
 
   return (

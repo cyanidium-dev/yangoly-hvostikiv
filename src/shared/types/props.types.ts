@@ -341,6 +341,7 @@ export interface IBlogArticleProps {
 
 export interface ITailsProps {
   translation: ITails;
+  lang: Locale;
 }
 
 export interface IRandomTailCardsProps {

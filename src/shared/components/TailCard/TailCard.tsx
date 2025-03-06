@@ -1,6 +1,6 @@
 import Image from "next/image";
-import React, { ComponentProps } from "react";
 import Link from "next/link";
+import { ComponentProps } from "react";
 import Button from "../Button/Button";
 import { ITailItem, ITails } from "@/shared/types";
 

@@ -80,7 +80,7 @@ export const UniversalForm = ({
       >
         {fields.map((field) => (
           <div key={field.name} className="space-y-1">
-            <label className="block text-[18px] leading-[130%] text-[#1D1D1D]">
+            <label className="block text-[16px] lg:text-[18px] leading-[130%] text-[#1D1D1D]">
               {field.label}
               {field.required && (
                 <span className={cn("", errors[field.name] && "text-red-500")}>
@@ -107,12 +107,7 @@ export const UniversalForm = ({
           </div>
         ))}
 
-        <Button
-          className="w-full py-3"
-          variant="secondary"
-          text={submitText}
-          type="submit"
-        />
+        <Button className="w-full py-3" text={submitText} type="submit" />
       </form>
     </div>
   );

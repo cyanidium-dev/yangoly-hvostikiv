@@ -1,17 +1,13 @@
 import { ISvgIconProps } from "@/shared/types";
 
-export const ArrowDonwIcon = ({
-  color,
-  className,
-  ...props
-}: ISvgIconProps) => {
+export const ArrowDonwIcon = ({ className, ...props }: ISvgIconProps) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="25"
       height="25"
       viewBox="0 0 25 25"
-      fill={color}
+      fill="currentColor"
       className={`w-6 h-6 ${className}`}
       {...props}
     >

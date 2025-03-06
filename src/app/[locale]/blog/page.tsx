@@ -1,15 +1,15 @@
+import Blog from "@/modules/Blog/Blog";
 import Contacts from "@/modules/Contacts/Contacts";
-import Tails from "@/modules/Tails/Tails";
 import { getDictionary } from "@/shared/utils";
 import { PageParams } from "@/shared/types";
 
-export default async function TailsPage({ params }: PageParams) {
+export default async function BlogPage({ params }: PageParams) {
   const { locale } = await params;
-  const { contacts, tails } = await getDictionary(locale);
+  const { blog, contacts } = await getDictionary(locale);
 
   return (
     <>
-      <Tails translation={tails} lang={locale} />
+      <Blog translation={blog} lang={locale} />
       <Contacts translation={contacts} lang={locale} />
     </>
   );

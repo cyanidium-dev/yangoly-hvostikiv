@@ -2,6 +2,7 @@ import { ComponentProps } from "react";
 import { dictionaries } from "../utils/getDictionary";
 import {
   IAboutTranslation,
+  IBlog,
   IContactsTranslation,
   IDonateAmountSectionTranslation,
   IDonateModalTranslation,
@@ -10,6 +11,7 @@ import {
   INavigationItem,
   IPartenrsTranslation,
   IPartnershipTranslation,
+  ITails,
 } from "./dictionary.types";
 import * as yup from "yup";
 import Link from "next/link";
@@ -287,18 +289,71 @@ export interface IModalProps extends ComponentProps<"div"> {
   modalClassName?: string;
 }
 
-export interface ITailProps {
+export interface ITailInfoProps {
+  tail: ITailItem;
+  locale: Locale;
+  translation: ITails;
+}
+
+export interface IBlogProps {
+  translation: IBlog;
+  lang: Locale;
+}
+
+export interface INewsItem {
+  id: string;
+  date: string;
+  title: string;
+  description: string;
+  mainPart: {
+    lists: { title: string; items: string[] }[];
+    text: string;
+  };
+  mainPhoto: string;
+  secondaryPhoto: string;
+}
+
+export interface ITailItem {
+  id: string;
   image: string;
   images: string[];
   name: string;
-  buttonText: string;
-  categories: string[];
   description: string[];
-  id: string;
+  sex: string;
+  sterilized: string;
+  categories: string[];
 }
 
-export interface ITailInfoProps {
-  tail: ITailProps;
+export interface IBlogCardProps {
+  blogItem: INewsItem;
+  className?: string;
+  translation: IBlog;
+}
+
+export interface IBlogListProps {
+  lang: Locale;
+  translation: IBlog;
+}
+
+export interface IBlogArticleProps {
+  article: INewsItem;
+  translation: IBlog;
+}
+
+export interface ITailsProps {
+  translation: ITails;
+  lang: Locale;
+}
+
+export interface IRandomTailCardsProps {
+  translation: ITails;
+  tails: ITailItem[];
+}
+
+export interface ITailProps {
+  translation: ITails;
+  tail: ITailItem;
+  randomTails: ITailItem[];
   locale: Locale;
 }
 
@@ -317,4 +372,9 @@ export interface ISlidesPaginationProps extends ComponentProps<"button"> {
   direction: "prev" | "next";
   onClick: () => void;
   disabled?: boolean;
+}
+export interface IAdoptModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+  translation: ITails;
 }

@@ -1,5 +1,5 @@
 "use client";
-import React, { useCallback } from "react";
+import { useCallback } from "react";
 import { cn } from "@/shared/utils";
 import { CloseIcon } from "../../../../public/images/icons";
 import { IModalProps } from "@/shared/types";
@@ -37,7 +37,7 @@ const Modal = ({
         >
           <motion.div
             className={cn(
-              "bg-white w-[90%] max-w-lg xl:max-w-2xl h-auto p-6 rounded-lg relative",
+              "bg-white w-[90%] max-w-lg xl:max-w-2xl h-auto p-6 rounded-[20px] relative",
               modalClassName
             )}
             initial={{ scale: 0.8 }}
@@ -47,7 +47,7 @@ const Modal = ({
           >
             <button
               onClick={onClose}
-              className="absolute right-4 top-4 p-2 hover:bg-gray-100 rounded-full z-10"
+              className="absolute right-6 top-3 p-2 hover:bg-gray-100 rounded-full z-10"
             >
               <CloseIcon variant="secondary" className="w-6 h-6" />
             </button>

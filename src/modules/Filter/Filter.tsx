@@ -39,13 +39,13 @@ export default function Filter({ selectedFilter }: { selectedFilter: string }) {
   };
 
   return (
-    <div className="flex gap-6 mb-6 flex-wrap justify-center">
+    <div className="flex flex-col lg:flex-row  justify-center gap-y-3 lg:gap-x-[44px] mb-10 lg:mb-[44px]">
       {filterOptions.map((filter) => (
         <button
           key={filter.value}
-          className={`text-[24px] pb-1 leading-[130%] ${
+          className={`text-[16px] lg:text-[20px] leading-[130%] hover:text-primary-green focus-visible:text-primary-green transition duration-300 ease-in-out ${
             selectedFilter === filter.value
-              ? "text-[#34AD5D] border-b border-[#34AD5D]"
+              ? "text-primary-green font-bold"
               : ""
           }`}
           onClick={() => handleFilterChange(filter.value)}

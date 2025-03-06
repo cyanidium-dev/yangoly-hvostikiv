@@ -9,7 +9,7 @@ const Button = ({
   ...props
 }: IButtonProps) => {
   const baseStyles =
-    "text-white uppercase py-4 px-6 rounded-[28px] transition-all duration-300 text-[18px]  leading-[110%] font-bold";
+    "text-white uppercase py-3 px-6 rounded-[28px] transition-all duration-300 text-[18px] leading-[110%] font-bold";
 
   const variantStyles = {
     primary: "bg-green hover:bg-green/90  active:scale-95",

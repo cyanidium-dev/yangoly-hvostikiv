@@ -9,18 +9,20 @@ const TailInfoDesktop = ({ tail, locale }: ITailInfoProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isAngelModalOpen, setIsAngelModalOpen] = useState(false);
   return (
-    <div className="flex gap-10">
+    <div className="flex  bg-white">
       <ImageSlider images={tail.images} />
-      <div className="flex flex-col justify-center">
-        <h2 className="text-black text-[32px] leading-[130%]">{tail.name}</h2>
+      <div className="flex flex-col justify-center px-[76px]">
+        <h2 className="mb-5 font-arial font-black text-black text-[32px] leading-[130%]">
+          {tail.name}
+        </h2>
         <div className="flex flex-col gap-4">
           {tail.description.map((descr, index) => (
-            <p className="text-black text-[18px] leading-[130%]" key={index}>
+            <p className="text-black text-[16px] leading-[130%]" key={index}>
               {descr}
             </p>
           ))}
         </div>
-        <div className="flex flex-col max-w-[364px] mt-[30px] gap-4">
+        <div className="flex flex-col max-w-[364px] mt-8 gap-2">
           <Button
             onClick={() => setIsModalOpen(true)}
             text={locale === "uk" ? "Взяти в родину" : "Take into the family"}

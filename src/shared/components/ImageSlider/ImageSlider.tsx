@@ -31,7 +31,7 @@ const ImageSlider = ({ images }: { images: string[] }) => {
                 exit={{ y: -20, opacity: 0 }}
                 transition={{ duration: 0.3, ease: "easeInOut" }}
                 className={cn(
-                  "relative aspect-[101/142] min-w-[101px] min-h-[142px] rounded-[8px] cursor-pointer",
+                  "relative aspect-[101/142] min-w-[101px] min-h-[142px] rounded-[10px] cursor-pointer",
                   globalIndex === selectedIndex &&
                     "border-2 border-primary-orange"
                 )}
@@ -51,13 +51,13 @@ const ImageSlider = ({ images }: { images: string[] }) => {
 
       <motion.div
         key={selectedIndex}
-        className="lg:w-[420px] xl:w-[580px] h-[474px] relative"
+        className="lg:w-[420px] xl:w-[580px] h-[474px] relative rounded-l-[8px] overflow-hidden"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
       >
         <Image
-          className="object-cover hover:scale-[1.01] transition-all duration-300 cursor-pointer rounded-tl-[8px] rounded-bl-[8px]"
+          className="object-cover hover:scale-[1.05] transition duration-1000 ease-in-out cursor-pointer rounded-l-[8px]"
           src={images[selectedIndex]}
           alt={`Selected Image ${selectedIndex}`}
           fill={true}
@@ -77,7 +77,7 @@ const ImageSlider = ({ images }: { images: string[] }) => {
             onClick={() => setIsModalOpen(false)}
           >
             <motion.div
-              className="relative w-[90vw] max-w-[800px] h-[90vh] max-h-[600px]"
+              className="relative w-[90vw] max-w-[800px] h-[90vh] max-h-[600px] rounded-lg"
               initial={{ scale: 0.8 }}
               animate={{ scale: 1 }}
               exit={{ scale: 0.8 }}

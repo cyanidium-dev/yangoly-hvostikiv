@@ -288,18 +288,8 @@ export interface IModalProps extends ComponentProps<"div"> {
   modalClassName?: string;
 }
 
-export interface ITailProps {
-  image: string;
-  images: string[];
-  name: string;
-  buttonText: string;
-  categories: string[];
-  description: string[];
-  id: string;
-}
-
 export interface ITailInfoProps {
-  tail: ITailProps;
+  tail: ITailItem;
   locale: Locale;
 }
 
@@ -350,4 +340,9 @@ export interface IBlogArticleProps {
 
 export interface ITailsProps {
   translation: ITails;
+}
+
+export interface IRandomTailCardsProps {
+  translation: ITails;
+  tails: ITailItem[];
 }

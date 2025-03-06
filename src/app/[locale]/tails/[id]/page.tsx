@@ -6,17 +6,19 @@ import TailInfoDesktop from "@/shared/components/TailInfo/TailInfoDesktop/TailIn
 import Link from "next/link";
 import { ArrowDonwIcon } from "../../../../../public/images/icons";
 import RandomTailCards from "@/shared/components/RandomTailCards/RandomTailCards";
+import { getDictionary } from "@/shared/utils";
 
 export default async function TailPage({ params }: PageParams) {
   const { id, locale } = await params;
   const tail = tails.find((tail) => tail.id === id);
+  const { tails: translation } = await getDictionary(locale);
 
   if (!tail) {
-    return null
+    return null;
   }
 
   const otherTails = tails.filter((t) => t.id !== id);
-  const randomTails = otherTails.sort(() => 0.5 - Math.random()).slice(0, 3);
+  const randomTails = otherTails.sort(() => 0.5 - Math.random()).slice(0, 4);
 
   return (
     <section className="bg-white xl:bg-[#F8F7F7]">
@@ -39,7 +41,7 @@ export default async function TailPage({ params }: PageParams) {
               <span>{locale === "uk" ? "Всі хвостики" : "All tails"}</span>
               <ArrowDonwIcon className="rotate-[270deg] w-6 h-6 transition-colors duration-300 group-hover:text-primary-orange" />
             </Link>
-            <RandomTailCards tails={randomTails} />
+            <RandomTailCards tails={randomTails} translation={translation} />
           </div>
         </div>
       </div>

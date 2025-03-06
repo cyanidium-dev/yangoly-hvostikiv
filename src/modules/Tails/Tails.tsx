@@ -44,13 +44,13 @@ export default function Tails({ translation }: ITailsProps) {
   return (
     <section className="mt-[65px] mx-auto xl:mt-[140px] container pt-[60px] lg:pt-8 pb-[100px] lg:pb-[148px] px-4 xl:px-10">
       <Filter selectedFilter={filter} />
-      <ul className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
-        {currentItems.map((tail, index) => (
-          <li key={index}>
-            <TailCard tail={tail} translation={translation} />
-          </li>
-        ))}
-      </ul>
+      <div className="flex justify-center">
+        <ul className="grid grid-cols-1 md:grid-cols-2 tabxl:grid-cols-3 laptop:grid-cols-4 gap-5 xl:gap-x-5 xl:gap-y-8 justify-items-center">
+          {currentItems.map((tail, index) => (
+            <TailCard key={index} tail={tail} translation={translation} />
+          ))}
+        </ul>
+      </div>
       <div className="flex justify-center mt-8 lg:mt-12">
         <Pagination
           currentPage={currentPage}

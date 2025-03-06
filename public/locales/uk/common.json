@@ -271,6 +271,7 @@
     "detailsButton": "Детальніше"
   },
   "tails": {
-    "detailsButton": "Детальніше"
+    "detailsButton": "Детальніше",
+    "allTails": "Всі хвостики"
   }
 }

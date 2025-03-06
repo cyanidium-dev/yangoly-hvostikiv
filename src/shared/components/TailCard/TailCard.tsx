@@ -13,7 +13,7 @@ const TailCard = ({ tail, translation }: ITailCardProps) => {
   const { detailsButton } = translation;
   const { name, image, description, sex, sterialized, id } = tail;
   return (
-    <div className="max-w-[343px] desk:max-w-[436px] min-h-full py-8 px-4 lg:px-6 rounded-[20px] bg-[#FCFCFC] shadow-blogCard">
+    <li className="max-w-[343px] desk:max-w-[436px] min-h-full py-8 px-4 lg:px-6 rounded-[20px] bg-[#FCFCFC] shadow-blogCard">
       <Link href={`/tails/${id}`}>
         <div className="relative w-full h-[246px] desk:h-[323px] mb-[26px] aspect-[296/246] rounded-[16px]">
           <Image
@@ -47,7 +47,7 @@ const TailCard = ({ tail, translation }: ITailCardProps) => {
       <Link href={`/tails/${id}`} className="block mt-auto h-[47px]">
         <Button text={detailsButton} fullWidth />
       </Link>
-    </div>
+    </li>
   );
 };
 

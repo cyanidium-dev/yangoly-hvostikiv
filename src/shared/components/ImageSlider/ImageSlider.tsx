@@ -2,8 +2,8 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { cn } from "@/shared/utils";
 import { CloseIcon } from "../../../../public/images/icons";
+import { cn } from "@/shared/utils";
 
 const ImageSlider = ({ images }: { images: string[] }) => {
   const [selectedIndex, setSelectedIndex] = useState(0);

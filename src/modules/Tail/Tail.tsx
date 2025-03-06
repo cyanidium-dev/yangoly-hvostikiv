@@ -23,11 +23,11 @@ export default function Tail({
         <div className="container mx-auto px-4 xl:px-10">
           <div className="mt-8">
             <Link
-              className="flex justify-between items-center lg:items-start font-arial font-black uppercase text-[24px] lg:text-[32px] leading-[130%] text-black transition-colors duration-300 hover:text-primary-orange"
+              className="flex justify-center lg:justify-between items-center font-arial font-black uppercase text-[24px] lg:text-[32px] leading-[130%] text-black transition-colors duration-300 hover:text-primary-orange"
               href="/tails"
             >
               <h2>{allTails}</h2>
-              <ArrowDonwIcon className="rotate-[270deg] w-6 h-6 transition-colors duration-300 group-hover:text-primary-orange" />
+              <ArrowDonwIcon className="hidden lg:block rotate-[270deg] w-6 h-6 transition-colors duration-300 group-hover:text-primary-orange" />
             </Link>
             <RandomTailCards tails={randomTails} translation={translation} />
           </div>

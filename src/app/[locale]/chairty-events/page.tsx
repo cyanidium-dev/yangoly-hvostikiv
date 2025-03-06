@@ -85,16 +85,16 @@ export default function CharityEventPage() {
         </h2>
       </div>
       {/* 4 абзаци */}
-      <div className="container mx-auto px-4 xl:px-[40px] ">
-        <div className="grid mt-[48px] pb-[100px] xl:pb-[148px] grid-cols-1 md:grid-cols-2 xl:flex xl:gap-[80px] gap-[32px] ">
+      <div className="container  flex justify-center mx-auto px-4 xl:px-[40px] ">
+        <div className="grid  mt-[48px] pb-[100px] xl:pb-[148px] grid-cols-1 md:grid-cols-2 xl:flex xl:gap-[80px] gap-[32px] ">
           {localTranslation.paragraphs.map((paragraph, index) => (
             <p
               className={clsx(
                 "text-[18px] text-black leading-[130%] font-light",
-                index === 0 && "xl:max-w-[235px]",
-                index === 1 && "xl:max-w-[265px]",
-                index === 2 && "xl:max-w-[326px]",
-                index === 3 && "xl:max-w-[346px]"
+                index === 0 && "xl:max-w-[235px] laptop:max-w-full",
+                index === 1 && "xl:max-w-[265px] laptop:max-w-full",
+                index === 2 && "xl:max-w-[326px] laptop:max-w-full",
+                index === 3 && "xl:max-w-[346px] laptop:max-w-full"
               )}
               key={index}
             >

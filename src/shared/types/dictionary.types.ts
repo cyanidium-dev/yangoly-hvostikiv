@@ -138,4 +138,5 @@ export interface ITails {
   adoptDescription: string;
   name: string;
   connectButton: string;
+  sterilize: string;
 }

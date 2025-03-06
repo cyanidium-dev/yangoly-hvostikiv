@@ -10,7 +10,7 @@ const TailInfo = ({ tail, locale, translation }: ITailInfoProps) => {
   const [isAdoptModalOpen, setIsAdoptModalOpen] = useState(false);
   const [isDonateModalOpen, setIsDonateModalOpen] = useState(false);
 
-  const { adoptButton, oneTimeHelpButton } = translation;
+  const { adoptButton, oneTimeHelpButton, sterilize } = translation;
 
   const handleAdoptModalClose = () => {
     setIsAdoptModalOpen(false);
@@ -19,6 +19,12 @@ const TailInfo = ({ tail, locale, translation }: ITailInfoProps) => {
   const handleDoanteModalClose = () => {
     setIsDonateModalOpen(false);
   };
+
+  console.log(tail);
+
+  const needsSterilization = tail.categories.find(
+    (category) => category === "needs-sterilization"
+  );
 
   return (
     <div className="flex flex-col items-center lg:flex-row gap-y-7 lg:gap-y-0 lg:bg-white">
@@ -47,7 +53,7 @@ const TailInfo = ({ tail, locale, translation }: ITailInfoProps) => {
           <Button
             onClick={() => setIsDonateModalOpen(true)}
             variant="outline"
-            text={oneTimeHelpButton}
+            text={needsSterilization ? sterilize : oneTimeHelpButton}
             fullWidth
             className="max-w-[404px] lg:w-[313px] mx-auto lg:mx-0"
           />

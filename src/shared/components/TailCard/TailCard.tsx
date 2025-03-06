@@ -11,7 +11,7 @@ interface ITailCardProps extends ComponentProps<"div"> {
 
 const TailCard = ({ tail, translation }: ITailCardProps) => {
   const { detailsButton } = translation;
-  const { name, image, description, sex, sterialized, id } = tail;
+  const { name, image, description, sex, sterilized, id } = tail;
   return (
     <li className="max-w-[343px] desk:max-w-[436px] min-h-full py-8 px-4 lg:px-6 rounded-[20px] bg-[#FCFCFC] shadow-blogCard">
       <Link href={`/tails/${id}`}>
@@ -38,7 +38,7 @@ const TailCard = ({ tail, translation }: ITailCardProps) => {
           {sex}
         </p>
         <p className="px-6 py-[8.5px] border border-black rounded-[28px]">
-          {sterialized}
+          {sterilized}
         </p>
       </div>
       <p className="min-h-[73px] mb-5 text-[14px] leading-[130%] line-clamp-4">

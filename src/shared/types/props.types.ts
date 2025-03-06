@@ -319,7 +319,7 @@ export interface ITailItem {
   name: string;
   description: string[];
   sex: string;
-  sterialized: string;
+  sterilized: string;
   categories: string[];
 }
 

@@ -10,7 +10,7 @@ const baseTails = {
       ],
       name: "Песик-інвалід Чарлі",
       sex: "Хлопчик",
-      sterialized: "Нестерилізований",
+      sterilized: "Нестерилізований",
       categories: ["needs-sterilization", "needs-family"],
       description: [
         "Чарлі отримав кулю в хребет та довго лежав на сонці, що призвело до інсульту. Також у песика паралізований сечовий міхур. Нажаль ходити він більше не зможе. Не дивлячись на це Чарлі дуже життєрадісний пес. У серпні 2024 року Чарлі був евакуйований з Покровська у Черкаську обл.",
@@ -27,7 +27,7 @@ const baseTails = {
       ],
       name: "Кошеня Рубі",
       sex: "Дівчинка",
-      sterialized: "Стерилізована",
+      sterilized: "Стерилізована",
       categories: ["needs-family"],
       description: [
         "Рубі – маленьке грайливе кошеня, яке шукає люблячу родину.",
@@ -44,7 +44,7 @@ const baseTails = {
       ],
       name: "Жужа",
       sex: "Дівчинка",
-      sterialized: "Стерилізована",
+      sterilized: "Стерилізована",
       categories: ["needs-family", "adopted"],
       description: [
         "Жужа – активна та енергійна собачка, яка любить гратися і гуляти.",
@@ -61,7 +61,7 @@ const baseTails = {
       ],
       name: "Барсік",
       sex: "Хлопчик",
-      sterialized: "Нестерилізований",
+      sterilized: "Нестерилізований",
       categories: ["needs-sterilization"],
       description: [
         "Барсік – добрий і спокійний кіт, який обожнює муркотіти та ніжитися на сонечку.",
@@ -77,7 +77,7 @@ const baseTails = {
       ],
       name: "Мурзик",
       sex: "Хлопчик",
-      sterialized: "Стерилізований",
+      sterilized: "Стерилізований",
       categories: ["needs-family"],
       description: [
         "Мурзик – грайливий котик, який шукає дім, де його любитимуть та піклуватимуться про нього.",
@@ -93,7 +93,7 @@ const baseTails = {
       ],
       name: "Граф",
       sex: "Хлопчик",
-      sterialized: "Стерилізований",
+      sterilized: "Стерилізований",
       categories: ["adopted"],
       description: [
         "Граф – благородний і відданий пес, який мріє про дім, де його оточать турботою та любов'ю.",
@@ -111,7 +111,7 @@ const baseTails = {
       ],
       name: "Charlie the Disabled Dog",
       sex: "Boy",
-      sterialized: "Not sterilized",
+      sterilized: "Not sterilized",
       categories: ["needs-sterilization", "needs-family"],
       description: [
         "Charlie was shot in the spine and lay in the sun for a long time, which led to a stroke. He also has a paralyzed bladder. Unfortunately, he will never walk again. Despite this, Charlie is a very cheerful dog. In August 2024, Charlie was evacuated from Pokrovsk to the Cherkasy region.",
@@ -128,7 +128,7 @@ const baseTails = {
       ],
       name: "Ruby the Kitten",
       sex: "Girl",
-      sterialized: "Sterilized",
+      sterilized: "Sterilized",
       categories: ["needs-family"],
       description: [
         "Ruby is a small, playful kitten looking for a loving family.",
@@ -145,7 +145,7 @@ const baseTails = {
       ],
       name: "Juja",
       sex: "Girl",
-      sterialized: "Sterilized",
+      sterilized: "Sterilized",
       categories: ["needs-family", "adopted"],
       description: [
         "Juja is an active and energetic dog who loves to play and go for walks.",
@@ -162,7 +162,7 @@ const baseTails = {
       ],
       name: "Barsik",
       sex: "Boy",
-      sterialized: "Not sterilized",
+      sterilized: "Not sterilized",
       categories: ["needs-sterilization"],
       description: [
         "Barsik is a kind and calm cat who loves to purr and bask in the sun.",
@@ -178,7 +178,7 @@ const baseTails = {
       ],
       name: "Murzik",
       sex: "Boy",
-      sterialized: "Sterilized",
+      sterilized: "Sterilized",
       categories: ["needs-family"],
       description: [
         "Murzik is a playful cat looking for a home where he will be loved and cared for.",
@@ -194,7 +194,7 @@ const baseTails = {
       ],
       name: "Graf",
       sex: "Boy",
-      sterialized: "Sterilized",
+      sterilized: "Sterilized",
       categories: ["adopted"],
       description: [
         "Graf is a noble and loyal dog who dreams of a home where he will be surrounded by care and love.",

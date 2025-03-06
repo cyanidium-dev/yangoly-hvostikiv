@@ -1,13 +1,14 @@
 "use client";
-import { ITailInfoProps } from "@/shared/types";
+import { useState } from "react";
 import ImageSlider from "../ImageSlider/ImageSlider";
 import Button from "../Button/Button";
 import Modal from "../Modal/Modal";
-import { useState } from "react";
+import DonateModal from "../DonateModal/DonateModal";
+import { ITailInfoProps } from "@/shared/types";
 
 const TailInfo = ({ tail, locale, translation }: ITailInfoProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isAngelModalOpen, setIsAngelModalOpen] = useState(false);
+  const [isDonateModalOpen, setIsDonateModalOpen] = useState(false);
 
   const {
     adoptButton,
@@ -42,7 +43,7 @@ const TailInfo = ({ tail, locale, translation }: ITailInfoProps) => {
             className="max-w-[404px] lg:w-[313px] mx-auto lg:mx-0"
           />
           <Button
-            onClick={() => setIsAngelModalOpen(true)}
+            onClick={() => setIsDonateModalOpen(true)}
             variant="outline"
             text={oneTimeHelpButton}
             fullWidth
@@ -75,29 +76,11 @@ const TailInfo = ({ tail, locale, translation }: ITailInfoProps) => {
         </a>
       </Modal>
 
-      <Modal
-        isOpen={isAngelModalOpen}
-        onClose={() => setIsAngelModalOpen(false)}
-      >
-        <h2 className="text-center text-[24px] leading-[130%] text-[#1D1D1D] uppercase mt-[40px]">
-          {locale === "uk"
-            ? "Стати янголом-опікуном"
-            : "Become a guardian - angel"}
-        </h2>
-        <p className="text-[#1D1D1D] text-[18px] leading-[144%] mt-6">
-          {locale === "uk"
-            ? "Щоб стати янголом-опікуном, будь ласка, зв’яжіться за цим номером"
-            : "To become a guardian angel, please contact at this number"}
-        </p>
-        <p className="text-[18px] leading-[130%] text-black mt-6 px-[6px] py-3 border border-[#D4D4D4] rounded-[4px]">
-          +380 99 200 40 80
-        </p>
-        <Button
-          onClick={() => setIsAngelModalOpen(false)}
-          className="mt-6 w-full"
-          text={locale === "uk" ? "Зрозуміло" : "Understood"}
-        />
-      </Modal>
+      <DonateModal
+        isOpen={isDonateModalOpen}
+        onClose={() => setIsDonateModalOpen(false)}
+        lang={locale}
+      />
     </div>
   );
 };

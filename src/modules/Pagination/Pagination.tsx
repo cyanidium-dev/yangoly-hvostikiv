@@ -3,7 +3,7 @@ import ArrowInCircleIcon from "../../../public/images/icons/ArrowInCircleIcon";
 export default function Pagination({
   currentPage,
   totalPages,
-  maxVisiblePages = 3,
+  maxVisiblePages = 4,
   onPageChange,
 }: {
   currentPage: number;

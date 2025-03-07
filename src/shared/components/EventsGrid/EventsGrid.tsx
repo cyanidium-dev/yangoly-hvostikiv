@@ -8,7 +8,7 @@ const EventsGrid = ({ images }: { images: string[] }) => {
         <div className="flex col-span-3 flex-col gap-5 h-full">
           <Image
             src={images[0]}
-            alt=""
+            alt="Event 1"
             layout="responsive"
             width={349}
             height={228}
@@ -16,7 +16,7 @@ const EventsGrid = ({ images }: { images: string[] }) => {
           />
           <Image
             src={images[1]}
-            alt=""
+            alt="Event 2"
             layout="responsive"
             width={349}
             height={236}
@@ -28,7 +28,7 @@ const EventsGrid = ({ images }: { images: string[] }) => {
         <div className="flex col-span-3 flex-col gap-5">
           <Image
             src={images[2]}
-            alt=""
+            alt="Event 3"
             layout="responsive"
             width={337}
             height={317}
@@ -48,7 +48,7 @@ const EventsGrid = ({ images }: { images: string[] }) => {
         <div className="flex col-span-6">
           <Image
             src={images[4]}
-            alt=""
+            alt="Event 4"
             layout="responsive"
             width={706}
             height={484}

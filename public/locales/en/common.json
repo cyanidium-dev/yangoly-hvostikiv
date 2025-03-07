@@ -284,5 +284,8 @@
     "name": "Anatoly",
     "connectButton": "Connect",
     "sterilize": "Sterilize"
+  },
+  "reporting": {
+    "title": "Financial reporting"
   }
 }

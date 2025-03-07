@@ -16,14 +16,11 @@ export default function Pagination({
     const halfVisible = Math.floor(maxVisiblePages / 2);
 
     let startPage = Math.max(1, currentPage - halfVisible);
-    let endPage = Math.min(totalPages, currentPage + halfVisible);
+    let endPage = startPage + maxVisiblePages - 1;
 
-    if (endPage - startPage < maxVisiblePages - 1) {
-      if (startPage === 1) {
-        endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
-      } else if (endPage === totalPages) {
-        startPage = Math.max(1, endPage - maxVisiblePages + 1);
-      }
+    if (endPage > totalPages) {
+      endPage = totalPages;
+      startPage = Math.max(1, endPage - maxVisiblePages + 1);
     }
 
     for (let i = startPage; i <= endPage; i++) {

@@ -388,3 +388,17 @@ export interface IReportingProps {
 export interface IReportingListProps {
   lang: Locale;
 }
+
+export interface IReportItem {
+  id: string;
+  date: string;
+  title: string;
+  description: string;
+  mainPart: string[];
+  mainPhoto: string;
+  secondaryPhoto: string;
+}
+
+export interface IReportProps {
+  report: IReportItem;
+}

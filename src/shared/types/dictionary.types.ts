@@ -12,9 +12,8 @@ export interface INavigationItem {
 export interface IHeroTranslation {
   title: string;
   subtitle: string;
-  fundraisingTitle: string;
-  goal: string;
-  currency: string;
+  text: string;
+  button: string;
 }
 
 interface ISegment {
@@ -117,11 +116,13 @@ export interface IFilterOption {
 export interface IChairtyEvents {
   title: string;
   paragraphs: string[];
-  listTitle: string;
-  listItems: string[];
+  benefitsTitle: string;
+  benefitsParagraphs: string[];
+  missionTitle: string;
+  missionParagraph: string;
+  botParagraphs: string[];
   buttons: string[];
   partnerModalTitle: string;
-  photoSubtitle: string;
 }
 
 export interface IBlog {

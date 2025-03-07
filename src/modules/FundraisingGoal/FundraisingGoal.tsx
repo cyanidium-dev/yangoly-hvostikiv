@@ -10,14 +10,14 @@ const FundraisingGoal = ({
   totalAmount,
   currentAmount,
   styles,
-  imageVariant ,
+  imageVariant,
   ...props
 }: IFundraisingGoalProps) => {
   return (
     <div className="px-4" {...props}>
       <h2
         className={cn(
-          "text-primary-black text-[18px] font-normal leading-[130%] text-center",
+          "text-orange text-[16px]  leading-[130%] text-center mt-[8px] xl:text-[24px]",
           styles?.titleClassName
         )}
       >
@@ -28,17 +28,17 @@ const FundraisingGoal = ({
         <JarWithPaw variant={imageVariant} />
       </div>
 
-      <div className="w-full max-w-[300px] mx-auto">
+      <div className="w-full max-w-[300px] xl:max-w-[383px] mx-auto">
         <div className="flex justify-between text-sm mb-2">
           <span
             className={cn(
-              "text-primary-gray-100 leading-[24px]",
+              "text-black text-[16px] font-semibold leading-[24px]",
               styles?.goalClassName
             )}
           >
             {goal}
           </span>
-          <span className="text-white px-1 no-ligatures  bg-primary-orange font-bold rounded-[32px]">
+          <span className="text-white px-[21px] py-[5px] no-ligatures text-[16px]  bg-orange font-bold rounded-[32px]">
             {formatAmount(totalAmount)} {currency}
           </span>
         </div>
@@ -48,7 +48,7 @@ const FundraisingGoal = ({
         <div className="mt-2">
           <span
             className={cn(
-              "text-[14px] leading-[170%] no-ligatures ml-[60px] font-normal text-primary-gray-100",
+              "text-[14px] leading-[170%] no-ligatures  font-normal text-black",
               styles?.currentAmountClassName
             )}
           >

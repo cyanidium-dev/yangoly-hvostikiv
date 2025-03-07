@@ -50,11 +50,10 @@
     ]
   },
   "hero": {
-    "title": "Charity Fund “Angels of Tails”",
-    "subtitle": "Become an Angel for Tails with us",
-    "fundraisingTitle": "Our monthly goal",
-    "goal": "Goal",
-    "currency": "UAH"
+    "title": "Angels of Tails",
+    "subtitle": "Charity Fund",
+    "text": "Become an Angel for Tails with us! Help animals feel needed in this world",
+    "button": "Help a Tail"
   },
   "about": {
     "aboutUs": {
@@ -244,20 +243,25 @@
   "chairtyEvents": {
     "title": "Our Charity Events",
     "paragraphs": [
-      "Friends, let's imagine which emotions are most often evoked by charitable foundations? Emotions of sadness, pain, hopelessness… Everything that fills us in these difficult times is sadness, worries, stress.",
-      "Unfortunately, during the war it is very difficult to stay in a good and joyful state, we understand this very well. Because of this, it is difficult to close many fundraisers. People are tired of donating, they often pass by and remain indifferent, because they are full of disappointment and sadness.",
-      "Analyzing this, we decided to do charity through entertainment. This is a chance to help animals not just through donations, but through participation in interesting events.",
-      "We have already held 2 charity events, which we organized ourselves. At the first event, we painted pictures on canvases with the handprints of owners and the paw prints of their pets. The second event was very atmospheric in a Halloween style, with a photo zone, prizes, costumes, contests."
+      "Friends, let's imagine what emotions charity foundations often evoke in us? Emotions of sadness, pain, hopelessness... Everything that fills us in these difficult times is sorrow, anxiety, stress.",
+      "Analyzing this, we decided to approach charity through entertainment. This is a chance to help animals not just through donations, but by participating in fun events.",
+      "Unfortunately, during the war, it is very difficult to be in a good and joyful state, we understand this very well. Because of this, it’s hard to complete many fundraisers. People are tired of donating, they often walk by and remain indifferent because they are filled with disappointment and sadness.",
+      "We have already held 2 charity events that we organized ourselves. At the first event, we painted pictures on canvases with handprints of the owners and paw prints of their tails. The second event was very atmospheric, styled for Halloween, with a photo zone, prizes, costumes, and contests."
     ],
-    "listTitle": "Advantages of our charity events:",
-    "listItems": [
-      "Interesting and captivating entertainment: we hold various interactive activities where everyone receives gifts, and we also create unique and exclusive products together with you that cannot be bought anywhere.",
-      "After our events, everyone is left with a wonderful mood, great emotions and cool photos",
-      "We create unique themed photo zones, costume looks, props"
+    "benefitsTitle": "Benefits of Our Charity Events",
+    "benefitsParagraphs": [
+      "Interesting and exciting entertainment: we conduct various interactive activities where everyone receives gifts, and also create unique and exclusive items together with you that cannot be bought anywhere.",
+      "After our events, everyone is left with great mood, positive emotions, and cool photos.",
+      "We create unique themed photo zones, costume looks, and props."
     ],
-    "buttons": ["Support", "BECOME A PARTNER"],
-    "partnerModalTitle": "To become our partner, leave your contact details",
-    "photoSubtitle": "The mission of our events: through good emotions and entertainment to help animals in frontline areas."
+    "missionTitle": "Mission of Our Events",
+    "missionParagraph": "Helping animals in frontline areas through good emotions and entertainment.",
+    "botParagraphs": [
+      "We are looking for partners and like-minded people and are open to cooperation. So, if you want to join us, we will be happy to consider your proposal.",
+      "Dear friends, we are waiting for each of you at our charity events! Follow the news. Become Angels for Tails with us!"
+    ],
+    "buttons": ["Support", "Become a Partner"],
+    "partnerModalTitle": "To become our partner, please leave your contact details"
   },
 
   "metadata": {

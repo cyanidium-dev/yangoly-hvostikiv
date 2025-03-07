@@ -44,7 +44,7 @@ export default async function LocaleLayout({
       />
       <div className="flex flex-col min-h-[100%]">
         <main
-          className={`${raleway.variable} h-full flex-1 w-full overflow-y-hidden overflow-x-hidden font-raleway`}
+          className={`${raleway.variable} bg-orange-bg h-full flex-1 w-full overflow-y-hidden overflow-x-hidden font-raleway`}
         >
           {children}
         </main>

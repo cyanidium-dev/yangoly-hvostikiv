@@ -10,4 +10,5 @@ export * from "./EmailIcon";
 export * from "./GoogleIcon";
 export * from "./CardIcon";
 export * from "./CheckboxIcon";
+export * from "./CircleArrowIcon";
 export * from "./ArrowInCircleIcon";

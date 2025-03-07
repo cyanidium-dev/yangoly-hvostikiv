@@ -1,32 +1,59 @@
+"use client";
 import { IInfoBlockProps } from "@/shared/types";
+import { motion } from "framer-motion";
+import { fadeIn, generalSlideUp } from "@/shared/utils";
+import clsx from "clsx";
 
 const InfoBlock = ({
   translation,
   children,
   className = "",
+  titleClassName = "",
   ...props
 }: IInfoBlockProps) => {
   const { paragraphs, title } = translation;
   return (
     <div className={`mx-auto bg-white ${className}`} {...props}>
-      <h2 className="text-[24px] xl:text-[32px] text-black leading-[130%]  mb-6">
+      <motion.h2
+        className={clsx(
+          "text-[20px] xl:text-left  uppercase font-extrabold text-center font-arial xl:text-[32px] text-[#140A01] leading-[130%] mb-[28px]",
+          titleClassName
+        )}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={fadeIn}
+        custom={0.2}
+      >
         {title}
-      </h2>
-      <div className="space-y-6">
+      </motion.h2>
+      <motion.div
+        className="space-y-6"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
         {paragraphs.map((paragraph, index) => (
-          <p key={index} className="text-black text-[18px] leading-[130%]">
+          <motion.p
+            key={index}
+            className="text-black text-[14px] md:text-[16px] xl:text-[18px] font-light leading-[130%]"
+            variants={generalSlideUp}
+            custom={index * 0.2}
+            initial="hidden"
+            whileInView="visible"
+          >
             {paragraph.segments?.map((segment, segIndex) => (
               <span
                 key={segIndex}
-                className={segment.bold ? "font-bold" : "font-normal"}
+                className={segment.bold ? "font-normal" : "font-normal"}
               >
                 {segment.text}
               </span>
             ))}
-          </p>
+          </motion.p>
         ))}
-      </div>
-      {children && <div className="mt-6">{children}</div>}
+      </motion.div>
+      {children && <>{children}</>}
     </div>
   );
 };

@@ -16,7 +16,7 @@ const ProgressBar = ({
         style={{ height }}
       >
         <div
-          className="absolute left-0 top-0 bg-primary-orange rounded-full"
+          className="absolute left-0 top-0 bg-orange rounded-full"
           style={{ width: `${progress}%`, height }}
         />
       </div>

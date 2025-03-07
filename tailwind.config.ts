@@ -18,38 +18,14 @@ const config: Config = {
       },
       colors: {
         dark: {
-          DEFAULT: "#140A01",
+          DEFAULT: "#18181B",
         },
-        primary: {
-          white: {
-            DEFAULT: "#F8F7F7",
-            hover: "#E8E7EF",
-            active: "#D8D7DF",
-          },
-          black: {
-            DEFAULT: "#262827",
-            hover: "#363837",
-            active: "#464847",
-          },
-          orange: {
-            DEFAULT: "#EACCAA",
-            hover: "#FF8322",
-            active: "#FF7312",
-          },
-          gray: {
-            DEFAULT: "#797979",
-            "100": "#F8F7F7",
-            hover: "#898989",
-            active: "#999999",
-          },
-          green: {
-            DEFAULT: "#74C396",
-          },
+        orange: {
+          DEFAULT: "#EACCAA",
+          bg: "#FFF7E5",
         },
-        background: {
-          gray: {
-            DEFAULT: "#F8F7F7",
-          },
+        green: {
+          DEFAULT: "#74C396",
         },
       },
       fontFamily: {

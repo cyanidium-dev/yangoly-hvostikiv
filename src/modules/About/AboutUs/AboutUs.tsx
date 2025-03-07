@@ -1,55 +1,142 @@
+"use client";
+import Button from "@/shared/components/Button/Button";
 import ImageGallery from "@/shared/components/ImageGallery/ImageGallery";
 import InfoBlock from "@/shared/components/InfoBlock/InfoBlock";
-import { IInformationBlockTranslation } from "@/shared/types";
-import Link from "next/link";
+import Modal from "@/shared/components/Modal/Modal";
+import UniversalForm from "@/shared/components/UniversalForm/UniversalForm";
+import getContactFormConfig from "@/shared/formsConfigs/contactForm";
+import { IInformationBlockTranslation, Locale } from "@/shared/types";
+import { usePathname } from "next/navigation";
+import { useCallback, useState } from "react";
+import { motion } from "framer-motion";
+import { generalSlideUp } from "@/shared/utils";
+import Image from "next/image";
 
 const aboutImages = [
   {
-    src: "/images/about1.jpg",
+    src: "/images/about/about-us-desk1.jpg",
     alt: "Owner with pets showing foundation logo",
   },
   {
-    src: "/images/about2.jpg",
+    src: "/images/about/about-us-desk2.png",
     alt: "Pet drawing with paw",
   },
   {
-    src: "/images/about3.jpg",
+    src: "/images/about/about-us-desk3.jpg",
     alt: "Team members with pets",
   },
 ];
+
+const aboutMobImages = [
+  {
+    src: "/images/about/about-us-mob1.jpg",
+    alt: "Owner with pets showing foundation logo",
+  },
+  {
+    src: "/images/about/about-us-mob2.jpg",
+    alt: "Owner with pets showing foundation logo",
+  },
+  {
+    src: "/images/about/about-us-mob3.jpg",
+    alt: "Owner with pets showing foundation logo",
+  },
+];
+
 const AboutUs = ({
   translation,
 }: {
   translation: IInformationBlockTranslation;
 }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const handleOpenModal = useCallback(() => setIsModalOpen(true), []);
+  const handleCloseModal = useCallback(() => setIsModalOpen(false), []);
+  const pathName = usePathname();
+  const lang = pathName?.split("/")[1] as Locale;
+
+  const contactConfig = getContactFormConfig(lang);
+
+  const handleSubmit = (data: unknown) => {
+    console.log("Submited:", data);
+  };
+
+  const modalTitle =
+    lang === "uk"
+      ? "Щоб стати нашим партнером, залиште ваші контактні дані"
+      : "To become our partner, leave your contact details";
+
   return (
-    <div className="flex flex-col xl:flex-row xl:justify-center xl:items-center xl:bg-white gap-6 xl:gap-0 items-start xl:mb-[40px]">
-      <div className="w-full xl:w-1/2 order-2 xl:order-1">
-        <ImageGallery
-          images={aboutImages}
-          variant="splitLayout"
-          className="xl:bg-primary-gray-100 mb-5 xl:mb-0"
-        />
+    <div className="xl:grid xl:grid-cols-2 pb-[40px]">
+      <div className="hidden xl:block">
+        <ImageGallery images={aboutImages} variant="splitLayout" />
       </div>
       <InfoBlock
-        className="w-full xl:w-1/2 order-1 xl:order-2 xl:bg-white xl:px-10 xl:py-10"
+        titleClassName="xl:mb-[48px]"
+        className="py-[40px] px-[30px] rounded-[20px] xl:px-[50px] 2xl:px-[93px] xl:py-[108px]"
         translation={translation}
       >
-        <div className="flex flex-col gap-4 xl:flex-row">
-          <Link
-            className="uppercase px-6 py-3 bg-primary-green text-[18px] leading-[130%] text-[#F8F7F7] text-center rounded-lg transition-colors duration-300 hover:bg-primary-green/90"
-            href={translation.links![0].href}
-          >
-            {translation.links![0].text}
-          </Link>
-          <Link
-            className="uppercase px-6 py-3 bg-white text-[18px] leading-[130%] text-primary-green text-center rounded-lg border border-primary-green transition-colors duration-300 hover:bg-primary-green hover:text-white"
-            href={translation.links![1].href}
-          >
-            {translation.links![1].text}
-          </Link>
-        </div>
+        <motion.div
+          className="flex flex-col md:flex-row md:gap-4 mt-[24px] xl:mt-[32px] w-full gap-4 xl:flex-row"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          <motion.div variants={generalSlideUp} custom={0.2}>
+            <Button
+              className="w-full"
+              onClick={handleOpenModal}
+              text={translation.links![0].text}
+            />
+          </motion.div>
+          <motion.div variants={generalSlideUp} custom={0.4}>
+            <Button
+              className="w-full"
+              variant="outline"
+              text={translation.links![1].text}
+            />
+          </motion.div>
+        </motion.div>
       </InfoBlock>
+      <motion.div
+        className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-5 xl:hidden"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
+        {aboutMobImages.map((image, index) => (
+          <motion.div
+            key={index}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={generalSlideUp}
+            custom={0.2 + index * 0.2} 
+          >
+            <Image
+              src={image.src}
+              width={328}
+              height={268}
+              layout="responsive"
+              alt={image.alt}
+              quality={100}
+              className="object-cover rounded-[16px]"
+            />
+          </motion.div>
+        ))}
+      </motion.div>
+      <Modal
+        modalClassName="xl:max-w-[535px]"
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+      >
+        <h2 className="text-[20px] xl:text-[24px] uppercase leading-[160%] font-arial mb-[20px] text-[#1D1D1D] text-center mt-10">
+          {modalTitle}
+        </h2>
+        <UniversalForm
+          className="p-0"
+          onSubmit={handleSubmit}
+          {...contactConfig}
+        />
+      </Modal>
     </div>
   );
 };

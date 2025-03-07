@@ -12,10 +12,10 @@ const Button = ({
     "text-white uppercase py-3 px-6 rounded-[28px] transition-all duration-300 text-[18px] leading-[110%] font-bold";
 
   const variantStyles = {
-    primary: "bg-primary-green hover:bg-primary-green/80  active:scale-95",
-    secondary: "bg-primary-orange hover:bg-primary-orange/90  active:scale-95",
+    primary: "bg-green hover:bg-green/90  active:scale-95",
+    secondary: "bg-orange hover:bg-orange/90  active:scale-95",
     outline:
-      "border border-primary-green text-primary-green hover:bg-primary-green hover:text-white  active:scale-95",
+      "border border-green text-green hover:bg-green hover:text-white  active:scale-95",
   };
   const widthStyle = fullWidth ? "w-full" : "w-auto";
 

@@ -9,7 +9,7 @@ export default async function ReportingPage({ params }: PageParams) {
 
   return (
     <>
-      <Reporting translation={reporting} />
+      <Reporting translation={reporting} lang={locale}/>
       <Contacts translation={contacts} lang={locale} />
     </>
   );

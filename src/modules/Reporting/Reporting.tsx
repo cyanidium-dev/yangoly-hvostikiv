@@ -1,6 +1,7 @@
 import { IReportingProps } from "@/shared/types";
+import ReportingList from "./ReportingList";
 
-export default function Reporting({ translation }: IReportingProps) {
+export default function Reporting({ translation, lang }: IReportingProps) {
   const { title } = translation;
 
   return (
@@ -11,6 +12,7 @@ export default function Reporting({ translation }: IReportingProps) {
       >
         {title}
       </h1>
+      <ReportingList lang={lang} />
     </section>
   );
 }

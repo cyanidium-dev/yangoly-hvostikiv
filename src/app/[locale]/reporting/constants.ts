@@ -55,12 +55,12 @@ const reporting = {
   ],
 };
 
-const reportingListUk = Array.from({ length: 20 }, (_, i) => ({
+const reportingListUk = Array.from({ length: 50 }, (_, i) => ({
   ...reporting.uk[i % reporting.uk.length],
   id: `article-${i + 1}`,
 }));
 
-const reportingListEn = Array.from({ length: 20 }, (_, i) => ({
+const reportingListEn = Array.from({ length: 50 }, (_, i) => ({
   ...reporting.en[i % reporting.en.length],
   id: `article-${i + 1}`,
 }));

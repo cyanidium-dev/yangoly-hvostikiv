@@ -382,4 +382,9 @@ export interface IAdoptModalProps {
 
 export interface IReportingProps {
   translation: IReporting;
+  lang: Locale;
+}
+
+export interface IReportingListProps {
+  lang: Locale;
 }

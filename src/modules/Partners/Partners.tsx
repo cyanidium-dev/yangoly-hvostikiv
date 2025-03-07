@@ -13,13 +13,19 @@ const partners = [
   { src: "/images/partners/brit.png", alt: "Brit Logo", width: 180 },
 ];
 
-const Partners = ({ translation, ...props }: IPartnersProps) => {
+const Partners = ({
+  translation,
+  withTitle = true,
+  ...props
+}: IPartnersProps) => {
   const { title } = translation;
   return (
     <section {...props}>
-      <h2 className="text-[32px] text-black leading-[130%] text-center mb-8">
-        {title}
-      </h2>
+      {withTitle && (
+        <h2 className="text-[24px] xl:text-[32px] text-dark font-arial font-black uppercase leading-[130%] text-center mb-8">
+          {title}
+        </h2>
+      )}
 
       <div className="relative flex overflow-x-hidden overflow-y-hidden w-full h-8 xl:h-[60px]">
         <div className="flex space-x-[100px] animate-marquee">

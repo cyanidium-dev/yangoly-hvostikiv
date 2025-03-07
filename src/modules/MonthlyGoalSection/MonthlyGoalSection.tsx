@@ -159,7 +159,7 @@ const MonthlyGoalSection = ({
               custom={1.0}
             >
               <motion.li
-                className="numeric-font text-primary-white text-[18px] leading-[130%]"
+                className="numeric-font text-dark text-[18px] leading-[130%]"
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
@@ -169,7 +169,7 @@ const MonthlyGoalSection = ({
                 {t.argument1}
               </motion.li>
               <motion.li
-                className="numeric-font text-primary-white text-[18px] leading-[130%]"
+                className="numeric-font text-dark text-[18px] leading-[130%]"
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
@@ -179,7 +179,7 @@ const MonthlyGoalSection = ({
                 {t.argument2}
               </motion.li>
               <motion.li
-                className="numeric-font text-primary-white text-[18px] leading-[130%]"
+                className="numeric-font text-dark text-[18px] leading-[130%]"
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
@@ -191,7 +191,7 @@ const MonthlyGoalSection = ({
             </motion.ul>
           </motion.div>
           <motion.p
-            className="numeric-font text-primary-white text-[18px] leading-[130%]"
+            className="numeric-font text-dark text-[18px] leading-[130%]"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}

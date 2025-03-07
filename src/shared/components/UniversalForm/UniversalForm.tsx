@@ -38,7 +38,7 @@ export const UniversalForm = ({
       ...register(field.name),
       placeholder: field.placeholder,
       className: cn(
-        "w-full rounded-md border px-[6px] py-3 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 appearance-none bg-white text-[#1D1D1D] placeholder:text-gray-500",
+        "w-full rounded-md border px-[14px] py-3 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 appearance-none bg-white text-[#1D1D1D] placeholder:text-gray-500",
         field.icon && "pl-10",
         errors[field.name] && "border-red-500"
       ),
@@ -80,7 +80,7 @@ export const UniversalForm = ({
       >
         {fields.map((field) => (
           <div key={field.name} className="space-y-1">
-            <label className="block text-[16px] lg:text-[18px] leading-[130%] text-[#1D1D1D]">
+            <label className="block text-[16px] lg:text-[18px] leading-[130%] text-[#18181B]">
               {field.label}
               {field.required && (
                 <span className={cn("", errors[field.name] && "text-red-500")}>
@@ -107,7 +107,12 @@ export const UniversalForm = ({
           </div>
         ))}
 
-        <Button className="w-full py-3" text={submitText} type="submit" />
+        <Button
+          variant="secondary"
+          className="w-full py-3"
+          text={submitText}
+          type="submit"
+        />
       </form>
     </div>
   );

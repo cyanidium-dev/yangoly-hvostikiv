@@ -83,7 +83,7 @@ const NavItem = ({
       <button
         className={cn(
           "text-[#27272A] text-[18px] hover:text-[#27272A]/60 font-normal leading-[120%] flex items-center gap-1",
-          isOnBurger && "mx-auto"
+          isOnBurger && "mr-auto "
         )}
         onClick={() => setIsOpen(!isOpen)}
       >
@@ -98,7 +98,7 @@ const NavItem = ({
           <motion.div
             className={cn(
               isOnBurger
-                ? "flex flex-col items-center space-y-4 mt-4"
+                ? "flex flex-col items-center  space-y-4 mt-4"
                 : "absolute top-full -left-[115px] mt-1 bg-white shadow-lg rounded-md py-2 min-w-[250px]"
             )}
             initial={{ opacity: 0, y: -10 }}
@@ -116,8 +116,8 @@ const NavItem = ({
                 className={cn(
                   "block w-full text-left",
                   isOnBurger
-                    ? "text-primary-black text-[18px] font-normal leading-[120%] hover:text-primary-gray transition-colors text-center"
-                    : "px-4 py-2 text-[#262827] text-[18px] leading-[110%] hover:bg-gray-100"
+                    ? "text-dark text-[18px] font-normal leading-[120%] hover:bg-gray-100 transition-colors text-left"
+                    : "px-4 py-2 text-dark text-[18px] leading-[110%] hover:bg-gray-100"
                 )}
               >
                 {dropdownItem.name}

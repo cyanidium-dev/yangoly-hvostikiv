@@ -35,11 +35,7 @@ const socials = [
   },
 ];
 
-const SocialsList = ({
-  iconClass = "text-primary-orange",
-}: {
-  iconClass?: string;
-}) => {
+const SocialsList = ({ iconClass = "text-orange" }: { iconClass?: string }) => {
   return (
     <ul className="flex items-center justify-center gap-4">
       {socials.map((item) => (

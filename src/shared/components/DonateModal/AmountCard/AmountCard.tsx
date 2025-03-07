@@ -16,7 +16,7 @@ const AmountCard = ({
     <button
       type="button"
       onClick={handleClick}
-      className={`w-full py-4 leading-[130%] px-1 text-[16px]  rounded-lg transition-all ${
+      className={`w-full py-4 leading-[130%] px-1 text-[16px] text-dark  rounded-lg transition-all ${
         isSelected
           ? "border border-[#FF9332]"
           : "border border-gray-300 hover:border-orange-500 hover:bg-orange-50"

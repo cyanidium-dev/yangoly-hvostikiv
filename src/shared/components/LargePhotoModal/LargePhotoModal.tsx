@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { CloseIcon } from "../../../../public/images/icons";
 
 const LargePhotoModal = ({
   photoSrc,
@@ -9,40 +10,25 @@ const LargePhotoModal = ({
 }) => {
   return (
     <div
-      className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50"
+      className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50"
       onClick={onClose}
     >
-      <div className="relative w-full h-full max-w-[90vw] max-h-[90vh]">
-        <div className="relative w-full h-full">
-          <Image
-            src={photoSrc}
-            alt="Large Photo"
-            layout="fill"
-            quality={100}
-            className="rounded-lg object-contain cursor-pointer"
-            onClick={(e) => e.stopPropagation()}
-          />
-          <button
-            className="absolute top-2 right-2 text-white text-2xl bg-black bg-opacity-50 rounded-full p-2 z-10 hover:bg-opacity-75 hover:scale-110 transition duration-300 ease-in-out"
-            onClick={(e) => {
-              e.stopPropagation();
-              onClose();
-            }}
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="30"
-              height="30"
-              viewBox="0 0 18 18"
-              fill="none"
-            >
-              <path
-                d="M17.75 2.0125L15.9875 0.25L9 7.2375L2.0125 0.25L0.25 2.0125L7.2375 9L0.25 15.9875L2.0125 17.75L9 10.7625L15.9875 17.75L17.75 15.9875L10.7625 9L17.75 2.0125Z"
-                fill="white"
-              />
-            </svg>{" "}
-          </button>
-        </div>
+      <div className="relative w-[90vw] max-w-[800px] h-[90vh] max-h-[600px] rounded-lg overflow-hidden">
+        <Image
+          src={photoSrc}
+          alt="Full-size Image"
+          fill={true}
+          className="object-cover object-center"
+          onClick={(e) => e.stopPropagation()}
+        />
+        <button
+          onClick={() => {
+            onClose();
+          }}
+          className="absolute right-6 top-6 p-2 hover:bg-gray-100 bg-opacity-[1%] rounded-full z-10 transition duration-300 ease-in-out"
+        >
+          <CloseIcon variant="secondary" className="w-6 h-6" />
+        </button>
       </div>
     </div>
   );

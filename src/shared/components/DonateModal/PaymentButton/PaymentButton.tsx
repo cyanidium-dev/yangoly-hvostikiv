@@ -53,7 +53,7 @@ const PaymentButton = ({
   return (
     <button
       type="button"
-      className={`w-full rounded-[4px] transition-all ${getButtonHeight()} ${getButtonStyles()} ${className}`}
+      className={`w-full rounded-[36px] transition-all ${getButtonHeight()} ${getButtonStyles()} ${className}`}
       {...props}
     >
       {getButtonContent()}

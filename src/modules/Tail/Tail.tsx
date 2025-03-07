@@ -23,7 +23,7 @@ export default function Tail({
           <div className="mt-8">
             <Link
               className="group flex justify-center lg:justify-between items-center font-arial font-black uppercase text-[24px] lg:text-[32px] 
-              leading-[130%] transition-colors duration-300 focus-visible:text-primary-gray xl:hover:text-primary-gray"
+              leading-[130%] transition-colors duration-300 focus-visible:text-gray/60 xl:hover:text-gray/60"
               href="/tails"
             >
               <h2>{allTails}</h2>

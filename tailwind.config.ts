@@ -27,6 +27,9 @@ const config: Config = {
         green: {
           DEFAULT: "#74C396",
         },
+        gray: {
+          DEFAULT: "#27272A",
+        },
       },
       fontFamily: {
         raleway: ["var(--font-raleway)", "serif"],

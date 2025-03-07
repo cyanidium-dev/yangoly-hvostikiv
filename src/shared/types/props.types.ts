@@ -11,6 +11,7 @@ import {
   INavigationItem,
   IPartenrsTranslation,
   IPartnershipTranslation,
+  IReporting,
   ITails,
 } from "./dictionary.types";
 import * as yup from "yup";
@@ -377,4 +378,27 @@ export interface IAdoptModalProps {
   isOpen: boolean;
   onClose: () => void;
   translation: ITails;
+}
+
+export interface IReportingProps {
+  translation: IReporting;
+  lang: Locale;
+}
+
+export interface IReportingListProps {
+  lang: Locale;
+}
+
+export interface IReportItem {
+  id: string;
+  date: string;
+  title: string;
+  description: string;
+  mainPart: string[];
+  mainPhoto: string;
+  secondaryPhoto: string;
+}
+
+export interface IReportProps {
+  report: IReportItem;
 }

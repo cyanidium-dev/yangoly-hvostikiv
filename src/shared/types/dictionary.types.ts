@@ -141,3 +141,7 @@ export interface ITails {
   connectButton: string;
   sterilize: string;
 }
+
+export interface IReporting {
+  title: string;
+}

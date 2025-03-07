@@ -33,8 +33,7 @@ const ImageSlider = ({ images }: { images: string[] }) => {
                 transition={{ duration: 0.3, ease: "easeInOut" }}
                 className={cn(
                   "relative aspect-[99/104] lg:aspect-[101/142] min-w-[99px] lg:min-w-[101px] min-h-[104px] lg:min-h-[142px] rounded-[6px] lg:rounded-[10px] cursor-pointer",
-                  globalIndex === selectedIndex &&
-                    "border-2 border-primary-orange"
+                  globalIndex === selectedIndex && "border-2 border-orange"
                 )}
                 onClick={() => handleThumbClick(globalIndex)}
               >

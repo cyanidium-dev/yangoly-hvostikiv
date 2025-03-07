@@ -13,10 +13,7 @@ const Contacts = ({ lang, translation }: IContactsProps) => {
   };
 
   return (
-    <section
-      id="contacts"
-      className="relative h-[923px] lg:h-[634px] bg-primary-green"
-    >
+    <section id="contacts" className="relative h-[923px] lg:h-[634px] bg-green">
       <div className="container relative z-10 px-4 xl:px-10 top-[124px] lg:top-[113px] mx-auto ">
         <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center">
           <div className="flex flex-col items-center lg:items-start lg:max-w-[406px]">

@@ -7,17 +7,13 @@
         "href": "/"
       },
       {
-        "name": "About the Foundation",
+        "name": "About",
         "href": "/#about"
       },
       {
         "name": "Our Projects",
         "href": "/",
         "dropdown": [
-          {
-            "name": "Spay/neuter",
-            "href": "/sterilization-of-tails"
-          },
           {
             "name": "Become a guardian angel",
             "href": "/tails"
@@ -36,8 +32,12 @@
         "href": "/partnership"
       },
       {
-        "name": "Charity Events",
+        "name": "Events",
         "href": "/chairty-events"
+      },
+      {
+        "name": "Blog",
+        "href": "/blog"
       },
       {
         "name": "Reporting",
@@ -167,6 +167,7 @@
   },
   "donateModal": {
     "fundraisingTitle": "Our goal for the month",
+    "subtitle": "Current Fundraising Campaign",
     "goal": "Goal",
     "currency": "UAH",
     "donateAmountSection": {

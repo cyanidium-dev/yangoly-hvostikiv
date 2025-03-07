@@ -15,10 +15,6 @@
         "href": "/",
         "dropdown": [
           {
-            "name": "Стерелізація хвостиків",
-            "href": "/sterilization-of-tails"
-          },
-          {
             "name": "Стати янголом-опікуном",
             "href": "/tails"
           },
@@ -38,6 +34,10 @@
       {
         "name": "Благодійні заходи",
         "href": "/chairty-events"
+      },
+      {
+        "name": "Блог",
+        "href": "/blog"
       },
       {
         "name": "Звітність",
@@ -168,6 +168,7 @@
   },
   "donateModal": {
     "fundraisingTitle": "Наша ціль на місяць",
+    "subtitle": "Актуальний збір",
     "goal": "Ціль",
     "currency": "грн",
     "donateAmountSection": {

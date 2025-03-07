@@ -1,15 +1,13 @@
 "use client";
 import Image from "next/image";
 import Button from "@/shared/components/Button/Button";
-import {
-  PartnerShipMaskDesktop,
-  PartnerShipMaskMobile,
-} from "../../../public/images/icons";
+
 import { useCallback, useState } from "react";
 import Modal from "@/shared/components/Modal/Modal";
 import { IPartnershipProps } from "@/shared/types";
 import UniversalForm from "@/shared/components/UniversalForm/UniversalForm";
 import getContactFormConfig from "@/shared/formsConfigs/contactForm";
+import EventsSlider from "@/shared/components/EventsSlider/EventsSlider";
 
 const Partnership = ({ translation, lang }: IPartnershipProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -22,32 +20,29 @@ const Partnership = ({ translation, lang }: IPartnershipProps) => {
   const handleSubmit = (data: unknown) => {
     console.log("Submited:", data);
   };
-
+  const images = [
+    "/images/partners1.jpg",
+    "/images/partners2.jpg",
+    "/images/partners3.jpg",
+    "/images/partners4.jpg",
+  ];
   return (
-    <section className="mt-[65px] xl:mt-[140px]">
-      <div className="relative flex justify-center">
-        <div className="absolute top-[20px] gap-4 flex flex-col items-center justify-center">
-          <h2 className="text-center text-[#FCFCFC] text-[24px] leading-[130%]">
-            {hero.title}
-          </h2>
-          <Button
-            onClick={handleOpenModal}
-            className="bg-white text-[#FF9332] hover:text-white py-3 hover:shadow-lg transition-all duration-300"
-            text={hero.button}
-          />
-        </div>
-        <PartnerShipMaskDesktop className="hidden xl:block" />
-        <PartnerShipMaskMobile className="xl:hidden max-h-[200px] w-full" />
-      </div>
+    <section className="mt-[65px] xl:mt-[130px]">
       <div className="container mx-auto px-4">
+        <h2 className="text-dark pt-[60px] font-arial text-[24px] font-black leading-[130%] uppercase text-center">
+          {hero.title}
+        </h2>
+        <div className="xl:hidden mt-[60px]">
+          <EventsSlider images={images} />
+        </div>
         <div className="flex flex-col xl:flex-row-reverse xl:mt-[50px]">
           {/* Текстовий блок */}
           <div className="w-full">
-            <div className="bg-white px-10 py-5 h-full border-tr-[8px] border-br-[8px] mt-[46px] xl:mt-0">
-              <h2 className="text-black text-[24px] leading-[130%] xl:text-[32px]">
+            <div className="bg-white px-[28px] py-[32px] xl:px-[40px] xl:py-[20px] h-full flex flex-col justify-center  border-tr-[8px] border-br-[8px] mt-[46px] xl:mt-0">
+              <h2 className="text-dark font-arial text-[24px] leading-[130%] xl:text-[32px]">
                 {content.title}
               </h2>
-              <p className="mt-5 text-black leading-[130%] text-[18px]">
+              <p className="mt-5 text-dark leading-[130%] text-[14px] xl:text-[18px]">
                 {content.description}
               </p>
               <ul className="space-y-4 mt-5">
@@ -60,14 +55,14 @@ const Partnership = ({ translation, lang }: IPartnershipProps) => {
                       alt="Paws"
                     />
                     <div>
-                      <p className="text-[18px] text-black leading-[130%]">
+                      <p className="text-[14px]  xl:text-[16px] font-arial font-black text-dark leading-[130%]">
                         {section.title}
                       </p>
                       <ul className="list-none">
                         {section.items.map((item, itemIndex) => (
                           <li
                             key={itemIndex}
-                            className="before:content-['-'] text-black before:mr-1 text-[18px] leading-[130%]"
+                            className="before:content-['-'] text-dark before:mr-1 text-[14px] xl:text-[16px] leading-[130%]"
                           >
                             {item}
                           </li>
@@ -80,11 +75,11 @@ const Partnership = ({ translation, lang }: IPartnershipProps) => {
               <div className="flex flex-col justify-center items-center gap-4 mt-5 xl:flex-row">
                 <Button
                   onClick={handleOpenModal}
-                  className="w-full py-3"
+                  className="w-full py-3 text-[14px] font-semibold xl:text-[18px]"
                   text={content.buttons.partner}
                 />
                 <Button
-                  className="w-full py-3"
+                  className="w-full py-3 text-[14px] font-semibold xl:text-[18px]"
                   text={content.buttons.documents}
                   variant="outline"
                 />
@@ -92,7 +87,7 @@ const Partnership = ({ translation, lang }: IPartnershipProps) => {
             </div>
           </div>
           {/* Галерея */}
-          <div className="w-full h-full">
+          <div className="w-full h-full hidden xl:block">
             <div className="grid grid-cols-2 gap-5 mt-10 xl:mt-0">
               {/* Лівий стовпчик */}
               <div className="flex flex-col gap-5">

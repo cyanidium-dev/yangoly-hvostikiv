@@ -26,16 +26,18 @@ export default function BlogCard({
           />
         </div>
       </Link>
-      <p className="mb-3 text-[16px] font-medium leading-[20.8px]">{date}</p>
+      <p className="mb-3  text-dark text-[16px] font-medium leading-[20.8px]">
+        {date}
+      </p>
       <Link href={`/blog/${id}`}>
         <h2
-          className="mb-3 text-[20px] font-semibold leading-[26px] line-clamp-2 focus-visible:text-primary-gray xl:hover:text-primary-gray 
+          className="mb-3 text-dark text-[20px] font-semibold leading-[26px] line-clamp-2 focus-visible:text-primary-gray xl:hover:text-primary-gray 
         transition duration-300 ease-out"
         >
           {title}
         </h2>
       </Link>
-      <p className="mb-5 font-normal text-[14px] leading-[18.2px] line-clamp-4">
+      <p className="mb-5 text-dark font-normal text-[14px] leading-[18.2px] line-clamp-4">
         {description}
       </p>
       <Link href={`/blog/${id}`}>

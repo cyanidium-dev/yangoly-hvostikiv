@@ -19,6 +19,7 @@ const WorkResults = ({ translation }: { translation: IWorkResult[] }) => {
             variants={generalSlideUp}
             custom={index * 0.2}
             initial="hidden"
+            viewport={{ once: true }}
             whileInView="visible"
           >
             <AchievementItem count={item.count} action={item.action} />

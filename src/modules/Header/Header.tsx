@@ -38,7 +38,7 @@ const Header = ({
           <div className="hidden xl:flex">
             <Navbar translation={translation} isOnBurger={false} />
           </div>
-          <div className="flex justify-center items-center gap-4 xl:gap-8">
+          <div className="flex justify-center items-center gap-4 xl:gap-2 laptop:gap-8">
             <LanguageSwitcher />
             <button
               className={`${isMenuOpen ? "ml-[auto]" : "xl:hidden"}`}

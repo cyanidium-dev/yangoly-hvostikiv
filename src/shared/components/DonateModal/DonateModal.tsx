@@ -6,6 +6,7 @@ import DonateAmountSection from "./DonateAmountSection/DonateAmountSection";
 import { IDonateModalProps } from "@/shared/types";
 import { getDictionary } from "@/shared/utils";
 import { motion, AnimatePresence } from "framer-motion";
+import { useLockBodyScroll } from "@/shared/hooks/useLockBodyScroll";
 
 const DonateModal = ({
   isOpen,
@@ -16,6 +17,7 @@ const DonateModal = ({
   const [localTranslation, setLocalTranslation] = useState(translation);
   const [showModal, setShowModal] = useState(isOpen);
 
+  useLockBodyScroll(isOpen);
   useEffect(() => {
     if (!translation) {
       getDictionary(lang).then(({ donateModal }) =>
@@ -43,7 +45,7 @@ const DonateModal = ({
 
   if (!localTranslation) return null;
 
-  const { fundraisingTitle, currency, goal, donateAmountSection } =
+  const { fundraisingTitle, subtitle, currency, goal, donateAmountSection } =
     localTranslation;
 
   return (
@@ -51,71 +53,77 @@ const DonateModal = ({
       {showModal && (
         <motion.div
           onClick={handleBackdropClick}
-          className="fixed inset-0 top-[65px] xl:top-[140px] flex items-start justify-center bg-black/50 z-[1000]"
+          className="fixed inset-0 top-[65px] xl:top-[130px] flex items-start justify-center bg-black/50 z-[1000]"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.3 }}
         >
           <motion.div
-            className="w-[92%] xl:w-[78%] h-[calc(100vh-81px)] xl:h-[90%] bg-white rounded-lg relative mt-2 xl:mt-10"
+            className="w-[92%] xl:w-[78%] h-[calc(100svh-81px)] xl:h-[90%] relative bg-white   xl:bg-[#FFF7E5] rounded-[12px] xl:rounded-[40px] overflow-auto scrollbar-none [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden  mt-2 xl:mt-10"
             initial={{ scale: 0.8 }}
             animate={{ scale: 1 }}
             exit={{ scale: 0.8 }}
             transition={{ duration: 0.3 }}
           >
-            <button
-              onClick={onClose}
-              className="absolute right-6 top-6 p-2 hover:bg-gray-100 rounded-full z-10"
-            >
-              <CloseIcon variant="secondary" className="w-6 h-6" />
-            </button>
-
-            <div className="h-full overflow-y-auto">
-              <div className="flex flex-col xl:flex-row min-h-full">
-                <div className="px-4 mt-[64px] xl:hidden">
-                  <FundraisingGoal
-                    imageVariant="small"
-                    fundraisingTitle={fundraisingTitle}
-                    goal={goal}
-                    currency={currency}
-                    totalAmount={30000}
-                    currentAmount={10000}
-                    styles={{
-                      titleClassName: "text-[24px]",
-                      goalClassName: "text-[14px] text-[#012A0F]",
-                      currentAmountClassName:
-                        "text-[14px] no-ligatures text-[#012A0F]",
-                    }}
-                  />
+            <div className="sticky xl:hidden top-0 left-0 right-0 bg-white z-[10000] px-6 py-4 flex justify-end">
+              <button
+                onClick={onClose}
+                className=" hover:bg-gray-100 rounded-full"
+              >
+                <CloseIcon variant="secondary" className="w-6 h-6" />
+              </button>
+            </div>
+            <div className="xl:flex xl:justify-between w-full">
+              <FundraisingGoal
+                className=" xl:hidden"
+                imageVariant="small"
+                fundraisingTitle={fundraisingTitle}
+                goal={goal}
+                currency={currency}
+                totalAmount={30000}
+                currentAmount={10000}
+                styles={{
+                  titleClassName:
+                    "!text-[24px] font-arial font-black uppercase self-stretch text-center max-w-[280px] mx-auto",
+                  goalClassName: "text-[14px] text-[#012A0F]",
+                  currentAmountClassName:
+                    "text-[14px] no-ligatures text-[#012A0F]",
+                }}
+              />
+              <div className="hidden xl:block xl:w-1/2 my-auto ">
+                <FundraisingGoal
+                  imageVariant="big"
+                  fundraisingTitle={fundraisingTitle}
+                  goal={goal}
+                  currency={currency}
+                  totalAmount={30000}
+                  currentAmount={10000}
+                  subtitle={subtitle}
+                  styles={{
+                    titleClassName:
+                      "!text-[36px] font-arial font-black uppercase max-w-[325px] text-center mx-auto",
+                    goalClassName: "text-[14px] text-[#012A0F]",
+                    currentAmountClassName:
+                      "text-[14px] no-ligatures text-[#012A0F]",
+                  }}
+                />
+              </div>
+              <div className="xl:w-1/2 xl:bg-white xl:pt-0 p-[20px]  xl:rounded-l-[40px]">
+                {" "}
+                <div className="sticky hidden xl:flex  top-0 left-0 right-0 bg-white z-10 px-2 py-2  justify-end ">
+                  <button
+                    onClick={onClose}
+                    className="p-2 hover:bg-gray-100 rounded-full"
+                  >
+                    <CloseIcon variant="secondary" className="w-6 h-6" />
+                  </button>
                 </div>
-
-                <div className="hidden xl:flex xl:w-1/2 bg-[#F5F5F5] rounded-l-lg items-center justify-center py-[64px]">
-                  <div className="-mt-10">
-                    <FundraisingGoal
-                      imageVariant="big"
-                      fundraisingTitle={fundraisingTitle}
-                      goal={goal}
-                      currency={currency}
-                      totalAmount={30000}
-                      currentAmount={10000}
-                      styles={{
-                        titleClassName: "text-[24px]",
-                        goalClassName: "text-[14px] text-[#012A0F]",
-                        currentAmountClassName:
-                          "text-[14px] no-ligatures text-[#012A0F]",
-                      }}
-                    />
-                  </div>
-                </div>
-
-                <div className="xl:w-1/2 px-4 py-[64px]">
-                  <DonateAmountSection
-                    lang={lang}
-                    currency={currency}
-                    translation={donateAmountSection}
-                  />
-                </div>
+                <DonateAmountSection
+                  lang={lang}
+                  currency={currency}
+                  translation={donateAmountSection}
+                />
               </div>
             </div>
           </motion.div>

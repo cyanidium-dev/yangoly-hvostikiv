@@ -78,10 +78,10 @@ const DonateAmountSection = ({
     <>
       <div className="flex relative flex-col items-center gap-6">
         <div className="mt-6 border border-[#FF9332] max-w-[350px] xl:max-w-[544px] p-3 xl:p-8 w-full">
-          <p className="text-center text-[24px] uppercase leading-[130%] mb-4">
+          <p className="text-center text-[20px] font-black font-arial text-dark uppercase leading-[130%] mb-4">
             {title}
           </p>
-          <p className="text-center text-[36px] leading-[130%] text-[#777] mb-4">
+          <p className="text-center text-[24px] xl:text-[32px] leading-[130%] text-[#52525B] mb-4">
             {formatAmount(currentAmount)} {currency}
           </p>
           <div className="grid grid-cols-3 gap-2 max-w-[400px] xl:max-w-[544px] mx-auto">
@@ -149,11 +149,13 @@ const DonateAmountSection = ({
         buttonText={lang === "en" ? "Got it" : "Зрозуміло"}
         title={lang === "en" ? "Thank you!" : "Дякуємо!"}
       />
-      <Toast
-        message={submitError}
-        isVisible={isToastVisible}
-        onClose={() => setIsToastVisible(false)}
-      />
+      {isToastVisible && (
+        <Toast
+          message={submitError}
+          isVisible={isToastVisible}
+          onClose={() => setIsToastVisible(false)}
+        />
+      )}
     </>
   );
 };

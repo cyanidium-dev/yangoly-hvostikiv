@@ -3,12 +3,12 @@ import Image from "next/image";
 const EventsGrid = ({ images }: { images: string[] }) => {
   return (
     <div className="hidden xl:block">
-      <div className="grid grid-cols-12 gap-5">
+      <div className="grid grid-cols-[2.92fr_2.82fr_5.92fr] gap-5">
         {/* Перший стовпчик */}
-        <div className="flex col-span-3 flex-col gap-5 h-full">
+        <div className="flex flex-col gap-5">
           <Image
             src={images[0]}
-            alt=""
+            alt="Event 1"
             layout="responsive"
             width={349}
             height={228}
@@ -16,7 +16,7 @@ const EventsGrid = ({ images }: { images: string[] }) => {
           />
           <Image
             src={images[1]}
-            alt=""
+            alt="Event 2"
             layout="responsive"
             width={349}
             height={236}
@@ -25,10 +25,10 @@ const EventsGrid = ({ images }: { images: string[] }) => {
         </div>
 
         {/* Другий стовпчик */}
-        <div className="flex col-span-3 flex-col gap-5">
+        <div className="flex flex-col gap-5">
           <Image
             src={images[2]}
-            alt=""
+            alt="Event 3"
             layout="responsive"
             width={337}
             height={317}
@@ -45,10 +45,10 @@ const EventsGrid = ({ images }: { images: string[] }) => {
         </div>
 
         {/* Третій стовпчик */}
-        <div className="flex col-span-6">
+        <div className="flex">
           <Image
             src={images[4]}
-            alt=""
+            alt="Event 4"
             layout="responsive"
             width={706}
             height={484}

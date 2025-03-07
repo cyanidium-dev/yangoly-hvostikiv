@@ -81,6 +81,7 @@ interface IFundraisingGoalStyleProps {
 
 export interface IFundraisingGoalProps extends ComponentProps<"div"> {
   fundraisingTitle: string;
+  subtitle?: string;
   goal: string;
   currency: string;
   totalAmount: number;
@@ -112,6 +113,7 @@ export interface ICardProps extends React.HTMLAttributes<HTMLDivElement> {
 export interface IPartnersProps
   extends React.HtmlHTMLAttributes<HTMLTableSectionElement> {
   translation: IPartenrsTranslation;
+  withTitle?: boolean;
 }
 
 export interface IFormField {

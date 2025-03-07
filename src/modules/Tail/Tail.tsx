@@ -26,7 +26,7 @@ export default function Tail({
               leading-[130%] transition-colors duration-300 focus-visible:text-gray/60 xl:hover:text-gray/60"
               href="/tails"
             >
-              <h2>{allTails}</h2>
+              <h2 className="text-dark">{allTails}</h2>
               <ArrowDonwIcon
                 className="hidden lg:block rotate-[270deg] w-6 h-6 transition-colors duration-300 group-[focus-visible]:text-primary-gray
                xl:group-hover:text-primary-gray"

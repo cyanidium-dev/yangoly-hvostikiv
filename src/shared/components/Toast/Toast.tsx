@@ -28,10 +28,10 @@ const Toast = ({
   return (
     <div
       className={cn(
-        "absolute bottom-6 right-6 z-[1001] flex items-center justify-between gap-2",
+        "fixed bottom-6 right-1 z-[1001] flex items-center justify-between gap-2",
         "max-w-[375px] w-full bg-white px-4 py-2 rounded-[4px] border border-[#D4D4D4] shadow-lg",
         "transform transition-all duration-300 ease-in-out",
-        isVisible ? "translate-x-0 opacity-100" : "translate-x-2 opacity-0"
+        isVisible ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0"
       )}
     >
       <span className="text-[18px] leading-[133%] text-[#1D1D1D] pr-2">

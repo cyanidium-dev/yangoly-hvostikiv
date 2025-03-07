@@ -72,35 +72,41 @@ export const ContactsMaskDesktop = ({ ...props }: ISvgIconProps) => {
   );
 };
 
-export const PartnerShipMaskMobile = ({ ...props }: ISvgIconProps) => {
+export const PartnerShipMaskMobile = ({
+  color = "#EACCAA",
+  ...props
+}: ISvgIconProps) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 393 202"
-      fill="none"
+      fill={color}
       preserveAspectRatio="none"
       {...props}
     >
       <path
         d="M0 0V196.389C0 196.389 40.7973 176.31 68.5 175.628C98.66 174.885 113.504 192.786 143.5 196.389C196.796 202.791 225.964 172.686 279.5 175.628C324.71 178.112 393 202 393 202V0H0Z"
-        fill="#FF9332"
+        fill={color}
       />
     </svg>
   );
 };
 
-export const PartnerShipMaskDesktop = ({ ...props }: ISvgIconProps) => {
+export const PartnerShipMaskDesktop = ({
+  color = "#EACCAA",
+  ...props
+}: ISvgIconProps) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       preserveAspectRatio="none"
       viewBox="0 0 1512 166"
-      fill="none"
+      fill={color}
       {...props}
     >
       <path
         d="M1491.45 25.891C1457.94 62.8951 1454.19 54.4987 1400 54.4987C1285 54.4987 1345.49 120.368 1252 133.999C1181.78 144.237 1118.66 111.225 1047.5 118.999C988 125.499 900.924 170.224 840 165.499C723.525 156.465 631.5 131.499 537 153.999C463.883 171.408 407 130.999 331 99.4991C277.084 77.1526 199.622 129.371 133.5 68.9989C87.5 26.9991 9.42841e-06 57.9991 9.42841e-06 57.9991L1.44552e-05 0.499105L1512 0.999054C1512 0.999054 1500.08 16.3654 1491.45 25.891Z"
-        fill="#FF9332"
+        fill={color}
       />
     </svg>
   );
@@ -112,7 +118,7 @@ export const EventsMaskMobile = ({ ...props }: ISvgIconProps) => {
       xmlns="http://www.w3.org/2000/svg"
       preserveAspectRatio="none"
       viewBox="0 0 360 907"
-      fill="none"
+      fill="currentColor"
       {...props}
     >
       <path

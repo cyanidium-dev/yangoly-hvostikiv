@@ -73,6 +73,7 @@ export interface IDonateAmountSectionTranslation {
 
 export interface IDonateModalTranslation {
   fundraisingTitle: string;
+  subtitle: string;
   currency: string;
   goal: string;
   donateAmountSection: IDonateAmountSectionTranslation;

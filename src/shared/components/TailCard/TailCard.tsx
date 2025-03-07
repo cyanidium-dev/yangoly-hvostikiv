@@ -34,14 +34,14 @@ const TailCard = ({ tail, translation }: ITailCardProps) => {
         </h2>
       </Link>
       <div className="flex items-center gap-x-2 mb-3 text-[14px] leading-[130%]">
-        <p className="px-6 py-[8.5px] border border-black rounded-[28px]">
+        <p className="px-6 text-dark py-[8.5px] border border-black rounded-[28px]">
           {sex}
         </p>
-        <p className="px-6 py-[8.5px] border border-black rounded-[28px]">
+        <p className="px-6 text-dark py-[8.5px] border border-black rounded-[28px]">
           {sterilized}
         </p>
       </div>
-      <p className="min-h-[73px] mb-5 text-[14px] leading-[130%] line-clamp-4">
+      <p className="min-h-[73px] text-dark mb-5 text-[14px] leading-[130%] line-clamp-4">
         {description[0]}
       </p>
       <Link href={`/tails/${id}`} className="block mt-auto h-[47px]">

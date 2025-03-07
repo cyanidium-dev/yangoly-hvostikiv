@@ -36,7 +36,7 @@ const TailInfo = ({ tail, locale, translation }: ITailInfoProps) => {
         <div className="flex flex-col gap-4">
           {tail.description.map((descr, index) => (
             <p
-              className="text-[14px] lg:text-[16px] leading-[130%]"
+              className="text-[14px] text-dark lg:text-[16px] leading-[130%]"
               key={index}
             >
               {descr}

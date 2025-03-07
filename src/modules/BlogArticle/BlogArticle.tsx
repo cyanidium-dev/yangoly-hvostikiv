@@ -14,8 +14,8 @@ export default function BlogArticle({
   const readingTime = calculateReadingTime(article);
 
   return (
-    <section className="mt-[65px] mx-auto xl:mt-[140px] container pt-[60px] xl:pt-12 pb-[100px] xl:pb-[148px] px-4 xl:px-10">
-      <div className="lg:flex items-center justify-between gap-x-[141px] mb-[60px] lg:mb-12">
+    <section className="mt-[65px] text-dark mx-auto xl:mt-[140px] container pt-[60px] xl:pt-12 pb-[100px] xl:pb-[148px] px-4 xl:px-10">
+      <div className="lg:flex  items-center justify-between gap-x-[141px] mb-[60px] lg:mb-12">
         <div className="lg:w-[49.3%] mb-[44px] lg:mb-0">
           <h1 className="mb-7 text-[32px] lg:text-[40px] font-bold leading-[130%]">
             {title}

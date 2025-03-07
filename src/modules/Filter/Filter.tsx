@@ -43,7 +43,7 @@ export default function Filter({ selectedFilter }: { selectedFilter: string }) {
       {filterOptions.map((filter) => (
         <button
           key={filter.value}
-          className={`text-[16px] lg:text-[20px] leading-[130%] hover:text-green focus-visible:text-green transition duration-300 ease-in-out ${
+          className={`text-[16px] text-dark lg:text-[20px] leading-[130%] hover:text-green focus-visible:text-green transition duration-300 ease-in-out ${
             selectedFilter === filter.value ? "text-green font-bold" : ""
           }`}
           onClick={() => handleFilterChange(filter.value)}

@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import Logo from "@/shared/components/Logo/Logo";
 import SocialsList from "@/shared/components/SocialsList/SocialsList";
 import { INavigationItem } from "@/shared/types";
-import { fadeIn, generalSlideUp, slideUp } from "@/shared/utils";
+import { fadeIn, generalSlideUp } from "@/shared/utils";
 import Link from "next/link";
 
 const Footer = ({ translation }: { translation: INavigationItem[] }) => {
@@ -51,7 +51,7 @@ const Footer = ({ translation }: { translation: INavigationItem[] }) => {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        variants={slideUp}
+        variants={fadeIn}
         custom={0.6 + translation.length * 0.1}
       >
         <SocialsList iconClass="text-white" />

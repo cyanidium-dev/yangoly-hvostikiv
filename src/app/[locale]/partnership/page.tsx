@@ -11,7 +11,11 @@ export default async function ParnershipPage({ params }: PageParams) {
       <Partnership translation={partnership} lang={locale} />
       <Partners
         withTitle={false}
-        className="pt-[80px] pb-[70px]"
+        className="pt-[80px] pb-[70px] xl:hidden"
+        translation={partners}
+      />
+      <Partners
+        className="pt-[80px] hidden xl:block pb-[70px]"
         translation={partners}
       />
     </>

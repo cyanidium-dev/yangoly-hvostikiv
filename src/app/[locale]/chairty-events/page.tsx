@@ -17,6 +17,9 @@ import EventsSlider from "@/shared/components/EventsSlider/EventsSlider";
 import clsx from "clsx";
 import Contacts from "@/modules/Contacts/Contacts";
 import EventsGrid from "@/shared/components/EventsGrid/EventsGrid";
+import { motion } from "framer-motion";
+import { fadeIn, slideUp, generalSlideUp } from "@/shared/utils"; 
+
 export default function CharityEventPage() {
   const [isDonateModalOpen, setIsDonateModalOpen] = useState(false);
   const [isPartnerModalOpen, setIsPartnerModalOpen] = useState(false);
@@ -40,6 +43,7 @@ export default function CharityEventPage() {
   };
 
   if (!localTranslation || !contactTranslation) return null;
+  // Фото для нижнього слайдера
   const slides = [
     "/images/chairty5.jpg",
     "/images/partners1.jpg",
@@ -55,6 +59,7 @@ export default function CharityEventPage() {
     "/images/partners3.jpg",
     "/images/partners4.jpg",
   ];
+  // Фото для слайдера у горі на мобілці
   const images = [
     "/images/partners1.jpg",
     "/images/partners2.jpg",
@@ -63,6 +68,7 @@ export default function CharityEventPage() {
     "/images/events/last-slide.jpg",
   ];
 
+  // Фото для геро секції
   const heroImages = [
     "/images/events/hero/img1.jpg",
     "/images/events/hero/img3.jpg",
@@ -80,15 +86,27 @@ export default function CharityEventPage() {
         </div>
         <EventsGrid images={heroImages} />
 
-        <h2 className="text-dark text-[24px] leading-[130%] font-black uppercase font-arial text-center mt-[80px]">
+        <motion.h2
+          variants={fadeIn}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          custom={0.2}
+          className="text-dark text-[24px] leading-[130%] font-black uppercase font-arial text-center mt-[80px]"
+        >
           {localTranslation.title}
-        </h2>
+        </motion.h2>
       </div>
-      {/* 4 абзаци! */}
-      <div className="container  flex justify-center mx-auto px-4 xl:px-[40px] ">
-        <div className="grid  mt-[48px] pb-[100px] xl:pb-[148px] grid-cols-1 md:grid-cols-2 xl:flex xl:gap-[80px] gap-[32px] ">
+      {/* 4 абзаци */}
+      <div className="container flex justify-center mx-auto px-4 xl:px-[40px]">
+        <div className="grid mt-[48px] pb-[100px] xl:pb-[148px] grid-cols-1 md:grid-cols-2 xl:flex xl:gap-[80px] gap-[32px]">
           {localTranslation.paragraphs.map((paragraph, index) => (
-            <p
+            <motion.p
+              variants={generalSlideUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              custom={0.2 + index * 0.2}
               className={clsx(
                 "text-[18px] text-black leading-[130%] font-light",
                 index === 0 && "xl:max-w-[235px] laptop:max-w-full",
@@ -99,121 +117,218 @@ export default function CharityEventPage() {
               key={index}
             >
               {paragraph}
-            </p>
+            </motion.p>
           ))}
         </div>
       </div>
       {/* Переваги заходів */}
       <div className="bg-[#140A01] py-[70px]">
         <div className="container mx-auto px-4 xl:px-[40px] xl:pl-[100px] laptop:pl-[114px] md:flex md:gap-[40px] xl:flex-row-reverse xl:gap-[130px]">
-          <Image
-            src="/images/events/benefits-mob.jpg"
-            alt="Event"
-            width={328}
-            height={286}
-            className="object-cover flex mx-auto rounded-[8px] xl:hidden"
-            quality={100}
-          />
-          <Image
-            src="/images/events/benefits-desk.jpg"
-            alt="Event"
-            width={747}
-            height={286}
-            className="object-cover hidden  mx-auto rounded-[8px] xl:flex"
-            quality={100}
-          />
+          <motion.div
+            variants={slideUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            custom={0.2}
+          >
+            <Image
+              src="/images/events/benefits-mob.jpg"
+              alt="Event"
+              width={328}
+              height={286}
+              className="object-cover flex mx-auto rounded-[8px] xl:hidden"
+              quality={100}
+            />
+          </motion.div>
+          <motion.div
+            variants={slideUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            custom={0.2}
+          >
+            <Image
+              src="/images/events/benefits-desk.jpg"
+              alt="Event"
+              width={747}
+              height={286}
+              className="object-cover hidden mx-auto rounded-[8px] xl:flex"
+              quality={100}
+            />
+          </motion.div>
           <div>
-            <h2 className="text-[24px] font-arial font-black uppercase text-white mt-[40px] md:mt-0">
+            <motion.h2
+              variants={fadeIn}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              custom={0}
+              className="text-[24px] font-arial font-black uppercase text-white mt-[40px] md:mt-0"
+            >
               {localTranslation.benefitsTitle}
-            </h2>
+            </motion.h2>
             <ul className="mt-6 flex flex-col gap-4">
-              {localTranslation.benefitsParagraphs.map((parahraph, index) => (
-                <li className="flex gap-4" key={index}>
+              {localTranslation.benefitsParagraphs.map((paragraph, index) => (
+                <motion.li
+                  variants={generalSlideUp}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  custom={0.4 + index * 0.2}
+                  className="flex gap-4"
+                  key={index}
+                >
                   <Image
                     src="/images/paw.marker-mob.png"
                     alt="Paw"
                     width={32}
                     height={32}
-                    className="w-8 h-8 "
+                    className="w-8 h-8"
                   />
-
                   <p className="text-[18px] text-white leading-[130%]">
-                    {parahraph}
+                    {paragraph}
                   </p>
-                </li>
+                </motion.li>
               ))}
             </ul>
           </div>
         </div>
       </div>
       {/* Місія заходів */}
-      <div className="  relative pt-[58px] xl:pt-[142px] xl:h-[620px] ">
-        <div className="container mx-auto px-4 xl:px-[40px] ">
-          <h2 className="text-[#FF9332] text-[24px] xl:text-[64px] font-black uppercase leading-[130%] xl:max-w-[622px]">
+      <div className="relative pt-[58px] xl:pt-[142px] xl:h-[620px]">
+        <div className="container mx-auto px-4 xl:px-[40px]">
+          <motion.h2
+            variants={fadeIn}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            custom={0}
+            className="text-[#FF9332] text-[24px] xl:text-[64px] font-black uppercase leading-[130%] xl:max-w-[622px]"
+          >
             {localTranslation.missionTitle}
-          </h2>
-          <p className="text-black text-[14px] md:text-[18px] leading-[130%] xl:text-[32px]  mt-4  xl:max-w-[622px]">
+          </motion.h2>
+          <motion.p
+            variants={slideUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            custom={0.2}
+            className="text-black text-[14px] md:text-[18px] leading-[130%] xl:text-[32px] mt-4 xl:max-w-[622px]"
+          >
             {localTranslation.missionParagraph}
-          </p>
+          </motion.p>
         </div>
-        <Image
-          src="/images/events/pets.png"
-          alt="Pets"
-          width={362}
-          height={189}
-          className="mt-[58px] ml-auto xl:hidden"
-        />
-        <Image
-          src="/images/events/pets.png"
-          alt="Pets"
-          width={850}
-          height={497}
-          className=" absolute right-0 bottom-0 hidden xl:flex"
-        />
+        <motion.div
+          variants={fadeIn}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          custom={0.4}
+        >
+          <Image
+            src="/images/events/pets.png"
+            alt="Pets"
+            width={362}
+            height={189}
+            className="mt-[58px] ml-auto xl:hidden"
+          />
+        </motion.div>
+        <motion.div
+          variants={fadeIn}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          custom={0.4}
+        >
+          <Image
+            src="/images/events/pets.png"
+            alt="Pets"
+            width={850}
+            height={497}
+            className="absolute right-0 bottom-0 hidden xl:flex"
+          />
+        </motion.div>
       </div>
       {/* Секція з кнопками */}
-      <div className="bg-green py-[60px] ">
-        <div className="container mx-auto px-4 xl:px-[40px] xl:pr-[100px] laptop:pr-[114px] bg-green ">
+      <div className="bg-green py-[60px]">
+        <div className="container mx-auto px-4 xl:px-[40px] xl:pr-[100px] laptop:pr-[114px] bg-green">
           <div className="md:flex md:gap-4 md:justify-between xl:flex-row-reverse xl:items-center">
             <div className="md:max-w-[450px] xl:max-w-[585px]">
               <div className="flex flex-col gap-4">
                 {localTranslation.botParagraphs.map((paragraph, index) => (
-                  <p
-                    className="text-[14px] leading-[130%] text-white xl:text-[18px] "
+                  <motion.p
+                    variants={generalSlideUp}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    custom={0.2 + index * 0.2} // Поступова затримка
+                    className="text-[14px] leading-[130%] text-white xl:text-[18px]"
                     key={index}
                   >
                     {paragraph}
-                  </p>
+                  </motion.p>
                 ))}
               </div>
               <div className="flex flex-col mt-6 gap-2 md:flex-row">
-                <Button
-                  onClick={() => setIsDonateModalOpen(true)}
-                  variant="secondary"
-                  text={localTranslation.buttons[0]}
-                />
-                <Button
-                  onClick={() => setIsPartnerModalOpen(true)}
-                  className="border-white text-white hover:text-[#34AD5D] hover:bg-white"
-                  variant="outline"
-                  text={localTranslation.buttons[1]}
-                />
+                <motion.div
+                  variants={fadeIn}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  custom={0.6}
+                >
+                  <Button
+                    onClick={() => setIsDonateModalOpen(true)}
+                    variant="secondary"
+                    text={localTranslation.buttons[0]}
+                  />
+                </motion.div>
+                <motion.div
+                  variants={fadeIn}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  custom={0.8}
+                >
+                  <Button
+                    onClick={() => setIsPartnerModalOpen(true)}
+                    className="border-white text-white hover:text-[#34AD5D] hover:bg-white"
+                    variant="outline"
+                    text={localTranslation.buttons[1]}
+                  />
+                </motion.div>
               </div>
             </div>
-            <Image
-              src="/images/events/bot-mob.jpg"
-              alt="Event"
-              width={328}
-              height={248}
-              className="flex mx-auto mt-[28px] md:mt-0 rounded-[8px] md:mx-0 xl:hidden "
-            />
-            <Image
-              src="/images/events/bot-desk.jpg"
-              alt="Event"
-              width={706}
-              height={248}
-              className="hidden  xl:flex rounded-[8px]"
-            />
+            <motion.div
+              variants={slideUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              custom={0.4}
+            >
+              <Image
+                src="/images/events/bot-mob.jpg"
+                alt="Event"
+                width={328}
+                height={248}
+                className="flex mx-auto mt-[28px] md:mt-0 rounded-[8px] md:mx-0 xl:hidden"
+              />
+            </motion.div>
+            <motion.div
+              variants={slideUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              custom={0.4}
+            >
+              <Image
+                src="/images/events/bot-desk.jpg"
+                alt="Event"
+                width={706}
+                height={248}
+                className="hidden xl:flex rounded-[8px]"
+              />
+            </motion.div>
           </div>
         </div>
       </div>
@@ -224,15 +339,9 @@ export default function CharityEventPage() {
             spaceBetween={10}
             slidesPerView={1.1}
             breakpoints={{
-              375: {
-                slidesPerView: 1.1,
-              },
-              768: {
-                slidesPerView: 2.1,
-              },
-              1366: {
-                slidesPerView: 4.1,
-              },
+              375: { slidesPerView: 1.1 },
+              768: { slidesPerView: 2.1 },
+              1366: { slidesPerView: 4.1 },
             }}
             pagination={{
               clickable: true,
@@ -245,7 +354,12 @@ export default function CharityEventPage() {
           >
             {slides.map((src: string, index: number) => (
               <SwiperSlide key={index}>
-                <div
+                <motion.div
+                  variants={generalSlideUp}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  custom={0.2 + (index % 4) * 0.2} // Затримка для кожної картинки в циклі
                   className="relative aspect-[343/248] w-full cursor-pointer"
                   onClick={() => setOpenPhoto(src)}
                 >
@@ -255,7 +369,7 @@ export default function CharityEventPage() {
                     fill
                     className="rounded-lg object-cover"
                   />
-                </div>
+                </motion.div>
               </SwiperSlide>
             ))}
           </Swiper>
@@ -276,14 +390,27 @@ export default function CharityEventPage() {
           isOpen={isPartnerModalOpen}
           onClose={() => setIsPartnerModalOpen(false)}
         >
-          <h2 className="text-[24px] font-arial font-black mb-5 leading-[130%] text-[#1D1D1D] text-center mt-10">
+          <motion.h2
+            variants={fadeIn}
+            initial="hidden"
+            animate={isPartnerModalOpen ? "visible" : "hidden"}
+            custom={0}
+            className="text-[24px] font-arial font-black mb-5 leading-[130%] text-[#1D1D1D] text-center mt-10"
+          >
             {localTranslation.partnerModalTitle}
-          </h2>
-          <UniversalForm
-            className="p-0"
-            onSubmit={handleSubmitPartner}
-            {...contactConfig}
-          />
+          </motion.h2>
+          <motion.div
+            variants={slideUp}
+            initial="hidden"
+            animate={isPartnerModalOpen ? "visible" : "hidden"}
+            custom={0.2}
+          >
+            <UniversalForm
+              className="p-0"
+              onSubmit={handleSubmitPartner}
+              {...contactConfig}
+            />
+          </motion.div>
         </Modal>
       </div>
       <Contacts lang={lang} translation={contactTranslation} />

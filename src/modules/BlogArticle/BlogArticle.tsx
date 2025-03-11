@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import { Fragment } from "react";
 import ClockIcon from "../../../public/images/icons/ClockIcon";

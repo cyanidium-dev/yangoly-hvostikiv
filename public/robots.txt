@@ -4,7 +4,7 @@ Allow: /
 Disallow: /[locale]/hidden-page
 
 # Host
-Host: https://yourdomain.com
+Host: https://yangoly-hvostikiv.vercel.app
 
 # Sitemaps
-Sitemap: https://yourdomain.com/sitemap.xml
+Sitemap: https://yangoly-hvostikiv.vercel.app/sitemap.xml

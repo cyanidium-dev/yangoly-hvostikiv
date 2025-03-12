@@ -11,6 +11,8 @@ export async function generateMetadata({
 }: PageParams): Promise<Metadata> {
   const { locale } = await params;
   const { metadata } = await getDictionary(locale);
+  const baseUrl =
+    process.env.NEXT_PUBLIC_SITE_URL || "https://yangoly-hvostikiv.vercel.app";
 
   return {
     title: metadata.title,
@@ -18,6 +20,21 @@ export async function generateMetadata({
     keywords: metadata.keywords,
     icons: {
       icon: "/favicon.ico",
+    },
+    openGraph: {
+      title: metadata.title,
+      description: metadata.description,
+      url: `${baseUrl}/${locale}`,
+      type: "website",
+      locale: locale,
+      images: [
+        {
+          url: "/images/about/about-us-desk3.jpg",
+          width: 1200,
+          height: 630,
+          alt: metadata.title,
+        },
+      ],
     },
   };
 }

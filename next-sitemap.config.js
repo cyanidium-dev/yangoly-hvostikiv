@@ -1,6 +1,7 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: "https://yangoly-hvostikiv.vercel.app",
+  siteUrl:
+    process.env.NEXT_PUBLIC_SITE_URL || "https://yangoly-hvostikiv.vercel.app",
   generateRobotsTxt: true,
   sitemapSize: 7000,
   changefreq: "daily",
@@ -79,13 +80,11 @@ module.exports = {
     return paths;
   },
 
-  // Налаштування для robots.txt
   robotsTxtOptions: {
     policies: [
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/[locale]/hidden-page"], // Приховані сторінки, якщо є
       },
     ],
   },

@@ -1,8 +1,11 @@
+"use client";
 import Link from "next/link";
 import TailInfo from "@/shared/components/TailInfo/TailInfo";
 import RandomTailCards from "@/shared/components/RandomTailCards/RandomTailCards";
 import { ArrowDonwIcon } from "../../../public/images/icons";
 import { ITailProps } from "@/shared/types";
+import { motion } from "framer-motion";
+import { fadeIn, slideUp } from "@/shared/utils";
 
 export default function Tail({
   tail,
@@ -26,11 +29,28 @@ export default function Tail({
               leading-[130%] transition-colors duration-300 focus-visible:text-gray/60 xl:hover:text-gray/60"
               href="/tails"
             >
-              <h2 className="text-dark">{allTails}</h2>
-              <ArrowDonwIcon
-                className="hidden lg:block rotate-[270deg] w-6 h-6 transition-colors duration-300 group-[focus-visible]:text-primary-gray
-               xl:group-hover:text-primary-gray"
-              />
+              <motion.h2
+                variants={fadeIn}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                custom={0}
+                className="text-dark"
+              >
+                {allTails}
+              </motion.h2>
+              <motion.div
+                variants={slideUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                custom={0.2}
+              >
+                <ArrowDonwIcon
+                  className="hidden lg:block rotate-[270deg] w-6 h-6 transition-colors duration-300 group-[focus-visible]:text-primary-gray
+                  xl:group-hover:text-primary-gray"
+                />
+              </motion.div>
             </Link>
             <RandomTailCards tails={randomTails} translation={translation} />
           </div>

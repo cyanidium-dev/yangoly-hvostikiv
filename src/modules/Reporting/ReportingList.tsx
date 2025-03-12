@@ -6,6 +6,8 @@ import Pagination from "../Pagination/Pagination";
 import { ArrowDonwIcon } from "../../../public/images/icons";
 import { reportingList } from "@/app/[locale]/reporting/constants";
 import { IReportingListProps } from "@/shared/types";
+import { motion } from "framer-motion";
+import { fadeIn, generalSlideUp } from "@/shared/utils";
 
 export default function ReportingList({ lang }: IReportingListProps) {
   const router = useRouter();
@@ -37,35 +39,56 @@ export default function ReportingList({ lang }: IReportingListProps) {
     <>
       <ul className="flex flex-col gap-y-6">
         {currentItems.map((item, idx) => (
-          <li
+          <motion.li
             key={idx}
+            variants={generalSlideUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            custom={idx * 0.2}
             className="py-[22px] px-[26px] rounded-[32px] bg-white text-[20px] lg:text-[24px] leading-[120%]"
           >
             <Link
               href={`/reporting/${item.id}`}
               className="group flex items-center justify-between w-full"
             >
-              <span
-                className="transition-colors duration-300 group-[focus-visible]:text-gray/60
-                             xl:group-hover:text-gray/60"
+              <motion.span
+                variants={fadeIn}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                custom={idx * 0.2 + 0.1}
+                className="transition-colors duration-300 group-[focus-visible]:text-gray/60 xl:group-hover:text-gray/60"
               >
                 {item.date}
-              </span>
-              <ArrowDonwIcon
-                className="rotate-[270deg] w-6 h-6 transition-colors duration-300 group-[focus-visible]:text-gray/60
-                             xl:group-hover:text-gray/60"
-              />
+              </motion.span>
+              <motion.div
+                variants={fadeIn}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                custom={idx * 0.2 + 0.2}
+              >
+                <ArrowDonwIcon className="rotate-[270deg] w-6 h-6 transition-colors duration-300 group-[focus-visible]:text-gray/60 xl:group-hover:text-gray/60" />
+              </motion.div>
             </Link>
-          </li>
+          </motion.li>
         ))}
       </ul>
-      <div className="w-fit mt-8 lg:mt-12 mx-auto">
+      <motion.div
+        variants={fadeIn}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        custom={0.8}
+        className="w-fit mt-8 lg:mt-12 mx-auto"
+      >
         <Pagination
           currentPage={currentPage}
           totalPages={totalPages}
           onPageChange={handlePageChange}
         />
-      </div>
+      </motion.div>
     </>
   );
 }

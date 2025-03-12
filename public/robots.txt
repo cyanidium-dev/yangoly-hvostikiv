@@ -1,0 +1,10 @@
+# *
+User-agent: *
+Allow: /
+Disallow: /[locale]/hidden-page
+
+# Host
+Host: https://yangoly-hvostikiv.vercel.app
+
+# Sitemaps
+Sitemap: https://yangoly-hvostikiv.vercel.app/sitemap.xml

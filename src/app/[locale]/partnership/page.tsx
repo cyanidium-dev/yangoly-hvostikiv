@@ -9,7 +9,15 @@ export default async function ParnershipPage({ params }: PageParams) {
   return (
     <>
       <Partnership translation={partnership} lang={locale} />
-      <Partners className="pt-[80px] pb-[70px]" translation={partners} />
+      <Partners
+        withTitle={false}
+        className="pt-[80px] pb-[70px] xl:hidden"
+        translation={partners}
+      />
+      <Partners
+        className="pt-[80px] hidden xl:block pb-[70px]"
+        translation={partners}
+      />
     </>
   );
 }

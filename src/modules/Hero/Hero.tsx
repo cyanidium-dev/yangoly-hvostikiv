@@ -1,10 +1,16 @@
 "use client";
 import Button from "@/shared/components/Button/Button";
-import { IHeroProps } from "@/shared/types";
+import { IHeroProps, Locale } from "@/shared/types";
 import { motion } from "framer-motion";
 import { fadeIn, slideUp, generalSlideUp } from "@/shared/utils";
+import { useState } from "react";
+import DonateModal from "@/shared/components/DonateModal/DonateModal";
+import { usePathname } from "next/navigation";
 
 const Hero = ({ translation }: IHeroProps) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const pathName = usePathname();
+  const lang = pathName.split("/")[1] as Locale;
   const { title, subtitle, text, button } = translation;
   return (
     <section className="mt-[65px] xl:mt-[105px] hero-bg pt-[381px] xl:pt-[497px] xl:pb-[43px] pb-[38px]">
@@ -43,10 +49,19 @@ const Hero = ({ translation }: IHeroProps) => {
             {text}
           </motion.p>
           <motion.div variants={generalSlideUp} custom={1.0}>
-            <Button className="mt-6 bg-orange text-dark" text={button} />
+            <Button
+              onClick={() => setIsModalOpen(true)}
+              className="mt-6 bg-orange text-dark"
+              text={button}
+            />
           </motion.div>
         </motion.div>
       </div>
+      <DonateModal
+        lang={lang}
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </section>
   );
 };

@@ -8,6 +8,8 @@ import Pagination from "@/modules/Pagination/Pagination";
 import { useItemsPerPage } from "@/shared/hooks/useItemsPerPage";
 import { tails } from "@/app/[locale]/tails/constans";
 import { ITailsProps } from "@/shared/types";
+import { motion } from "framer-motion";
+import { fadeIn, generalSlideUp } from "@/shared/utils"; 
 
 export default function Tails({ translation, lang }: ITailsProps) {
   const router = useRouter();
@@ -43,21 +45,47 @@ export default function Tails({ translation, lang }: ITailsProps) {
 
   return (
     <section className="mt-[65px] mx-auto xl:mt-[140px] container pt-[60px] lg:pt-8 pb-[100px] lg:pb-[148px] px-4 xl:px-10">
-      <Filter selectedFilter={filter} />
+      <motion.div
+        variants={fadeIn}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        custom={0}
+      >
+        <Filter selectedFilter={filter} />
+      </motion.div>
+
       <div className="flex justify-center">
         <ul className="grid grid-cols-1 md:grid-cols-2 tabxl:grid-cols-3 laptop:grid-cols-4 gap-5 xl:gap-x-5 xl:gap-y-8 justify-items-center">
           {currentItems.map((tail, index) => (
-            <TailCard key={index} tail={tail} translation={translation} />
+            <motion.li
+              key={index}
+              variants={generalSlideUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              custom={index * 0.2}
+            >
+              <TailCard tail={tail} translation={translation} />
+            </motion.li>
           ))}
         </ul>
       </div>
-      <div className="flex justify-center mt-8 lg:mt-12">
+
+      <motion.div
+        variants={fadeIn}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        custom={0.8}
+        className="flex justify-center mt-8 lg:mt-12"
+      >
         <Pagination
           currentPage={currentPage}
           totalPages={totalPages}
           onPageChange={handlePageChange}
         />
-      </div>
+      </motion.div>
     </section>
   );
 }

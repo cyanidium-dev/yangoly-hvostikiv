@@ -9,7 +9,7 @@ import { useItemsPerPage } from "@/shared/hooks/useItemsPerPage";
 import { tails } from "@/app/[locale]/tails/constans";
 import { ITailsProps } from "@/shared/types";
 import { motion } from "framer-motion";
-import { fadeIn, generalSlideUp } from "@/shared/utils"; 
+import { fadeIn, generalSlideUp } from "@/shared/utils";
 
 export default function Tails({ translation, lang }: ITailsProps) {
   const router = useRouter();
@@ -44,7 +44,7 @@ export default function Tails({ translation, lang }: ITailsProps) {
   };
 
   return (
-    <section className="mt-[65px] mx-auto xl:mt-[140px] container pt-[60px] lg:pt-8 pb-[100px] lg:pb-[148px] px-4 xl:px-10">
+    <section className=" mx-auto  container pt-[60px] lg:pt-8 pb-[100px] lg:pb-[148px] px-4 xl:px-10">
       <motion.div
         variants={fadeIn}
         initial="hidden"

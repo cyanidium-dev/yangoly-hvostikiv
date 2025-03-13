@@ -53,7 +53,7 @@ export default async function LocaleLayout({
   const { header, footerNav, donateModal } = await getDictionary(locale);
 
   return (
-    <>
+    <div className="relative">
       <Header
         lang={locale}
         translation={header}
@@ -67,6 +67,6 @@ export default async function LocaleLayout({
         </main>
         <Footer translation={footerNav} />
       </div>
-    </>
+    </div>
   );
 }

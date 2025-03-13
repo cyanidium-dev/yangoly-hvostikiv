@@ -67,11 +67,11 @@ const AboutUs = ({
   return (
     <div className="xl:grid xl:grid-cols-2 pb-[40px]">
       <div className="hidden xl:block">
-        <ImageGallery images={aboutImages} variant="splitLayout" />
+        <ImageGallery images={aboutImages} className="" variant="splitLayout" />
       </div>
       <InfoBlock
         titleClassName="xl:mb-[48px]"
-        className="py-[40px] px-[30px] rounded-[20px] xl:px-[50px] 2xl:px-[93px] xl:py-[108px]"
+        className="py-[40px] px-[30px]  rounded-[20px] flex flex-col h-full  justify-center xl:px-[50px] 2xl:px-[93px] xl:py-[108px]"
         translation={translation}
       >
         <motion.div
@@ -109,15 +109,15 @@ const AboutUs = ({
             whileInView="visible"
             viewport={{ once: true }}
             variants={generalSlideUp}
-            custom={0.2 + index * 0.2} 
+            custom={0.2 + index * 0.2}
+            className="relative w-full aspect-[328/268] rounded-[16px] overflow-hidden"
           >
             <Image
               src={image.src}
-              width={328}
-              height={268}
-              layout="responsive"
               alt={image.alt}
+              fill
               quality={100}
+              sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover rounded-[16px]"
             />
           </motion.div>

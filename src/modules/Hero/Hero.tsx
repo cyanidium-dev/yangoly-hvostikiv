@@ -6,15 +6,38 @@ import { fadeIn, slideUp, generalSlideUp } from "@/shared/utils";
 import { useState } from "react";
 import DonateModal from "@/shared/components/DonateModal/DonateModal";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 const Hero = ({ translation }: IHeroProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const pathName = usePathname();
   const lang = pathName.split("/")[1] as Locale;
   const { title, subtitle, text, button } = translation;
+
   return (
-    <section className="mt-[65px] xl:mt-[105px] hero-bg pt-[381px] xl:pt-[497px] xl:pb-[43px] pb-[38px]">
-      <div className="flex flex-col items-center justify-center">
+    <section className="relative  pt-[381px] xl:pt-[497px] xl:pb-[43px] pb-[38px] overflow-hidden">
+      <div className="absolute inset-0 w-full h-full">
+        <Image
+          src="/images/hero-bg-desk.webp"
+          alt="Hero background"
+          fill
+          className="hidden sm:flex object-cover w-full h-full lg:object-top"
+          quality={100}
+          priority
+          sizes="100vw"
+        />
+        <Image
+          src="/images/hero-bg-mob.webp"
+          alt="Hero background"
+          fill
+          className="object-cover object-top sm:hidden w-full h-full"
+          quality={100}
+          priority
+          sizes="100vw"
+        />
+      </div>
+
+      <div className="relative flex flex-col items-center justify-center z-10">
         <motion.h2
           className="text-white font-arial text-[16px] font-black leading-[122%] uppercase xl:text-[36px] xl:font-extrabold"
           initial="hidden"
@@ -36,7 +59,7 @@ const Hero = ({ translation }: IHeroProps) => {
           {title}
         </motion.h1>
         <motion.div
-          className="flex flex-col items-center max-w-[300px] xl:flex-row xl:max-w-full xl:w-full xl:justify-between  xl:px-[73px] xl:mt-[48px]"
+          className="flex flex-col items-center max-w-[300px] xl:flex-row xl:max-w-full xl:w-full xl:justify-between xl:px-[73px] xl:mt-[48px]"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}

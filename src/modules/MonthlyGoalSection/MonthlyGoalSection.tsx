@@ -108,6 +108,7 @@ const MonthlyGoalSection = ({
             custom={0.5}
           >
             <Button
+              onClick={() => setIsDonateModalOpen(true)}
               variant="secondary"
               className="mx-auto w-full max-w-[300px] xl:max-w-[383px] mt-[2px] flex justify-center"
               text={t.donateButton}

@@ -367,6 +367,7 @@ export interface IFundraisingCardProps {
   currentAmount: number;
   currency: string;
   buttonText: string;
+  goal: string;
   onClick: () => void;
   className?: string;
 }

@@ -20,28 +20,53 @@ function getLocaleFromHeader(request: NextRequest): string {
 
 export function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
+  const savedLocale = request.cookies.get(LOCALE_COOKIE)?.value;
 
+  // Перевіряємо, чи є локаль у шляху
   const pathnameHasLocale = locales.some(
     (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
   );
 
+  // Отримуємо локаль із cookie або заголовків
+  const locale =
+    savedLocale && locales.includes(savedLocale)
+      ? savedLocale
+      : getLocaleFromHeader(request);
+
+  // Якщо локаль є в шляху, але вона не збігається з локаллю з cookie, перенаправляємо
+  if (
+    pathnameHasLocale &&
+    savedLocale &&
+    savedLocale !== pathname.split("/")[1]
+  ) {
+    const newPathname = pathname.replace(/^\/[^/]+/, `/${savedLocale}`);
+    console.log(`Redirecting to: ${newPathname} (based on cookie)`);
+    const response = NextResponse.redirect(new URL(newPathname, request.url));
+    response.cookies.set(LOCALE_COOKIE, savedLocale, {
+      path: "/",
+      maxAge: 60 * 60 * 24 * 365,
+    });
+    return response;
+  }
+
+  // Якщо локалі немає в шляху, додаємо локаль із cookie або заголовків
   if (!pathnameHasLocale) {
-    const savedLocale = request.cookies.get(LOCALE_COOKIE)?.value;
-    const locale = savedLocale || getLocaleFromHeader(request);
-
-    const response = NextResponse.redirect(
-      new URL(`/${locale}${pathname}`, request.url)
-    );
-
+    const newPath = `/${locale}${pathname || "/"}`;
+    const response = NextResponse.redirect(new URL(newPath, request.url));
     response.cookies.set(LOCALE_COOKIE, locale, {
       path: "/",
       maxAge: 60 * 60 * 24 * 365,
     });
-
     return response;
   }
 
-  return NextResponse.next();
+  // Якщо все збігається, просто продовжуємо
+  const response = NextResponse.next();
+  response.cookies.set(LOCALE_COOKIE, locale, {
+    path: "/",
+    maxAge: 60 * 60 * 24 * 365,
+  });
+  return response;
 }
 
 export const config = {

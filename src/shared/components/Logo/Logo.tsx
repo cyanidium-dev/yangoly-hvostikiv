@@ -1,4 +1,6 @@
+"use client";
 import { ILogoProps } from "@/shared/types";
+import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -15,7 +17,8 @@ const Logo = ({
         alt="logo"
         width={width}
         height={height}
-        className={variant === "black" ? "logo-white-mask" : ""}
+        priority
+        className={clsx(variant === "black" ? "logo-white-mask" : "")}
       />
     </Link>
   );

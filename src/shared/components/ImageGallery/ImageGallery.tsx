@@ -1,5 +1,8 @@
+"use client";
 import { IImageGalleryProps } from "@/shared/types";
 import Image from "next/image";
+import { motion } from "framer-motion";
+import { generalSlideUp } from "@/shared/utils";
 
 const ImageGallery = ({
   images,
@@ -8,21 +11,35 @@ const ImageGallery = ({
 }: IImageGalleryProps) => {
   if (variant === "splitLayout") {
     return (
-      <div className={`grid grid-cols-2  gap-4 xl:gap-5 ${className}`}>
-        <div className="relative w-full h-full">
+      <div className={`grid grid-cols-2 gap-4 xl:gap-5 ${className} h-full`}>
+        <motion.div
+          className="relative w-full h-full"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={generalSlideUp}
+          custom={0.2}
+        >
           <div className="absolute inset-0">
             <Image
               src={images[0].src}
               alt={images[0].alt}
               fill
-              className="object-cover rounded-lg xl:rounded-[16px]"
+              className="object-cover object-top rounded-lg xl:rounded-[16px]"
               sizes="(max-width: 1280px) 50vw, 33vw"
               priority
             />
           </div>
-        </div>
+        </motion.div>
         <div className="flex flex-col gap-4 xl:gap-5 h-full">
-          <div className="relative w-full aspect-[170/156] xl:aspect-[329/331]">
+          <motion.div
+            className="relative w-full flex-1"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={generalSlideUp}
+            custom={0.4}
+          >
             <Image
               src={images[1].src}
               alt={images[1].alt}
@@ -30,9 +47,16 @@ const ImageGallery = ({
               className="object-cover rounded-lg xl:rounded-[16px]"
               sizes="(max-width: 1280px) 50vw, 33vw"
             />
-          </div>
+          </motion.div>
           {images[2] && (
-            <div className="relative w-full aspect-[170/156] xl:aspect-[329/331]">
+            <motion.div
+              className="relative w-full flex-1"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={generalSlideUp}
+              custom={0.6}
+            >
               <Image
                 src={images[2].src}
                 alt={images[2].alt}
@@ -40,7 +64,7 @@ const ImageGallery = ({
                 className="object-cover rounded-lg xl:rounded-[16px]"
                 sizes="(max-width: 1280px) 50vw, 33vw"
               />
-            </div>
+            </motion.div>
           )}
         </div>
       </div>
@@ -50,7 +74,15 @@ const ImageGallery = ({
     return (
       <div className={`grid grid-cols-2 gap-4 ${className}`}>
         {images.slice(0, 4).map((image, index) => (
-          <div key={index} className="relative w-full aspect-square">
+          <motion.div
+            key={index}
+            className="relative w-full aspect-square"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={generalSlideUp}
+            custom={0.2 + index * 0.2}
+          >
             <Image
               src={image.src}
               alt={image.alt}
@@ -58,7 +90,7 @@ const ImageGallery = ({
               className="object-cover rounded-lg"
               sizes="(max-width: 1280px) 50vw, 33vw"
             />
-          </div>
+          </motion.div>
         ))}
       </div>
     );

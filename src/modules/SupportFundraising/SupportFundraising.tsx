@@ -10,6 +10,7 @@ import SlidesPagination from "../Pagination/SlidesPagination/SlidesPagination";
 import clsx from "clsx";
 import { motion } from "framer-motion";
 import { slideUp, generalSlideUp } from "@/shared/utils";
+import DonateModal from "@/shared/components/DonateModal/DonateModal";
 
 const translations = {
   uk: {
@@ -31,10 +32,17 @@ const translations = {
 };
 
 const SupportFundraising = ({ lang }: { lang: Locale }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const t = translations[lang] || translations.uk;
 
-  const handleCardClick = (title: string) => {
-    console.log("Card clicked:", title);
+  // const handleCardClick = useCallback(() => {
+  //   console.log(`click`);
+  //   setIsModalOpen(true);
+  // }, []);
+  const handleCardClick = () => {
+    console.log(`click`);
+    setIsModalOpen(true);
   };
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -60,7 +68,6 @@ const SupportFundraising = ({ lang }: { lang: Locale }) => {
         {t.title}
       </h2>
 
-      {/* Анімація для слайдера */}
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -91,21 +98,20 @@ const SupportFundraising = ({ lang }: { lang: Locale }) => {
           {t.cardTitles.map((title, index) => (
             <SwiperSlide key={index}>
               <FundraisingCard
+                goal={t.goal}
                 image={t.image}
                 title={title}
                 currentAmount={(index + 1) * 3000}
                 totalAmount={(index + 1) * 10000}
                 currency={t.currency}
                 buttonText={t.buttonText}
-                onClick={() => handleCardClick(title)}
-                className=""
+                onClick={handleCardClick}
               />
             </SwiperSlide>
           ))}
         </Swiper>
       </motion.div>
 
-      {/* Анімація для кнопок пагінації */}
       <motion.div
         className={clsx(
           "mt-4 flex justify-center gap-6",
@@ -128,6 +134,14 @@ const SupportFundraising = ({ lang }: { lang: Locale }) => {
           disabled={isNextDisabled}
         />
       </motion.div>
+
+      {isModalOpen && (
+        <DonateModal
+          lang={lang}
+          onClose={() => setIsModalOpen(false)}
+          isOpen={isModalOpen}
+        />
+      )}
     </section>
   );
 };

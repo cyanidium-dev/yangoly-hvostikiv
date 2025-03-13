@@ -29,7 +29,7 @@ const Partnership = ({ translation, lang }: IPartnershipProps) => {
   ];
 
   return (
-    <section className="mt-[65px] xl:mt-[130px]">
+    <section>
       <div className="container mx-auto px-4">
         <motion.h2
           variants={fadeIn}
@@ -220,27 +220,15 @@ const Partnership = ({ translation, lang }: IPartnershipProps) => {
         isOpen={isModalOpen}
         onClose={handleCloseModal}
       >
-        <motion.h2
-          variants={fadeIn}
-          initial="hidden"
-          animate={isModalOpen ? "visible" : "hidden"}
-          custom={0}
-          className="text-[24px] font-arial font-black mb-5 leading-[130%] text-[#1D1D1D] text-center mt-10"
-        >
+        <h2 className="text-[24px] font-arial font-black mb-5 leading-[130%] text-[#1D1D1D] text-center mt-10">
           {modalTitle}
-        </motion.h2>
-        <motion.div
-          variants={slideUp}
-          initial="hidden"
-          animate={isModalOpen ? "visible" : "hidden"}
-          custom={0.2}
-        >
-          <UniversalForm
-            className="p-0"
-            onSubmit={handleSubmit}
-            {...contactConfig}
-          />
-        </motion.div>
+        </h2>
+
+        <UniversalForm
+          className="p-0"
+          onSubmit={handleSubmit}
+          {...contactConfig}
+        />
       </Modal>
     </section>
   );

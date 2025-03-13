@@ -30,7 +30,7 @@ const Partners = ({
           whileInView="visible"
           viewport={{ once: true }}
           variants={generalSlideUp}
-          custom={1.2}
+          custom={0.2}
           className="text-[24px] xl:text-[32px] text-dark font-arial font-black uppercase leading-[130%] text-center mb-8"
         >
           {title}
@@ -42,8 +42,8 @@ const Partners = ({
         whileInView="visible"
         viewport={{ once: true }}
         variants={generalSlideUp}
-        custom={1.4}
-        className="relative flex overflow-x-hidden overflow-y-hidden w-full h-8 xl:h-[60px]"
+        custom={0.4}
+        className="relative flex overflow-x-hidden overflow-y-hidden w-full h-[60px]"
       >
         <div className="flex space-x-[100px] animate-marquee">
           {partners.map((partner, index) => (

@@ -4,6 +4,7 @@ import { cn } from "@/shared/utils";
 import { CloseIcon } from "../../../../public/images/icons";
 import { IModalProps } from "@/shared/types";
 import { motion, AnimatePresence } from "framer-motion";
+import { useLockBodyScroll } from "@/shared/hooks/useLockBodyScroll";
 
 const Modal = ({
   isOpen,
@@ -21,13 +22,14 @@ const Modal = ({
     [onClose]
   );
 
+  useLockBodyScroll(isOpen);
   return (
     <AnimatePresence>
       {isOpen && (
         <motion.div
           onClick={handleBackdropClick}
           className={cn(
-            "fixed inset-0 flex items-center top-[65px] xl:top-[140px] justify-center bg-black/50 z-[1000]",
+            "fixed inset-0 flex items-center top-[65px] xl:top-[130px] justify-center bg-black/50 z-[1000]",
             className
           )}
           initial={{ opacity: 0 }}

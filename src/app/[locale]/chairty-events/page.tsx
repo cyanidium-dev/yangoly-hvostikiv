@@ -137,7 +137,7 @@ export default function CharityEventPage() {
               width={328}
               height={286}
               className="object-cover flex mx-auto rounded-[8px] xl:hidden"
-              quality={80}
+              quality={75}
             />
           </motion.div>
           <motion.div
@@ -153,7 +153,7 @@ export default function CharityEventPage() {
               width={747}
               height={286}
               className="object-cover hidden mx-auto rounded-[8px] xl:flex"
-              quality={80}
+              quality={75}
             />
           </motion.div>
           <div>

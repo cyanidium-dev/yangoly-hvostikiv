@@ -116,7 +116,7 @@ const AboutUs = ({
               src={image.src}
               alt={image.alt}
               fill
-              quality={80}
+              quality={75}
               sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover rounded-[16px]"
             />

@@ -31,7 +31,7 @@ const AboutOwner = ({
             alt="Foundation Owner"
             fill
             className="object-contain object-top rounded-[20px] xl:object-cover"
-            quality={100}
+            quality={80}
             priority
           />
         </motion.div>

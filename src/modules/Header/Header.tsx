@@ -30,31 +30,29 @@ const Header = ({
     setIsMenuOpen(false);
   }, []);
   return (
-    <>
-      <header className="fixed top-0 flex-col bg-white border-b border-[#E9E9EE] xl:bg-background-gray  w-full flex justify-between items-center z-50">
-        <TopBanner />
-        <div className="flex w-full justify-between px-4 py-3 xl:py-[18px] xl:px-10  ">
-          <Logo href="/" variant="color" />
-          <div className="hidden xl:flex">
-            <Navbar translation={translation} isOnBurger={false} />
-          </div>
-          <div className="flex justify-center items-center gap-4 xl:gap-2 laptop:gap-8">
-            <LanguageSwitcher />
-            <button
-              className={`${isMenuOpen ? "ml-[auto]" : "xl:hidden"}`}
-              onClick={handleMenuToggle}
-            >
-              {isMenuOpen ? <CloseIcon /> : <BurgerButtonIcon />}
-            </button>
-            <Button
-              variant="outline"
-              className="hidden xl:block bg-inherit text-dark border-dark hover:text-white hover:bg-dark"
-              text={translation?.donateButton}
-              onClick={() => setIsDonateModalOpen(true)}
-            />
-          </div>
+    <header className="sticky top-0 flex-col bg-white border-b border-[#E9E9EE] xl:bg-background-gray  w-full flex justify-between items-center z-50">
+      <TopBanner />
+      <div className="flex w-full justify-between px-4 py-3 xl:py-[18px] xl:px-10  ">
+        <Logo href="/" variant="color" />
+        <div className="hidden xl:flex">
+          <Navbar translation={translation} isOnBurger={false} />
         </div>
-      </header>
+        <div className="flex justify-center items-center gap-4 xl:gap-2 laptop:gap-8">
+          <LanguageSwitcher />
+          <button
+            className={`${isMenuOpen ? "ml-[auto]" : "xl:hidden"}`}
+            onClick={handleMenuToggle}
+          >
+            {isMenuOpen ? <CloseIcon /> : <BurgerButtonIcon />}
+          </button>
+          <Button
+            variant="outline"
+            className="hidden xl:block bg-inherit text-dark border-dark hover:text-white hover:bg-dark"
+            text={translation?.donateButton}
+            onClick={() => setIsDonateModalOpen(true)}
+          />
+        </div>
+      </div>
       <BurgerMenu
         onClose={handleCloseMenu}
         lang={lang}
@@ -68,7 +66,7 @@ const Header = ({
         isOpen={isDonateModalOpen}
         onClose={handleCloseModal}
       />
-    </>
+    </header>
   );
 };
 

@@ -13,7 +13,7 @@ const InfoBlock = ({
 }: IInfoBlockProps) => {
   const { paragraphs, title } = translation;
   return (
-    <div className={`mx-auto bg-white ${className}`} {...props}>
+    <div className={`mx-auto  bg-white ${className}`} {...props}>
       <motion.h2
         className={clsx(
           "text-[20px] xl:text-left  uppercase font-extrabold text-center font-arial xl:text-[32px] text-[#140A01] leading-[130%] mb-[28px]",

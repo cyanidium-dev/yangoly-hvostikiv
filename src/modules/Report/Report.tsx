@@ -9,7 +9,7 @@ export default function Report({ report }: IReportProps) {
     report;
 
   return (
-    <section className="mt-[65px] mx-auto xl:mt-[140px] container pt-[60px] xl:pt-12 pb-[100px] xl:pb-[148px] px-4 xl:px-10">
+    <section className="mx-auto container pt-[60px] xl:pt-12 pb-[100px] xl:pb-[148px] px-4 xl:px-10">
       <div className="lg:flex items-center justify-between gap-x-[141px] mb-[60px] lg:mb-12">
         <div className="lg:w-[49.3%] mb-[44px] lg:mb-0">
           <motion.h2

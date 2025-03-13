@@ -8,7 +8,7 @@ export default function Reporting({ translation, lang }: IReportingProps) {
   const { title } = translation;
 
   return (
-    <section className="mt-[65px] mx-auto xl:mt-[140px] container pt-[60px] xl:pt-14 pb-[100px] xl:pb-[148px] px-4 xl:px-10">
+    <section className="mx-auto container pt-[60px] xl:pt-14 pb-[100px] xl:pb-[148px] px-4 xl:px-10">
       <motion.h1
         variants={fadeIn}
         initial="hidden"

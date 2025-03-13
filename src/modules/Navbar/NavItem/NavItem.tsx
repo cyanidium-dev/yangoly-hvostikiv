@@ -47,6 +47,7 @@ const NavItem = ({
   };
 
   useEffect(() => {
+
     function handleClickOutside(event: MouseEvent) {
       if (
         dropdownRef.current &&

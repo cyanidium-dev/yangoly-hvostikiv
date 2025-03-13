@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import ProgressBar from "../ProgressBar/ProgressBar";
 import { formatAmount } from "@/shared/utils";
@@ -14,6 +15,7 @@ const FundraisingCard = ({
   buttonText,
   onClick,
   className,
+  goal,
 }: IFundraisingCardProps) => {
   return (
     <div
@@ -36,7 +38,7 @@ const FundraisingCard = ({
       </h2>
       <div className="flex justify-between mt-[18px] mb-[16px]">
         <p className="text-black text-[18px] font-semibold leading-[130%]">
-          Ціль
+          {goal}
         </p>
         <p className="text-black text-[18px] font-semibold leading-[130%]">
           {formatAmount(totalAmount)} {currency}

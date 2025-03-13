@@ -1,7 +1,6 @@
 # *
 User-agent: *
 Allow: /
-Disallow: /[locale]/hidden-page
 
 # Host
 Host: https://yangoly-hvostikiv.vercel.app

@@ -110,7 +110,6 @@ const DonateModal = ({
                 />
               </div>
               <div className="xl:w-1/2 xl:bg-white xl:pt-0 p-[20px]  xl:rounded-l-[40px]">
-                {" "}
                 <div className="sticky hidden xl:flex  top-0 left-0 right-0 bg-white z-10 px-2 py-2  justify-end ">
                   <button
                     onClick={onClose}

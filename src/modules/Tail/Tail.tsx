@@ -17,7 +17,7 @@ export default function Tail({
 
   return (
     <section>
-      <div className="mt-[65px] mx-auto xl:mt-[140px] container pt-8 pb-5 px-4 xl:px-10">
+      <div className="mx-auto container pt-8 pb-5 px-4 xl:px-10">
         <TailInfo tail={tail} locale={locale} translation={translation} />
       </div>
 

@@ -18,7 +18,7 @@ import clsx from "clsx";
 import Contacts from "@/modules/Contacts/Contacts";
 import EventsGrid from "@/shared/components/EventsGrid/EventsGrid";
 import { motion } from "framer-motion";
-import { fadeIn, slideUp, generalSlideUp } from "@/shared/utils"; 
+import { fadeIn, slideUp, generalSlideUp } from "@/shared/utils";
 
 export default function CharityEventPage() {
   const [isDonateModalOpen, setIsDonateModalOpen] = useState(false);
@@ -78,7 +78,7 @@ export default function CharityEventPage() {
   ];
 
   return (
-    <section className="bg-orange-bg mt-[65px] xl:mt-[105px]">
+    <section className="bg-orange-bg">
       {/* Гіро секція */}
       <div className="container mx-auto px-4 xl:px-[40px] pt-[60px]">
         <div className="xl:hidden">
@@ -359,7 +359,7 @@ export default function CharityEventPage() {
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true }}
-                  custom={0.2 + (index % 4) * 0.2} // Затримка для кожної картинки в циклі
+                  custom={0.2 + (index % 4) * 0.2}
                   className="relative aspect-[343/248] w-full cursor-pointer"
                   onClick={() => setOpenPhoto(src)}
                 >
@@ -390,27 +390,15 @@ export default function CharityEventPage() {
           isOpen={isPartnerModalOpen}
           onClose={() => setIsPartnerModalOpen(false)}
         >
-          <motion.h2
-            variants={fadeIn}
-            initial="hidden"
-            animate={isPartnerModalOpen ? "visible" : "hidden"}
-            custom={0}
-            className="text-[24px] font-arial font-black mb-5 leading-[130%] text-[#1D1D1D] text-center mt-10"
-          >
+          <h2 className="text-[24px] font-arial font-black mb-5 leading-[130%] text-[#1D1D1D] text-center mt-10">
             {localTranslation.partnerModalTitle}
-          </motion.h2>
-          <motion.div
-            variants={slideUp}
-            initial="hidden"
-            animate={isPartnerModalOpen ? "visible" : "hidden"}
-            custom={0.2}
-          >
-            <UniversalForm
-              className="p-0"
-              onSubmit={handleSubmitPartner}
-              {...contactConfig}
-            />
-          </motion.div>
+          </h2>
+
+          <UniversalForm
+            className="p-0"
+            onSubmit={handleSubmitPartner}
+            {...contactConfig}
+          />
         </Modal>
       </div>
       <Contacts lang={lang} translation={contactTranslation} />

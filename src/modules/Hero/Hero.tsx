@@ -22,7 +22,7 @@ const Hero = ({ translation }: IHeroProps) => {
           alt="Hero background"
           fill
           className="hidden sm:flex object-cover w-full h-full lg:object-top"
-          quality={80}
+          quality={75}
           priority
           sizes="100vw"
         />
@@ -31,7 +31,7 @@ const Hero = ({ translation }: IHeroProps) => {
           alt="Hero background"
           fill
           className="object-cover object-top sm:hidden w-full h-full"
-          quality={80}
+          quality={75}
           priority
           sizes="100vw"
         />

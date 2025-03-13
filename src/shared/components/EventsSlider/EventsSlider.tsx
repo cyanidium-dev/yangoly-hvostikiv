@@ -63,7 +63,7 @@ const EventsSlider = ({ images }: { images: string[] }) => {
               width={328}
               height={377}
               priority={index === 0}
-              quality={80}
+              quality={75}
             />
           </SwiperSlide>
         ))}

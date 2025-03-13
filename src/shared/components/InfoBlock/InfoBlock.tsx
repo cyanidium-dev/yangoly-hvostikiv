@@ -39,6 +39,7 @@ const InfoBlock = ({
             className="text-black text-[14px] md:text-[16px] xl:text-[18px] font-light leading-[130%]"
             variants={generalSlideUp}
             custom={index * 0.2}
+            viewport={{ once: true }}
             initial="hidden"
             whileInView="visible"
           >

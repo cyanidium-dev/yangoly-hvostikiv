@@ -151,8 +151,7 @@ export interface ICheckBoxIconProps extends React.SVGProps<SVGSVGElement> {
 
 export interface ILogoProps extends ComponentProps<typeof Link> {
   variant?: "black" | "color";
-  width?: number;
-  height?: number;
+  className: string;
 }
 
 export interface IInfoBlockProps extends ComponentProps<"div"> {

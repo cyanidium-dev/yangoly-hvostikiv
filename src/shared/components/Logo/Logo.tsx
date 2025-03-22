@@ -4,21 +4,19 @@ import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
 
-const Logo = ({
-  variant = "black",
-  width = 94,
-  height = 40,
-  ...props
-}: ILogoProps) => {
+const Logo = ({ variant = "black", className = "", ...props }: ILogoProps) => {
   return (
-    <Link {...props}>
+    <Link {...props} className={`${className} relative block overflow-hidden`}>
       <Image
-        src="/images/logo.mobile.png"
+        src="/images/logo.webp"
         alt="logo"
-        width={width}
-        height={height}
         priority
-        className={clsx(variant === "black" ? "logo-white-mask" : "")}
+        fill
+        sizes="10vw"
+        className={clsx(
+          variant === "black" ? "logo-white-mask" : "",
+          "w-full h-full object-cover"
+        )}
       />
     </Link>
   );

@@ -16,7 +16,7 @@ const Footer = ({ translation }: { translation: INavigationItem[] }) => {
         variants={fadeIn}
         custom={0.2}
       >
-        <Logo href={"/"} width={109} height={48} />
+        <Logo href={"/"} className="w-[109px] h-[48px]" />
       </motion.div>
 
       <motion.nav

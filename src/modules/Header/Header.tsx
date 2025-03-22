@@ -33,7 +33,11 @@ const Header = ({
     <header className="sticky top-0 flex-col bg-white border-b border-[#E9E9EE] xl:bg-background-gray  w-full flex justify-between items-center z-50">
       <TopBanner />
       <div className="flex w-full justify-between px-4 py-3 xl:py-[18px] xl:px-10  ">
-        <Logo href="/" variant="color" />
+        <Logo
+          href="/"
+          variant="color"
+          className="w-[94px] h-10 2xl:w-[112px] 2xl:h-12"
+        />
         <div className="hidden xl:flex">
           <Navbar translation={translation} isOnBurger={false} />
         </div>

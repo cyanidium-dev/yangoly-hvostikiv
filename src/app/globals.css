@@ -109,8 +109,32 @@ textarea:focus-visible {
   }
 }
 
+.animate-color {
+  animation: colorChange 2s infinite ease-in-out;
+}
+
 @layer utilities {
   .transition-base {
-    @apply transition  duration-300 ease-in-out;
+    @apply transition duration-300 ease-in-out;
+  }
+
+  .custom-wave {
+    animation: wave 1.5s ease-in-out infinite;
+  }
+
+  @keyframes wave {
+    0%,
+    100% {
+      transform: translateY(0);
+      color: #ffffff;
+    }
+    30% {
+      transform: translateY(-30px);
+      color: #74c396;
+    }
+    60% {
+      transform: translateY(10px);
+      color: #eaccaa;
+    }
   }
 }
